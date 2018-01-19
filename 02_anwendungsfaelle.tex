@@ -1,0 +1,87 @@
+Abgesehen vom Nachweis einer nativen Währung, stellt sich die Frage welche weiteren Anwendungsfälle umsetzbar sind. \\
+Bei der Überlegung welche Anwendungsfälle sich besonders gut für eine Blockchain eignen können zusätzlich Schwächen der Technologie schnell aufzeigen, was keinen primären Einsatzzweck darstellt bzw. wofür weitere technische Lösungen notwendig werden.
+
+%Weitere Anwendungsfälle wie Lieferketten und IoT wurden ebenfalls in Erwägung gezogen aber als zum einen bereits stark im .
+
+Im folgenden werden ein paar wenige Anwendungsfälle kurz diskutiert. Dabei sollen Vorteile und erkannte Probleme kurz benannt werden.
+
+%~ * Nachweis-System
+\section{Zeitstempelservice}
+
+Eine denkbare Anwendung ist die Dokumentation von betrieblichen Ereignissen zu oder nahe an ihrem jeweilig tatsächlichen Zeitpunkt.
+Bisher wird dies als Markt als sog. \emph{Time Stamping Service} von u.a. SwissSign\footnote{\url{https://www.swisssign.com/de/signing/time-stamping-services}}, \gls{DFN}\footnote{\gls{DFN}-\gls{PKI} Zeitstempeldienst \url{https://www.pki.dfn.de/zeitstempeldienst/}} und \gls{DGN}\footnote{\gls{DGN} Zeitstempeldienst \url{https://www.dgn.de/dgn-zeitstempeldienst/}} beworben.
+
+Der eingangs erwähnte Genesis~Block hat die Nachricht \enquote{The Times 03/Jan/2009 Chancellor on brink of second bailout for banks}\footnote{http://www.righto.com/2014/02/ascii-bernanke-wikileaks-photographs.html} eingebettet und der Block. Auch das bereits Whitepaper \autocite{p:bitcoin} ist in Block \texttt{230009}\footnote{Transaktion \href{https://blockchain.info/tx/54e48e5f5c656b26c3bca14a8c95aa583d07ebe84dde3b7dd4a78f4e4186e713}{54e48e5f5c656b26c3bca14a8c95aa583d07ebe84dde3b7dd4a78f4e4186e713}} zu finden\footnote{\url{https://bitcoin.stackexchange.com/questions/35959/how-is-the-whitepaper-decoded-from-the-blockchain-tx-with-1000x-m-of-n-multisi}}.
+
+Eine Demonstration der Möglichkeit einer Blockchain als Zeitstempeldienst gab es seitens Julian Assange am 10.01.2017.\footnote{\url{https://www.twitch.tv/videos/113771480?t=49m49s}} als er den \enquote{proof of life} Zeitpunkt des Videos abweichend von der traditionellen Methode des Vorzeigens der aktuellen Tageszeitung durch die Nennung\footnote{\url{https://www.twitch.tv/reddit/v/113771480?t=01h53m00s}} des aktuellen Blocks\footnote{Nummer \href{https://blockchain.info/block/00000000000000000178374f687728789caa92ecb49b4d850dfc173a7c0351e6}{447506}} von Bitcoin nachwies. \\
+Assange bewies ungewollt auch gleich mit der mangelhaften Tonqualität der Videoübertragung und einem Fehler beim Vorlesen der Blocknummer seine kurz zuvor getätigte These, dass diese Methode nicht nur für den Laien schwer nachvollziehbar ist, sondern ggf. auch fehleranfällig ist.
+
+Die Umsetzung auf einer Blockchain kann oberflächlich betrachtet den Vorteil haben, dass der Zeitstempel zusätzlich durch die Metadaten des Blocks gestützt wird. Viel eindrucksvoller ist aber das Sicherheitsniveau der Verortung auf einer Blockchain\footnote{Bsp. \href{https://app.originstamp.org/}{OriginStamp} mit Kosten von 5\,USD für einen Hash zum Zeitpunkt der Recherche} gegenüber einer einfachen Signatur unter Zuhilfenahme eines Zeitstempeldienstes. \\
+Ein Zeitstempelserver signiert einmalig den sehr zuverlässig gelieferten Zeitstempel. Dieser lässt sich anschließend in z.B. eine Datei einbetten oder anderweitig ablegen. Dagegen setzt sich die Blockchain-basierte Lösung jedoch dadurch ab, dass der Hash eines zu datierenden Datenobjektes (hier der Datei) auf der Blockchain datiert abgelegt wird. Im hypothetischen Fall eines Angriffes auf die beiden Alternativen benötigt es für die Zeitstempeldienste den Bruch einer Signatur. Für die Lösung auf der öffentlichen Blockchain müssten jedoch alle seitdem geschriebenen Blöcke erneut berechnet werden; was jedoch wirtschaftlich selbst für staatliche Angreifer nicht umsetzbar ist. \\
+Die Kosten des erhöhten Sicherheitsniveaus direkt auf einer öffentlichen Blockchain, die auch viele andere Anwendungsfälle aufnimmt, sind langfristig jedoch nicht beherrschbar. Daher ist für den geschäftlichen Einsatz eine etwas komplexere Lösung oder die Umsetzung auf einer Blockchain speziell für diese Anwendung geeigneter.
+
+Auch nicht erwähnt werden weitere Umstände, wie Verbindungsprobleme und Schwankungen im Stromnetz die für Inselstaaten wie auch Krisenregionen nicht selten sind. Die Personalabteilung einer Firma mit einer redundanten Kopie der Blockchain wäre unabhängiger von einem Internetanschluss. Gleichzeitig ist die Datenmenge kompakter als ein üblicher Datenbankauszug, der gleichzeitig ein viel größeres Problem für den Datenschutz darstellen dürfte und weniger Integrität bietet.
+
+\section{Nachweis von Besitzverhältnissen}
+
+Dem Prinzip der Kryptowährung nicht fern ist der Nachweis von Besitz- oder Eigentumsverhältnissen. Es ist zunächst nicht relevant um welche Art von Gütern (je nach Kategorisierung z.B. materiell/immateriell) es sich hier handelt.
+
+Ein konkretes Beispiel ist die Umsetzung von Abschlusszeugnissen auf einer Blockchain durch eine Zusammenarbeit der Firma IOHK mit dem \gls{GRNET} \autocite{w:abschluesse-blockchain}. Hier ist schon erkennbar, dass für diesen Fall hinnehmbare Einschränkungen vorgenommen wurden um die Kosten im Rahmen zu halten. Der Zeitpunkt muss nicht auf die Stunde oder genauer sein muss. Und auch die Anzahl der Transaktionen hält sich stark in Grenzen, sodass keine Überlastung dieser Blockchain zu erwarten ist. Gewonnen ist aber ein verteiltes Register von Abschlüssen an den beteiligten Universitäten und darüber hinaus einer gemeinsamen Institution, die in Fällen des Ausfalles oder der Neugründung einer Universität einen (wahrscheinlich juristisch bedingten, aber technisch nicht notwendigen) zusätzlichen Anker bietet. Die Bestätigung durch diese Blockchain allein erhärtet die Gültigkeit eines vorgelegten Abschlusszeugnisses bereits selbst wenn Details wie Fachbereich, Module/Scheine, Teilnoten, Abschlussnote bzw. das Prädikat (keine Erwähnung in der Pressemitteilung) nicht gespeichert werden. Die Europäische Kommission hat bereits eine Studie\footnote{\enquote{Blockchain in Education} \autocite{p:bc-edu-eurocommission}} dazu erstellen lassen, die der \gls{VDI} 2018 zur Aktualisierung aufgreifen möchte.
+
+Es können u.a. Repräsentationen von Vermögenswerten erstellt\footnote{Colored Coins \autocite{b:mastering-bitcoin}, \url{https://github.com/bitcoinbook/bitcoinbook/blob/8d01749bcf45f69f36cf23606bbbf3f0bd540db3/colored_coins.asciidoc}} oder einfach nur Daten in der Transaktion encodiert abgelegt werden.
+
+Diese Art der Datenablage ist jedoch nicht sonderlich effizient, da zum einen nicht unbegrenzt Speicher in den Blöcken zur Verfügung steht und zum anderen dieser Speicher sehr teuer ist. Damit sind diese Beispiele auf einer öffentlichen, Gebühren-incentivierten Blockchain nicht praktikabel. Aber auch in einer unternehmenseigenen privaten Blockchain ist das Ablegen von Dateien nicht der beste Weg diese nachzuweisen. Stattdessen könnte für die allermeisten Anwendungsfälle genügen, Metadaten wie z.B. den Ablageort, die verantwortliche Stelle im Unternehmen und eine Prüfsumme zu speichern. Ein weiterer Blickwinkel ist die potentielle Öffentlichkeit eines so abgelegten Dokumentes. Die zukünftiger Erweiterung des Kreises der Zugangsberechtigten zur Blockchain könnte potentiell alle abgelegten Daten ungewollt öffentlich werden lassen.
+
+Internet der Kopien vs. Internet der Originale
+%https://www.coindesk.com/can-blockchain-save-us-from-the-internets-original-sin/
+
+
+\href{https://www.everledger.io}{Everledger}
+
+\section{Dezentrale Informations-Märkte}
+
+Aus Claims wie \enquote{kill the middleman} und \enquote{decentralize everthing} folgen Ansätze mit \mbox{Disruptive Technologien}\footnote{\url{http://wirtschaftslexikon.gabler.de/Definition/disruptive-technologien.html} \autocite{w:lexika-econimics}}, wie u.a. \gls{BCT}.
+
+Eine den Kryptowährung nicht ganz ferne konkrete Anwendung ist die Zusammenführung von Angebot und Nachfrage als Markplatz in verschiedenen Formen. Das kann für die Anwender wie \mbox{eBay Kleinanzeigen} als Börse aussehen oder um Funktionen wie Auktion erweitert werden. Bisherige Ansätze stützen sich noch auf eine nicht gänzlich dezentralisierbare Plattform. Ein Beispiel weitgehender Dezentralisierung wäre hier \gls{OB}\footnote{Website \url{https://www.openbazaar.org/}, Portal \url{https://bazaarbay.org/}}.
+
+Die Platformindustrie hat auch \emph{Uber} und \emph{AirBnb} hervorgebracht. Der Kern des Geschäftsmodelles ist die vereinfachte Zusammenführung von Angebot, Nachfrage und damit zusammenhängenden Dienstleistungen. Es werden nicht Taxifahrten oder Übernachtungen verkauft, sondern die Informationsbereitstellung. Weitere Unternehmen versuchen dieses Modell zu erweitern und die Lücken beim Informationsbedarf zu füllen; \emph{slock.it}\footnote{Website \url{https://slock.it}} führt das Türschloss und die Schlüsselübergabe als einen Schwachpunkt für die Hotelplattform an, zielt aber auf die \gls{SE} als größeres Geschäftsfeld ab.\\
+Die beispielhaft angeführten Plattformen stellen zentrale Autoritäten dar, deren Notwendigkeit infrage gestellt werden kann. Für AirBnb schickt sich schon das Start-up CryptoBnb\footnote{Website \url{https://cryptobnb.io/}} als direkter Konkurrent an einen \gls{ICO} zu starten. Und \emph{CryptoCribs}\footnote{Website \url{https://www.cryptocribs.com/}} zielt zum Marketing für die Dezentalisierung auf die Community selbst ab.
+
+Für weitere Möglichkeiten rund um \emph{Big Data}%\footnote{}
+ -- \enquote{das Öl des 21. Jahrhnderts}\footnote{Vergleich Daten und Öl als Rohstoff \autocite{b:spitz-daten}} -- bieten sich Soziale Netzwerke als Betätigungsfeld geradezu an. Steem hat bereits eine beachtliche Nutzerzahl mit der Beteiligung am Gewinn\footnote{334.250 Nutzer und 22,7 Millionen USD am 17. Januar 2017 \autocite{w:steem}} erschlossen. 
+%~ * musikindustrie
+
+%~ \section{IoT-Steuerung}
+
+% \gls{MQTT}
+%~ * Loyalty-Prorgamm / Datamining
+
+  %~ * IoT-Datenerhebung/-Steuerung
+
+
+
+
+  %~ * Asset-Nachweis eines Vertrages https://legalfling.io/
+
+  %~ * Lieferketten
+
+
+\section{Grenzen der Technologie}\label{grenzen-der-technologie}
+%
+
+Ausgehend von den Anwendungsfällen und insb. den beiden großen öffentlichen, globalen Blockchains (Bitcoin und Ethereum)  können
+bereits der Technologie innewohnende Vor- bzw. Nachteile erkannt werden.
+Hierbei geht es nicht um administrative Hindernissse wie Regulierung\label{first:regulierung} (s. \ref{regulierung}) und Instandhaltung\label{first:kosten} (s. \ref{kosten}).
+
+\subsection{Transaktionsgeschwindigkeit}%\label{}
+
+Die Anzahl der realisierbaren Transaktionen je Zeiteinheit hängt neben der Infrastruktur des Netzwerkes vor allem von der Größe der Transaktionen, dem Zeitintervall und der Gesamtkapazität je Zeiteinheit statt. Durch eine maximale Blockgröße ist die Kapazität der dominante limitierende Faktor. Die Größe der einzelnen Transaktionen kann je nach Datenstruktur einer Transaktion nicht unter einen bestimmten Wert fallen. Damit ihr die Auslastungsschwelle eines Blockes durch das Protokoll klar vorgegeben solange dieser eine Maximalgröße hat, selbst wenn diese durch Protokollmechanismen im Netzwerk regelmäßig angepasst wird. Das Zeitintervall kann aufgrund der Latenz im Netzwerk nicht beliebig klein gewählt werden. \\
+An dieser Stelle wird über Skalierbarkeit -- oft insb. auf Basis der Erhöhung der Blockgröße -- gesprochen. Tatsächlich ist dies aber bestenfalls eine kurzfristige Option. 
+
+\subsection{Speicherknappheit}%\label{}
+
+Die Verfügbarkeit der Blockchain wird im Netzwerk durch das möglichst vollständige Speichern der Historie belastet.
+Die vollständige Historie zu speichern kann die Festplattenkapazität einzelner Teilnehmer überfordern.
+Eine denkbare Lösung ist \gls{glos:Pruning}, dadurch werden unter Beibehaltung der Integritätsinformationen nur die Transaktionsdaten gelöscht, die als nicht relevant für die eigenen Zwecke betrachtet werden. Das können z.B. lange zurück liegender Transaktionen sein, oder solche die nicht Adressen der eigenen \gls{glos:Wallet} betreffen.
+
+%\subsection{}

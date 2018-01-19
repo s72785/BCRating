@@ -1,0 +1,61 @@
+\listfiles
+\errorcontextlines=\maxdimen  
+\documentclass[german,a4paper,11pt,DIV=calc,parskip]{scrartcl}
+
+\usepackage[a-1b]{pdfx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+%****************
+% define medatata
+%________________
+\def\Title{Interdisziplinäres Forschungsdatenmanagement}
+\def\Author{Some Name}
+\def\Subject{An Example Document}
+\def\Keywords{LaTeX,Example,Document}
+\def\Copyright{Creative Commons: Namensnennung und Weitergabe unter gleichen Bedingungen 4.0}
+\def\CopyrightURL{https://creativecommons.org/licenses/by-sa/4.0/}
+%***************************************************************************
+% \convertDate converts D:20080419103507+02'00' to 2008-04-19T10:35:07+02:00
+% found on: http://support.river-valley.com/wik.....ompliant_PDFs_from_pdftex
+%___________________________________________________________________________
+\def\convertDate{%
+    \getYear
+}
+{\catcode`\D=12
+ \gdef\getYear D:#1#2#3#4{\edef\xYear{#1#2#3#4}\getMonth}
+}
+\def\getMonth#1#2{\edef\xMonth{#1#2}\getDay}
+\def\getDay#1#2{\edef\xDay{#1#2}\getHour}
+\def\getHour#1#2{\edef\xHour{#1#2}\getMin}
+\def\getMin#1#2{\edef\xMin{#1#2}\getSec}
+\def\getSec#1#2{\edef\xSec{#1#2}\getTZh}
+\def\getTZh +#1#2{\edef\xTZh{#1#2}\getTZm}
+\def\getTZm '#1#2'{%
+    \edef\xTZm{#1#2}%
+    \edef\convDate{\xYear-\xMonth-\xDay T\xHour:\xMin:\xSec+\xTZh:\xTZm}%
+}
+ 
+\expandafter\convertDate\pdfcreationdate
+
+\pdfinfo{%
+    /Title    (\Title)
+    /Author   (\Author)
+    /Subject  (\Subject)
+    /Keywords (\Keywords)
+    /ModDate  (\pdfcreationdate)
+    /Trapped  /False
+	/Copyright(\Copyright)
+	/CopyrightURL(\CopyrightURL)
+}
+
+
+%~ \usepackage{hyperref}
+\hypersetup{
+pdfa
+}
+         
+\begin{document}              
+Does it work? Yes!
+\end{document}

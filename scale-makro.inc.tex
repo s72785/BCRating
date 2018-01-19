@@ -1,0 +1,32 @@
+% Skalieren auf breite oder Höhe
+\usepackage{environ}
+
+\makeatletter
+\newsavebox{\measure@tikzpicture}
+\NewEnviron{scaletikzpicturetowidth}[1]{%
+  \def\tikz@width{#1}%
+  \def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
+  \BODY
+  \end{lrbox}%
+  \pgfmathparse{#1/\wd\measure@tikzpicture}%
+  \edef\tikzscale{\pgfmathresult}%
+  \BODY
+}
+\NewEnviron{scaletikzpicturetoheight}[1]{%
+  \def\tikz@width{#1}%
+  \def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
+  \BODY
+  \end{lrbox}%
+  \pgfmathparse{#1/\ht\measure@tikzpicture}%
+  \edef\tikzscale{\pgfmathresult}%
+  \BODY
+}
+\makeatother
+\newlength{\imgwidth}
+\newlength{\imgwidthmax}
+\setlength{\imgwidthmax}{0.5\paperheight}
+\newcommand\scalegraphics[1]{%
+    \settowidth{\imgwidth}{\includegraphics{#1}}%
+    \setlength{\imgwidth}{\minof{\imgwidthmax}{\minof{\imgwidth}{\textwidth}}}%
+    \includegraphics[width=0.9\imgwidth]{#1}%
+}

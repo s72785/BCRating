@@ -1,0 +1,123 @@
+%Wie unter \ref{}
+
+%davon abweichend aus den erkannten Nachteilen heraus nach Blockchains gesucht werden, die dahingehend einen anderen Weg -- ohne \gls{PoW}, mit höherer Transaktionsgeschwindigkeit und mit Rücksicht auf den Datenschutz -- beschreiten.
+
+Wenn eine neue \gls{BC} auftaucht, können Beobachter sehr unterschiedliche darauf reagieren.
+Die einen suchen zuerst nach der nativen Währung und betrachten die Technologie eher als Investitionsobjekt.
+Der nächste sucht den primären Anwendungsfall und hat eher einen Fokus auf die praktische Nutzbarkeit.
+%Aber abseits des Kryptowährungsmarktes weitere Blockchain-Implementierung aufzufinden ist nicht ganz so einfach.
+An dieser Stelle soll die davon Abweichend die Hypothese~\rom{2} verfolgt werden. Da, wie eingangs festgestellt, Unternehmen inzwischen aktiv mit Blockchain arbeiten, sollten sie bereits 
+
+Die in der \nameref{einleitung} bereits erwähnte \gls{HSM} bot im September~2017 eine Woche \enquote{Autumn School} zum Thema Blockchain an.\footnote{Programm und Informationen \autocite{w:hsmw-bccm-as}} Der Schwerpunkt wurde wahrscheinlich durch die in der Nähe befindlichen und bei der Gründung von Ethereum beteiligte Firma \mbox{slock.it} beeinflusst. In der Retrospektive ist interessant, welche konkreten Mittel Firmen -- außer Ethereum oder Bitcoin -- betrachtet oder im Einsatz haben.
+Hier sticht ein vorgeführter Prototyp der \emph{Deutschen Bundesbank} vor. Dieser wurde mit \emph{Quorum} -- einem Fork von Ethereum -- umgesetzt. Dies scheint also ein beachtenswerter Vergleichskandidat zu sein. Weiterhin hat die Firma \emph{Sopra Steria} die Umsetzung von Kundenprojekten mittels \emph{BigchainDB} und den Einsatz von \emph{Hyperledger} durch Kunden erwähnt.
+Da das Projekt von der \mbox{Linux Foundation} mit Unterstützung zahlreicher nahmhafter Firmen gehostet wird ist davon auszugehen, dass sich die Investition für beteiligte Unternehmen lohn. Die hinter \emph{BigchainDB} stehende gleichnamige Firma ist ebenfalls Mitglied im \emph{Bundesverband Blockchain} und arbeitet mit der \gls{IPDB}\footnote{Blogpost zur Gründung \autocite{w:ipdb-foundation}}, damit hätten wir einen mindestens einen zweiten Kandidaten.
+
+Ein internationaler Konkurrent aus China ist \emph{NEO} -- vormals \gls{ANS}. Das Projekt erscheint zunächst interessant. Das überladene Design der Website gepaart mit bereits im Whitepaper fehlerhafter englischer Übersetzung\footnote{\enquote{NEO White Paper} \autocite{w:neo-whitepaper}} machen wenig Freude beim Lesen. Beworben
+%~ https://steemit.com/cryptocurrency/@basiccrypto/almost-everything-you-wanted-to-know-about-neo-part-1-of-2
+
+Auf der Suche nach einem dritten Kandidaten leuchtet die Schlagzeile über einen Geschwindigkeitsrekord der \emph{Red Belly Blockchain} auf. Über diese Schlagzeilen hinaus findet sich aber nichts. Auch wenig Details oder Dokumentation. Das Projekt \emph{Hyperledger} der \emph{Linux Foundation} bietet dagegen neben Dokumentation auf GitHub\footnote{\url{https://hyperledger.github.io/}} zahlreiche Mitglieder aus der Industrie, darunter auch die Deutsche Börse und die Firma SAP.
+
+\section{BigchainDB}
+
+Der Name suggeriert bereits, dass es sich bei \emph{BigchainDB}\footnote{Whitepaper \autocite{p:bigchaindb}} primär um die Nutzbarmachung der \gls{BCT} für Datenbanken dreht. Tatsächlich wird die Blockchain in einer Datenbank gehalten. Bisher wurden Treiber für RethinkDB und für MongoDB implementiert. Die Autoren konzentrieren sich nach eigener Aussage auf die Skalierbarkeit bei Erhaltung der Dezentralisierung und Unveränderbarkeit sowohl für eine globale öffentliche \gls{BC} auch auch private \gls{BC}.
+Etwas überraschend ob des Namens ist die klare Unterteilung nicht Daten auf der Blockchain zu speichern, sondern nur als Hash und Zugangstoken darauf zu verorten.
+
+Für die verbesserten Datenschutz (engl. privacy) von Daten sollen \enquote{Privacy Protocols} sorgen.\footnote{\url{https://github.com/bigchaindb/privacy-protocols}} Dazu sollen Authentifizierung und Beweise -- für u.a. Sharing, Storage und Replikation -- dienen.
+Für die redundante Ablage ist auch die Nutzung von \gls{IPFS} oder vergleichbaren verteilten Dateisystemen angedacht.
+Zusätzlich sollen Vermögenswetre (engl. Assets) nativ ermöglich werden. Die Verbindung verschiedener \gls{BC} soll über das Interledger Protokoll\footnote{A Protocol for Interledger Payments \autocite{p:interledger}}\label{first:interledger} ermöglicht werden.
+
+%~ Die Roadmap\footnote{\url{https://github.com/bigchaindb/org/blob/master/ROADMAP.md}} hat noch viele Features für die Zukunft
+Die Integration in Entwicklunsgwerkzeuge ist einer der wirklichen Vorteile. Bisher stehen Treiber für Python, JavaScript (inkl. NodeJS) zur Verfügung.
+Allerdings ist die 
+
+Bisher muss noch die fehlender Dezentralisierung kritisiert werden. Ohne einen zentralen Datenbank-Cluster ist die öffentliche, globale \emph{IPDB} derzeit nicht machbar weil alle Teilnehmer dorthin verbinden müssen.\footnote{\url{https://www.reddit.com/r/Bitcoin/comments/4j7wjf/bigchaindb_a_prime_example_of_blockchain_bullshit/}} Es ist kein Anreizsystem erkennbar, dass für einen Betrieb des Netzwerkes sorgen würde.
+Auch der Konsens.
+
+%~ * federation with pki => https://docs.bigchaindb.com/projects/server/en/latest/production-deployment-template/index.html
+%~ * tbd: labs.ipdb.com
+
+%~ * no smart contracts? (\in electronic contracting)
+
+%~ https://www.bigchaindb.com/
+%~ https://github.com/bigchaindb/bigchaindb
+%~ https://readthedocs.org/projects/bigchaindb/
+%~ https://docs.bigchaindb.com/en/latest/
+
+%~ Skalierung durch Sharding
+
+%~ Participants: 
+  %~ --- Dimi: ascribe, with Bruce, building stuff on bitcoin, then BigchainDB
+%~ -- Bitcoin amazing properties, but hard with storing stuff
+  %~ --- Kamal: enterprise solutions, business development, customer, before software 
+%~ - Hyperledger "is good to automate a business process"
+%~ - Interledger --> connect different blockchains
+%~ - Public Utility Networks --> consider rewards
+%~ - Acyclic graph, a la bitcoin transaction
+%~ - Scalability through sharding
+%~ - single type of asset -- bitcoin in bitcoin
+  %~ -- no minting of assets yourself
+%~ - in BigchainDB mutliple types of assets
+   %~ -- minting is fine
+%~ - Federated Consensus Architecture
+   %~ -- whitelist of federation nodes
+%~ - replication protocols security
+%~ - append-only database
+%~ - deletion: in 1.0 Bigchain not there yet, maybe in 2.0
+  %~ -- archiving may be possible
+  %~ -- pure deletion --> not really (future-proof encryption protocols!) 
+%~ - the other nodes will only accept valid transaction for replication (of for example deletion request, drop db, etc)
+%~ - Consensus
+%~ -- transactions validation
+%~ -- fault tolerance
+%~ - privacy
+   %~ -- store only access control token to data in the blockchain (a pointer where the data is)
+   %~ -- store only claims which contain enough information about the underlying data
+%~ -  proof of replication, storage
+%~ - privacy protocols from BigChainDB: 
+%~ - IPDB -- BigChain DB in a federated setting
+%~ - Federation = define voting nodes
+   %~ -- Nodes authentication for voting
+  %~ -- see production deployment template on Bigchain DB
+%~ -  "Digital twins"
+%~ - IRP/IMS --> supply chain management communication protocols
+%~ - PharmaTrustChain
+   %~ -- "Smart contract" --> very easily implemented 
+   %~ -- Role-based access control,
+%~ - Similar to MongoDB, GPL license --> code modification--> available to the community, 
+   %~ -- enterprise version
+%~ -- Monthly subsription
+%~ - Transaction times@BigchainDB 
+    %~ -- 2 thousand transaction per second 
+    %~ -- a couple of seconds for transaction
+%~ - Guarantees/consensus --> documentation 
+   %~ -- plugable consensus
+
+
+\section{Quorum}\label{impl:quorum}
+
+Quorum ist ein Ethreum-Fork\footnote{Auf Basis des Go~Ethereum Clients \autocite{}} für den Unternehmenseinsatz und profitiert insb. von den Werkzeugen die für Ethereum entwickelt werden. Es gibt hierbei private Transaktionen, deren Inhalt nur den Beteiligten unter den Teilnehmern bekannt wird, und öffentliche Transaktionen, deren Inhalt für alle Teilnehmer zugänglich ist. Der Konsens ist konfigurierbar% wird durch einen \gls{glos:SmartContract} gebildet
+. Dies ermöglicht den späteren Einsatz eines anderen Konsensalgorithmus. Im Weiteren ist der in Quorum~2.0 und von Ethereum abweichende Raft\footnote{The Raft Consensus Algorithm \autocite{p:raft}} kurz beschrieben.
+
+% uorumChaim
+% erlaubt ein Voting durch in der Rolle der \emph{Voter} befindliche Teilnehmer. Neben den Votern gibt es zwei weitere \emph{Rollen} -- für das Erstellen der Blöcke die \emph{Maker} (können Voter sein) und die lediglich validierenden \emph{Observer} (können keine weitere Rolle einnehmen). Die ersten beiden Rollentypen können einem Observer ihre eigene Rolle durch eine Transaktion verleihen.
+%Um die Wahrscheinlichkeit einer gleichzeitigen Blockerstellung bei mehreren Makern zu verringern werden individuelle Wartezeiten rundenbasierend zufällig neu gesetzt; ein Maker beginnt erst mit der Erstellung eines Blockes wenn seine Wartezeit abgelaufen ist.
+%https://github.com/jpmorganchase/quorum/wiki/QuorumChain-Consensus
+
+Der \enquote{Raft-based consensus}\footnote{\url{https://github.com/coreos/etcd/tree/master/raft}} ist ein Alternativer Konsensalgorithmus für private \gls{BC}. Die Teilnehmer sind in die drei Rollen unterteilt:  \emph{Leader}, \emph{Follower} und \emph{Candidate}. Im Normalfall gibt es genau einen \emph{Leader} der als Hub für alle Anfragen der \emph{Follower} zuständig ist. Der \emph{Candidate} wird nur benötigt um einen neuen \emph{Leader} zu bestimmen. Dafür wird eine Wahl per Losverfahren nach dem Abschluss einer Amtszeit (engl. term) des \emph{Leader} angesetzt. Sofern eine einfache Mehrheit einen neuen \emph{Leader} gewält hat, beginnt eine neue Amtszeit. Es werden sehr schnelle Transaktionszeiten (im Millisekundenbereich) ermöglicht und es entstehen keine Blöcke soweit keine Transaktionen vorhanden sind; d.h. der Effekt von unnötige, leeren Blöcken auf privaten Blockchains tritt nicht auf. Allerdings verzichten die Autoren nach eigener Aussage vollständig auf die Byzantine Fehlertolleranz zugunsten eines leicht verständlichen und in der Praxis einsetzbaren Design. 
+
+Als Fork profitiert Quorum von Weiterentwicklungen aus dem Umfeld von Ethereum. Jedes der privaten Netzwerke kann neue Features übernehmen oder auf dem bewährten Stand bleiben ohne abhängig von der Exponierung einer globalen Blockhain zu werden.
+
+\section{Hyperledger}\label{impl:hyperledger}
+
+Das Projekt wurde Dezember 2015 von der Linux Foundation begonnen und hat nicht eine spezifische Blockchain sondern die gemeinsame Entwicklung der Technologie zum Ziel.
+ %~ Als Konsensalgorithmus wird ein 
+
+Hyperledger erlaubt eine gute Integration in bestehende Datenbanksysteme und eignet sich durch die konservative Technologie insbesondere zur Automatisierung von Geschäftprozessen.
+
+
+%~ * issues around centralization
+%~ * good for automation of business processes
+%~ * better in-stack
+%~ * not as trusted data sources
+%~ * interledger to be adopted (in bigchaindb)
+

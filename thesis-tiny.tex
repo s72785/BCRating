@@ -1,0 +1,298 @@
+\documentclass[german,12pt,paper=a4,DIV=calc,twoside, openright]{scrreprt}
+
+%~ \usepackage[a-1b,latxmp]{pdfx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+% Einzugsart
+\setlength{\parindent}{0em} 
+\setlength{\parskip}{2em}
+
+% spacing for paragraphs but no indent
+\usepackage[onehalfspacing]{setspace}
+
+%****************
+% define medatata
+% found on: http://golatex.de/pdfx-bzw-pdf-a-oder-pdf-x-t4427.html
+%________________
+\input{customize}
+\def\setRGBcolorprofile{sRGB_IEC61966-2-1_black_scaled.icc}
+\def\setCMYKcolorprofile{coated_FOGRA39L_argl.icc}
+%~ \input{fixdate}
+
+%~ \usepackage{lmodern}
+%~ \PrerenderUnicode{äöüÄÖÜß}
+%~ \usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+
+% needs to be (like) arial - uggly
+%~ \usepackage[scaled]{helvet}
+%~ \renewcommand*{\familydefault}{\sfdefault}
+
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage[top=2cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{tikz}
+%~ \input{scale-makro.inc.tex}
+\usepackage{color}
+%~ \usepackage{pdfpages}
+
+% roman numbers support
+\input{romannum.inc}
+
+% spacing of paragraphs influences lists, so fix that here 
+%~ \usepackage{enumitem}
+%~ \setlist[itemize]{parsep=0pt}
+%~ \setlist[enumerate]{parsep=0pt}
+
+% if we need listings for code or cli
+%~ \usepackage{listings}
+%~ \makeatletter
+%~ \lst@Key{matchrangestart}{f}{\lstKV@SetIf{#1}\lst@ifmatchrangestart}
+%~ \def\lst@SkipToFirst{%
+    %~ \lst@ifmatchrangestart\c@lstnumber=\numexpr-1+\lst@firstline\fi
+    %~ \ifnum \lst@lineno<\lst@firstline
+        %~ \def\lst@next{\lst@BeginDropInput\lst@Pmode
+        %~ \lst@Let{13}\lst@MSkipToFirst
+        %~ \lst@Let{10}\lst@MSkipToFirst}%
+        %~ \expandafter\lst@next
+    %~ \else
+        %~ \expandafter\lst@BOLGobble
+    %~ \fi}
+%~ \makeatother
+%~ \definecolor{mygreen}{rgb}{0,0.6,0}
+%~ \definecolor{mygray}{rgb}{0.5,0.5,0.5}
+%~ \definecolor{mymauve}{rgb}{0.58,0,0.82}
+%~ \lstset{ %
+  %~ backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  %~ basicstyle=\ttfamily\footnotesize,        % the size of the fonts that are used for the code
+  %~ breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  %~ breaklines=true,                 % sets automatic line breaking
+  %~ captionpos=b,                    % sets the caption-position to bottom
+  %~ commentstyle=\color{mygreen},    % comment style
+  %~ deletekeywords={...},            % if you want to delete keywords from the given language
+  %~ escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  %~ extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  %~ frame=single,	                   % adds a frame around the code
+  %~ keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  %~ keywordstyle=\color{blue},       % keyword style
+  %~ language=Octave,                 % the language of the code
+  %~ morekeywords={*,...},            % if you want to add more keywords to the set
+  %~ numbers=right,                   % where to put the line-numbers; possible values are (none, left, right)
+  %~ numbersep=5pt,                   % how far the line-numbers are from the code
+  %~ numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  %~ matchrangestart=t,			   % show actual range from file
+  %~ rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  %~ showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  %~ showstringspaces=false,          % underline spaces within strings only
+  %~ showtabs=false,                  % show tabs within strings adding particular underscores
+  %stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  %~ stringstyle=\color{mymauve},     % string literal style
+  %~ tabsize=2,	                   % sets default tabsize to 2 spaces
+  %~ title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+%~ }
+%~ \lstset{literate=
+  %~ {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  %~ {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  %~ {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  %~ {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  %~ {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  %~ {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  %~ {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  %~ {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  %~ {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  %~ {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  %~ {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  %~ {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+  %~ {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+  %~ {…}{{\ldots}}1 {–}{{--}}1
+%~ }
+
+
+
+%~ \usepackage[authoryear]{natbib}
+% so:
+\usepackage[backend=biber,%
+citestyle=authoryear,%
+urldate=comp,dateabbrev=false% for online sources date formatting
+]{biblatex}
+\addbibresource{quellen.bib}
+\renewcommand{\bibfont}{\small}
+
+% define string for bibliorphy urldate
+%~ \DefineBibliographyStrings{english}{%
+%~ urlseen = {Retrieved},
+%~ }
+\DefineBibliographyStrings{german}{%
+urlseen = {Abgerufen},
+}
+
+% Glossar
+\usepackage[ngerman]{translator}
+%Paket laden
+\usepackage[
+nonumberlist, %keine Seitenzahlen anzeigen
+acronym,      %ein Abkürzungsverzeichnis erstellen
+toc,          %Einträge im Inhaltsverzeichnis
+section]      %im Inhaltsverzeichnis auf section-Ebene erscheinen
+{glossaries}
+% Ein eigenes Symbolverzeichnis erstellen
+\newglossary[slg]{symbolslist}{syi}{syg}{Symbolverzeichnis}
+% Den Punkt am Ende jeder Beschreibung deaktivieren
+\renewcommand*{\glspostdescription}{}
+\makeglossaries
+
+%~ \usepackage{bookmark}
+%~ \hypersetup{%
+	%~ draft,
+	%pdfa,
+	%unicode,
+	%driverfallback=hpdftex,
+	%hypertex,
+	%colorlinks=false,pdfborderstyle={/S/U/W 1},% for non-PDF/A
+	%~ colorlinks,
+	%draft,%no links
+	%~ allcolors=black,%for PDF/A with pdfx
+%~ }
+\usepackage{hyperref}
+
+% minitoc
+%~ \usepackage{minitoc}
+% do not show minitoc error msgs
+%~ \usepackage{silence}
+%~ \WarningFilter{minitoc(hints)}{W0023}
+%~ \WarningFilter{minitoc(hints)}{W0028}
+%~ \WarningFilter{minitoc(hints)}{W0030}
+%~ \WarningFilter{minitoc(hints)}{W0043}
+%~ \WarningFilter{minitoc(hints)}{W0049}
+
+% Kleiner Kommentar vor der bib, zitation funktioniert hierin nicht
+\newcommand{\quellenHinweistext}{Online aufgefundene Quellen wurden via \href{https://archive.org/}{archive.org} gesichert und umfangreiche Werke bei Abgabe auf dem Datenträger beigelegt.}
+
+% Glossareinträge einlesen
+\input{00_glossar}
+
+\begin{document}
+
+\input{00_titlepage}
+
+%<Chap1…
+\input{00_Vorwort} \newpage
+%/Chap1>
+\cleardoublepage 
+%~ \pagenumbering{roman}
+%~ \pagestyle{plain}
+
+% add bookmark for toc to pdf
+\pdfbookmark{\contentsname}{toc}
+
+\tableofcontents
+\cleardoublepage 
+
+%Glossar ausgeben
+\printglossary[style=altlist,title=Glossar]
+\clearpage 
+ 
+%Abkürzungen ausgeben
+\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
+\printglossary[type=\acronymtype,style=long]
+ 
+%Symbole ausgeben
+%~ \printglossary[type=symbolslist,style=long]\cleardoublepage 
+
+%~ \,
+%~ \vspace{30em}
+%~ {
+%~ \LARGE\textbf{Danksagung}\vspace{1em}
+%~ }
+
+%~ Ich möchte mir herzlichst für die Geduld und Unterstützung bedanken,
+%~ die mir sowohl beim ZIH aber auch von Seiten Thomas Jejkal, Entwickler
+%~ des KIT Datamanager am Karlsruher Instutut für Technologie, entgegen
+%~ gebracht wurde.
+
+%~ \newpage
+
+\pagenumbering{arabic} %for actual content
+
+%<Chap1…
+\input{01_Einleitung}
+
+\newpage
+
+%%%
+\chapter{Anwendungsfälle}
+%%%
+\input{02_anwendungsfaelle}
+
+
+%%%
+\chapter{Auswahl von Blockchain-Implementierungen}
+%%%
+\input{03_implementierungen}
+
+
+%%%
+\chapter{Entwicklung von Kriterien}
+%%%
+\input{04_kriterien}
+
+\chapter{Quantifizierung der Bewertung}
+%~ + Quantifizierung der Bewertung
+  %~ + Wertebereiche
+  %~ + Klassifizierung
+%~ + Darstellung
+  %~ + 
+
+%Methode: paarweiser Vergleich
+Um die in Frage stehenden Blockchain-Implementierungen miteinander vergleichen zu können,
+soll den eigenen Kriterien jeweils ein von der Software unabhängiges Gewicht als Präferenz für die Wichtigkeit zugeordnet werden.
+
+Spezifisch für jedes Kriterien 
+  
+\chapter{Darstellung zur Präsentation}
+\input{05_darstellung}
+
+
+\chapter{Fazit und Ausblick}
+\cleardoublepage 
+
+\pagenumbering{Roman} %for non-content
+
+%~ * Anhang
+  %~ + Literaturverzeichnis
+  %~ + Ehrenwörtliche Erklärung
+
+% TOC ergänzen, bib bauen
+\printbibliography[title={Quellennachweise%\\\hspace{1mm}\,\\\normalfont{}\normalsize{}\quellenHinweistext{}%
+}]
+\addcontentsline{toc}{chapter}{Quellennachweise}
+\cleardoublepage 
+
+\appendix
+%~ \chapter*{Anlagen}
+%~ \addcontentsline{toc}{chapter}{Anlagen}
+%~ \addstarredchapter{Anlagen}
+%~ \minitoc
+%~ \clearpage
+
+%~ \addsec{Vorgehen mit VirtualBox}\label{apx:vb}
+%~ \input{vb}
+%~ \clearpage
+
+% externe pdf einbinden
+%~ \addcontentsline{toc}{section}{Organisationsplan der TU Dresden}%\addsec{Organisationsplan der TU Dresden}
+%~ \label{apx:tud}
+%~ \includepdf[landscape=true,pages=-]{dat/Organisationsplan_TUD.pdf}
+%~ \clearpage
+
+
+%~ + Ehrenwörtliche Erklärung
+\hspace{1mm}\,\vspace{3em}
+\addsec{Selbstständigkeitserklärung}\label{apx:ee}
+\input{99_selbststaendigkeitserklaerung}
+\clearpage
+
+
+\end{document}

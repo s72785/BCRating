@@ -1,0 +1,36 @@
+%***************************************************************************
+% \convertDate converts D:20080419103507+02'00' to 2008-04-19T10:35:07+02:00
+% found on: http://support.river-valley.com/wik.....ompliant_PDFs_from_pdftex
+%___________________________________________________________________________
+\def\convertDate{%
+    \getYear
+}
+{\catcode`\D=12
+ \gdef\getYear D:#1#2#3#4{\edef\xYear{#1#2#3#4}\getMonth}
+}
+\def\getMonth#1#2{\edef\xMonth{#1#2}\getDay}
+\def\getDay#1#2{\edef\xDay{#1#2}\getHour}
+\def\getHour#1#2{\edef\xHour{#1#2}\getMin}
+\def\getMin#1#2{\edef\xMin{#1#2}\getSec}
+\def\getSec#1#2{\edef\xSec{#1#2}\getTZh}
+\def\getTZh +#1#2{\edef\xTZh{#1#2}\getTZm}
+\def\getTZm '#1#2'{%
+    \edef\xTZm{#1#2}%
+    \edef\convDate{\xYear-\xMonth-\xDay T\xHour:\xMin:\xSec+\xTZh:\xTZm}%
+}
+ 
+\expandafter\convertDate\pdfcreationdate
+
+\pdfinfo{%
+    /Title    (\Title)
+    /Author   (\Author)
+    /Subject  (\Subject)
+    /Keywords (\Keywords)
+    /ModDate  (\pdfcreationdate)
+    /Trapped  /False
+    %~ /Publisher(\Publisher)
+	/Copyright(\Copyright)
+	/CopyrightURL(\CopyrightURL)
+	/setRGBcolorprofile(\setRGBcolorprofile)
+	/setCMYKcolorprofile(\setCMYKcolorprofile)
+}

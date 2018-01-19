@@ -1,0 +1,188 @@
+\input{praeambel}
+
+% Glossareinträge einlesen
+\input{00_glossar}
+
+\begin{document}
+
+\input{00_titlepage}
+
+%<Chap1…
+\input{00_Vorwort} \newpage
+%/Chap1>
+\cleardoublepage 
+%~ \pagenumbering{roman}
+%~ \pagestyle{plain}
+
+% add bookmark for toc to pdf
+\pdfbookmark{\contentsname}{toc}
+
+\tableofcontents
+\cleardoublepage 
+
+%Glossar ausgeben
+\printglossary[style=altlist,title=Glossar,toctitle=Glossar]
+%~ \printglossary[title=Stichwortverzeichnis,toctitle=Stichwortverzeichnis,] 
+
+\clearpage 
+ 
+%Abkürzungen ausgeben
+\printglossary[type=\acronymtype,style=long,title=Abkürzungsverzeichnis,toctitle=Abkürzungsverzeichnis]
+%~ \printglossary[type=acronym,title=Abkürzungsverzeichnis,toctitle=Abkürzungsverzeichnis] 
+ 
+%Symbole ausgeben
+%~ \printglossary[type=symbolslist,style=long]\cleardoublepage 
+
+%~ \,
+%~ \vspace{30em}
+%~ {
+%~ \LARGE\textbf{Danksagung}\vspace{1em}
+%~ }
+
+%~ Ich möchte mir herzlichst für die Geduld und Unterstützung bedanken,
+%~ die mir sowohl beim ZIH aber auch von Seiten Thomas Jejkal, Entwickler
+%~ des KIT Datamanager am Karlsruher Instutut für Technologie, entgegen
+%~ gebracht wurde.
+
+%~ \newpage
+
+
+
+%<Textteil…
+\pagenumbering{arabic} %for actual content
+
+%<Chap1…
+\input{01_Einleitung}
+\newpage
+
+%%%
+\chapter{Anwendungsfälle}
+%%%
+\input{02_anwendungsfaelle}
+
+
+%%%
+\chapter{Auswahl von Blockchain-Implementierungen}
+%%%
+\input{03_implementierungen}
+
+
+%%%
+\chapter{Entwicklung von Kriterien}
+%%%
+\input{04_kriterien}
+
+\chapter{Quantifizierung der Bewertung}
+%~ + Quantifizierung der Bewertung
+  %~ + Wertebereiche
+  %~ + Klassifizierung
+%~ + Darstellung
+  %~ + 
+
+%Methode: paarweiser Vergleich
+Um die in Frage stehenden Blockchain-Implementierungen miteinander vergleichen zu können,
+soll den eigenen Kriterien jeweils ein von der Software unabhängiges Gewicht als Präferenz für die Wichtigkeit zugeordnet werden.
+
+Spezifisch für jedes Kriterien 
+  
+\chapter{Darstellung zur Präsentation}
+\input{05_darstellung}
+
+
+\chapter{Fazit und Ausblick}
+%~ + Fazit und Ausblick
+%~ + Breitere Betrachtung von DLT
+\input{06_fazit}
+
+%~ > Wie ist "Kandidat" definiert? Offenbar sind Kandidaten Blockchain-Implementierungen.
+
+%~ Ja, die Formulierung "Blockchain-Implementierungen" hat allerdings in Unterhaltungen zur Annahme geführt, es sei eine dedizierte Implementierung für einen konkreten Anwendungsfall in einem konkreten Unternehmen. Anfänglich war der Begriff im Dialog "Blockchain-Technologien", allerdings sehen ich keine grundsätzliche Unterscheidung um die infrage stehende Software als unterschiedliche Technologien zu begreifen. Die Terminologie wurde bei der MMS bereits in einer Art abgegrenzt die ich als schlüssig empfinde.
+
+%~ Hierarchie:
+%~ - Datenbanktechnologie
+%~ - Distributed Ledger Technology
+%~ - Blockchain (Konzept)
+%~ - Implementierung
+
+%~ Dazu muss ich offenbar deutlich machen, wann Kandidaten (nicht) betrachtet werden. Gemeint sind (wie z.B. Ethereum, Quorum, Hyperledger fabric, BigchainDB und weitere) Implementationen einer Blockchain. Eine klare Abgrenzung kann hier anhand Block-basierter Umsetzungen gegenüber anderen Ansätzen wie insb. Schwarm-/Tangle-basierten getroffen werden. Ob diese privat nur Zugriffsberechtigten oder öffentlich allen bzw. eine Mischform der Zugänglichkeit darstellen (können) ist dann aus meiner Sicht eine der Eigenschaften. Nicht selbst betrachtet werden sollen traditionelle Ansätze mit Datenbanken; allerdings soll bei den Anwendungsfällen klar herausgestellt sein, warum der Ansatz über Blockchain besser geeignet erscheint.
+
+
+%/Chap1>
+
+%<Chap2…
+%~ \input{02_Aufgabenstellung} \newpage
+%/Chap2>
+
+%<Chap3…
+%~ \input{03_Betrieb} \newpage
+%/Chap3>
+
+%<Chap4…
+%~ \input{04_Einarbeitung} \newpage
+%/Chap4>
+
+%<Chap5…
+%~ \input{05_Analyse} \newpage
+%/Chap5>
+
+%<Chap6…
+%~ \input{06_Konzept} \newpage
+%/Chap6>
+
+%<Chap8…
+%~ \input{07_Implementation} \newpage
+%/Chap8>
+
+%<Chap7…
+%~ \input{08_Test} \newpage
+%/Chap7>
+
+%<Chap7…
+%~ \input{09_Schlussbemerkung} \newpage
+%/Chap7>
+
+
+%/Textteil>
+
+\begin{comment}
+\end{comment}
+
+\cleardoublepage 
+
+\pagenumbering{Roman} %for non-content
+
+%~ * Anhang
+  %~ + Literaturverzeichnis
+  %~ + Ehrenwörtliche Erklärung
+
+% TOC ergänzen, bib bauen
+\printbibliography[title={Quellennachweise\\\hspace{1mm}\,\\\normalfont{}\normalsize{}\quellenHinweistext{}}]
+\addcontentsline{toc}{chapter}{Quellennachweise}
+\cleardoublepage 
+
+\appendix
+\chapter*{Anlagen}
+\addcontentsline{toc}{chapter}{Anlagen}
+%~ \addstarredchapter{Anlagen}
+%~ \minitoc
+\clearpage
+
+%~ \addsec{Vorgehen mit VirtualBox}\label{apx:vb}
+%~ \input{vb}
+%~ \clearpage
+
+% externe pdf einbinden
+%~ \addcontentsline{toc}{section}{Organisationsplan der TU Dresden}%\addsec{Organisationsplan der TU Dresden}
+%~ \label{apx:tud}
+%~ \includepdf[landscape=true,pages=-]{dat/Organisationsplan_TUD.pdf}
+%~ \clearpage
+
+
+%~ + Ehrenwörtliche Erklärung
+\hspace{1mm}\,\vspace{3em}
+\addsec{Selbstständigkeitserklärung}\label{apx:ee}
+\input{99_selbststaendigkeitserklaerung}
+\clearpage
+
+
+\end{document}

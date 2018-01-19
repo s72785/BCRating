@@ -1,0 +1,177 @@
+% Umfang 40-60 Seiten (15-30 / Monat)
+
+%~ Thema => Ausgangsproblem => Forschungsfrage
+%~ Einführung => Auslöser, Verlauf, Ergebnis
+%~ Kern => Forschungsfrage behandeln => Eigenleistung, nicht nur allg. Sachverhalte wiedergeben
+%~ Hypothemen => Begründete Annahme => Was sind die Unklarheiten
+%~ Arbeitsmethoden => Fragetsellungen => Quellen => Interview, Literatur, Experten, Kompetenzträger
+%~ Theorien => Belegen Hypothesen => Plausible Erklärungsansätze
+%~ Abschluss => Bogen zum Anfang spannen => Hypothesen bestätigt/verworfen
+
+%~ \chapter{Einleitung}\label{einleitung}
+
+%~ \emph{betonter text}
+%~ \footnote{fußtnotentext}
+
+%Abkürzungsverzeichnis
+
+%Abbildungs- und Tabellenverzeichnisse
+
+%Textteil
+
+\chapter{Einleitung}\label{einleitung}
+%\pagestyle{plain} %http://www.weinelt.de/latex/pagestyle.html
+
+% warum relevant?
+
+Der erste weltweit bekannte Vertreter der \emph{Blockchain}-Technologie war das im Jahr~2008 vorgestellte und seit Januar~2009\footnote{3.\,Januar~2009, \gls{glos:GenesisBlock} \autocite{w:bitcoin-wiki}} aktive \emph{Bitcoin}\footnote{s.a. \enquote{Bitcoin Whitepaper} \autocite{p:bitcoin}}. Der sehr beschränkte primäre Einsatzzweck als \enquote{digitales Bargeld} über ein offenes, global verteiltes, zensurresistentes, transaktionsbasiertes\footnote{in Anlehnung an einen Vergleich von Andreas Antonopoulos bezüglich der Innovation von Bitcoin und der des Internet, \autocite{o:open-blockchain}} Peer-to-Peer-Netzwerk  wurde unlängst weiter gedacht und auf andere Anwendungszwecke, wie z.B. seit Mitte Oktober~2010 Namecoin als DNS-Alternative via IRC\footnote{Transcript of bitcoin-dev channel \autocite{w:irc-ts-bitcoindev}}/Bitcointalk\footnote{\url{https://bitcointalk.org/index.php?topic=1790.0}}, ausgedehnt die ihrerseits auf einer Buchhaltung, einer Nachweisliste oder einem Register beruhen.
+
+Das Problem, welches hier gelöst wurde, ist der \gls{glos:Konsens} in einem verteilten Netzwerk ohne Vertrauen auf eine zentrale Autorität oder Erlaubnis der anderen Teilnehmer; bekannter als \enquote{Byzantinischer Fehler}\footnote{engl. \enquote{Byzantine Fault Tolerance} o. \enquote{Byzantine Generals Problem}  \autocite{p:byzantine-original}}.
+Dabei wird die Reihenfolge der Blöcke, und damit der darin befindlichen Transaktionen, unveränderbar.\footnote{nicht zwangsläufig zutreffend für den Inhalt, soweit ein Löschen durch kryptografische Maßnahmen ermöglicht wird \autocite{w:accenture-patent}} Im Ergebnis werden Abweichungen vom Konsens durch andere Teilnehmer im Netzwerk als Regelverstoß erkannt und bestraft. Die Einhaltung des Protokolls wird so wirtschaftlich erzwungen ohne einen Erlaubnisvorbehalt zu benötigen. Bisherige Ansätze wie Paxos\href{Voraussetzung ist die Position als Legislator \autocite{p:paxos}} waren dahingehend unvollständig.
+
+%Tatsächlich ist die Forschung um die Konsens-Findung bereits wesentlich älter. Bereits in den 1980er Jahren wurde eine Reihe an Protokollen unter dem Namen Paxos veröffentlich, die noch heute in definierten Umgebungen das Problem 
+
+Gleichartige Probleme sind in Unternehmen nicht nur in der Finanzbuchhaltung relevant.
+Stets gibt es Gefälle von Vertrauen.
+Zwischen
+einfachen Mitarbeitern und Vorgesetzten,
+zwischen Mitarbeitern mit bestimmten Verantwortungen gegenüber anderen Mitarbeiten
+und nicht zuletzt
+zwischen Vertragsparteien wie z.B. Beteiligten aus unterschiedlichen Unternehmen bis hin zu Kunden.
+
+% Damit ermöglicht ein solches System eine hochdynamische Menge an Teilnehmern im Netzwerk.
+% durch einen ständigen Akkreditierungsprozess zur Prüfung der Teilnehmer 
+
+Bereits im Jahr~2012 hat sich die \emph{Bitcoin Foundation} formiert, auch um in der Wirtschaft für die möglichen Anwendungsfälle zu werben. Das Unterfangen war bis heute von wenig Erfolg außerhalb der USA gekrönt. Auch die Gründung des \emph{Bundesverband Bitcoin e.V.}\footnote{Website \url{https://www.bundesverband-bitcoin.de/}} in Deutschland war noch kaum mit dem erhofften Einfluss auf die Politik gesegnet. Ende des Jahres~2015 hat die \emph{Linux Foundation} das Projekt \emph{Hyperledger} aufgenommen, Ethereum hat die \gls{EEA}\footnote{Website \url{https://entethalliance.org/}  \autocite{p:eea}} ausgegründet und ist inzwischen die größte Blockchain-Initiative\footnote{\url{https://web.archive.org/web/20180114184419/https://entethalliance.org/worlds-largest-blockchain-initiative-launches-three-working-groups/}}. Und auch in Deutschland sind mit dem \emph{Blockchain Bundesverband}\footnote{\url{http://bundesblock.de/}} inzwischen 19 Unternehmen -- zumeist Start-ups und mehrheitlich aus Berlin -- versammelt.
+
+Unternehmen suchen bereits aktiv nach Arbeitnehmern im Umfeld von \enquote{Blockchain}. Darunter sind nicht nur \gls{glos:FinTech}, Beratungsfirmen und Start-ups, sondern auch Telekommunikation, Automobilkonzerne, Automobilzulieferer, Reiseunternehmen, Banken, Brangenverbände, Energiekonzerne und Rüstungsindustrie.\footnote{\url{https://web.archive.org/web/20180114192420/https://www.stepstone.de/5/ergebnisliste.html?ke=blockchain}} Je Job-Portal kommen auf den Suchbegriff zwei- bis dreistellige Trefferzahlen. Allein auf dem regionalen Portal \href{https://www.itsax.de/}{ITsax.de} gibt es 10 Treffer\footnote{\url{https://web.archive.org/web/20180114181102/https://www.itsax.de/IT-jobs/search?q=blockchain}}.
+
+Auch Universitäten und Hochschulen widmen sich zunehmend dem Thema. Nikosia bietet u.a. seit 2015 einen \gls{MOOC} und einen \enquote{Master of Science in Digital Currency}\footnote{3 Semester Fernstudium Digital Currency \autocite{w:unic-master-dc}} an. Auch Edinburgh, das \mbox{University College} London, Stanford, Berkeley, die \mbox{John Hopkins University}, das \gls{MIT} und Princeton bieten Studienkurse oder Module zum Thema an. 
+Seitens der \gls{HSM} wurde im Jahr 2017 ein \href{http://blockchain.hs-mittweida.de/}{Blockchain Competence Center} (BCCM) initiiert. Dort wird auch in Zusammenarbeit hinsichtlich der Forschung zu des Einsatzes von \gls{BC} mit der Politik und Wirtschaft fachübergreifend angegangen.
+
+\newpage
+%%%
+\section{Ausgangssituation und Problemstellung}\label{sec:problemstellung}
+%%%
+%Ausgangssituation und Problemstellung
+
+Es gibt insb. seit Ende des Jahres~2013\footnote{s.a. \enquote{Ethereum Whitepaper} \autocite{p:ethereum}} zahlreiche Vertreter im Umfeld dieser speziellen Datenbank-Technologie.
+Unternehmen stehen vor der Herausforderung diese nach einheitlichen Kriterien zu betrachten um für sich eine Bewertung und Auswahl treffen zu können.
+Hierzu sollen im Rahmen der Arbeit einzelne am Markt vertretene Blockchain-Implementierungen, in auf weitere Neuentwicklungen anwendbarer Weise, betrachtet werden.
+
+\section{Ziel der Arbeit}
+
+%~ Mein Arbeitsauftrag leitet sich aus dem Vertrag mit der T-Systems Multimediasolutions und der daraus resultieren Vereinbarung mit der \gls{HTW} ab.\footnote{Reihenfolge und Formulierung teilw. abweichend von }
+
+Es soll ein System zur Bewertung von \gls{BCI} erstellt werden.
+Die dafür notwendigen Kriterien sollen schrittweise recherchiert werden. Dazu dient auch die Betrachtung von Anwendungsfällen sowie bestehender \gls{BCI}.
+Aufgefundene Kriterien müssen im Kontext der Bewertung quantifizierbar gestaltet sein.
+%~ Mittels der gefundenen Bewertungen 
+
+%~ \begin{enumerate}
+%~ \item Herausstellen des Nutzens der Blockchain-Technologie für ausgewählte Anwendungsfälle im Unternehmenskontext
+%~ \item Auswahl von mindestens drei am Markt konkurrierenden Kandidaten für Blockchain-Implementierungen
+%~ \item Ermittlung und Analyse der Eigenschaften, die diese Kandidaten ausmacht
+%~ \item Bewertung zum Zweck einer übersichtlichen Darstellung des Vergleiches
+%~ \item Systematische Vorgehensweise anwendbar auf weitere zuvor nicht betrachtete Blockchain-Implementierungen
+%~ \end{enumerate}
+
+\section{Abgrenzung}\label{sec:abgrenzung}
+
+Begrifflich wird die \gls{DLT} (auch Shared Ledger) als eine Datenbanktechnologie verstanden.\footnote{\enquote{What is a shared ledger?} \autocite{b:gos-dlt}} Darunter verstehen wir neben der \gls{BCT}, die teilweise synonym verwendet wird, auch Ideen eine andere oder keine feste Anordnung der Datenobjekte in Blöcken vorzunehmen solange sie dazu keine zentrale Autorität, zentrale Speicher oder einen Erlaubnisvorbehalt benötigen und die Verfügbarkeit durch das Netzwerk gewährleistet wird. Ein weiterer bekannter -- bislang theoretischer -- Vertreter ohne Blockchain und ohne Blöcke ist der Tangle bzw. \gls{DAG}\footnote{\enquote{DAG (Tangle) is not Blockchain} \autocite{w:satoshiwatch-dag}}. Die bekannteste \gls{DAG}-Implementierung unter dem Namen \href{https://iota.org/}{IOTA}\footnote{\enquote{The Tangle} \autocite{p:iota}} läuft bisher jedoch nicht ohne einen zentrale Autorität\footnote{Ein Entwickler bestätigte den Umstand auf Nachfrage \autocite{w:iota-centralized}} -- den Koordinator der auch einen zentralen Speicher darstellt.
+% Hashgraph\footnote{\href{https://hashgraph.com/}{hashgraph.com}} ist ein weiterer Ansatz ohne Blöcke mit einigen Einschränkungen
+Die im Rahmen der Arbeit besprochene Form ist daher ausschließlich die bereits über Jahre bewährte \gls{BCT}.
+
+Die \emph{verteilte Buchhaltung} ermöglicht mit der Eigenschaft der Programmierbarkeit\footnote{Bitcoin Script \autocite{w:btcwiki-script}, } 
+
+Virtuelle Währungen (engl. Virtual Currency) benötigen keine \gls{BC}.
+Virtuelle Währung gewinnen neue Eigenschaften wenn sie als native Kryptowährung (engl. Cryptocurrency) einer \gls{BC} verwendet werden. Sie bieten einen Anreiz zur Einhaltung des Protokolls. Sie können eine maximale bzw. auch algorithmisch gesteuerte Geldmenge aufweisen. %Das Vertrauen der Bürger in den Staat ist sehr begrenzt wenn Währungskrisen auftreten.
+Damit sind Kryptowährungen hinsichtlich der Geldmenge transparenter\footnote{Angaben zur Geldmenge z.B. auf \url{https://coinmarketcap.com/}} als Geldmengenberichte\footnote{Keine Aussage zur gesamten Geldmenge \autocite{w:ecb-moneydev}} der Zentralbank.
+Neben diesen nativen Währungen kann u.a. durch die Eigenschaft der Programmierbarkeit dieses Geldes weitere sog. Token\footnote{\enquote{What is An Ethereum Token} \autocite{w:eth-token}} oder Colored Coins\footnote{Colored Coins \autocite{b:mastering-bitcoin}, \url{https://github.com/bitcoinbook/bitcoinbook/blob/8d01749bcf45f69f36cf23606bbbf3f0bd540db3/colored_coins.asciidoc}} erstellt werden. Damit sind Kryptowährungen eine Möglichkeit die Verwendung für bestimmte Anwendungen wie etwa eine \gls{DApp} vorzusehen.
+Die Eigenschaften die zur Nutzbarkeit von Kryptowährungen führen sind damit Bestandteil der Arbeit. Nicht Bestandteil sind Fragen zu Legalität, Legitimität, Handel und anderen Gesichtspunkten der Finanzwirtschaft.
+
+%Je nach der beabsichtigten wirtschaftlichen Anwendung können die 
+
+\section{Methode}
+
+Diese Arbeit basiert auf qualitativer Recherche unter Nutzung von Sekundärforschung, Forschungsüberblick, Betrachtung von Anwendungsfällen und bestehenden \gls{BCI} um Kriterien für die Beurteilung aufzufinden.
+Damit wird der Herausforderung stetig neuer Veröffentlichungen um die Technologie Rechnung getragen, da die Forschung dazu noch nicht abgeschlossen und durch neue Ansätze geprägt ist. 
+
+Um mehr über die Grenzen der \gls{BCT} zu erfahren sollen Anwendungsfälle betrachtet werden, die eine Eignung für den Unternehmenseinsatz aufweisen.
+Als allgemeine Annahme wird verfolgt, dass technologische Grenzen durch eine konkrete Implementierung entweder deutlich oder aber von der Implementierung abgemildert werden. %Sofern solche Grenzen erkannt werden können, eignen sie sich als Kriterium für den Vergleich über verschiedene \gls{BCI} hinweg.
+%D.h. über bekannt gewordene Anwendungsfälle sollen Kriterien ermittelt werden, die als Vor-/Nachteilen der \gls{BCT} oder der \gls{BCI} erkannt werden können.
+Die theoretischen Vorteile werden bei der Werbung für Produkte üblicherweise stark betont, weshalb hier insb. auf Schwächen geachtet werden soll.
+
+\textbf{Hypothese~\rom{1}} Anwendungsfälle zeigen Schwächen von Blockchain-Implementierungen auf.
+
+Das zu Demonstrationszwecken gewählte Feld der infrage stehenden Blockchain-Implementierungen soll besonders für die Verwendung in Unternehmen geeignet sein um daraus erkannte Kriterien auch auf Neuerscheinungen vergleichend anwenden zu können. Deshalb wird die Auswahl darauf beruhen inwiefern Unternehmen bereits mit den konkreten \gls{BCI} befasst sind.
+
+\textbf{Hypothese~\rom{2}} Blockchain-Implementierungen die für den Unternehmenseinsatz geeignet sind, werden primär von Firmen oder Verbänden voran getrieben.
+
+\textbf{Hypothese~\rom{3}} Aus den erkannten Schwächen können aussagekräftige Kriterien für die Beurteilung gezogen werden.
+
+Für die quantitative Bewertung sollen Kriterien die nicht binär oder durch eine Bewertung in Zahlen ausgedrück werden auf eine solche zurück geführt werden.
+Daran anschließend soll eine geeignete Vergleichsmöglichkeit und Darstellung gefunden werden.
+
+%~ Die erfolgte quantitative Bewertung soll in geeigneter Art und Weise übersichtlich 
+
+%Initial wird davon ausgegangen, dass für den Unternehmenseinsatz beworbene oder bereits im Unternehmenseinsatz befindliche Kandidaten geeinet sind. 
+
+%
+
+%
+%~ \textbf{Hypothese~\rom{4}} .
+
+%
+%~ \textbf{Hypothese~\rom{5}} .
+
+
+%Bekannte Vertreter sind Lose des Webportals \href{http://klamm.de/}{klamm.de} oder Spielwährungen in u.a. \emph{World of Warcraft}. Ihnen wird teilweise auch über die Ausgabestelle hinaus ein Wert, z.B. durch den Aufwand der notwendig ist um an sie heran zu kommen, beigemessen. Das führt auch dazu, dass sie als Tauschmittel außerhalb des angedachten Bereiches verwendet werden.
+%Tatsächlich sind staatliche Währungen in den meisten Fällen eine virtuelle Währung, die mit einer Garantie eines Staates oder einer Staatengemeinschaft und ihrer Zentralbanken versehen ist.
+%Sofern eine öffentliche, globale, erlaubnisfreie und zensur-resistente Blockchain \autocite{}
+
+%Abgrenzung der Themenstellung
+
+%+ Aufbau der Arbeit 
+%  * Welche Anwendungsfälle können mit Blockchain umgesetzt werden?
+%  * Welche Kriterien unterscheiden Blockchain-Implementierungen?
+
+%+ Methode
+%  * Benchmarking
+
+%~ - (Hauptteil(e) + Was wie und warum)
+%~ + Begriffliche und theoretische Grundlagen
+%~ \chapter{Begriffliche und theoretische Grundlagen}
+
+%~ Zur Unterscheidung der Begriffe möchte ich 
+%~ Distribited Ledger Technologies
+
+%~ Blockchain
+
+%~ Implementierung
+
+%~ Kryptoanarchie
+
+%~ Pyramidenspiel
+
+%~ Pinzi Schema
+
+%~ Altcoin
+
+%\section{}  %~ * Definitionen
+
+%~ \section{DLT, Blockchain, Implementierung}
+
+%~ \section{Konsens}
+
+	%~ - Kandidaten
+
+	%~ - Anwendungsfälle
+
+  %~ * Funktionsweise einer Blockchain - evtl. eher herauslassen?
+
+	%~ - Asymmetrische Kryptografie
+
+	%~ - Transaktion
+
+	%~ - Konsens über Zustand
