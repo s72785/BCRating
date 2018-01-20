@@ -4,6 +4,16 @@ name=Dezentralisierung,
 description={Als Gegensatz zur Zentralisierung. Hier insb. bezüglich Teilnehmern in Computernetzwerken bzw. Entscheidungsprozessen. Die Steigerung ist: Zentralisiert, Dezentralisiert, Verteilt.}
 }
 
+\newglossaryentry{glos:Chaincode}{
+name=Chaincode,
+description={Angelehnt an Smart~Contracts programmierbare Geschäftslogik mit gekapseltem State bei Hyperledger Fabric. Betroffene Teilnehmer müssen zustimmen.%
+}}
+
+\newglossaryentry{glos:Web3}{
+name=Web3,
+description={JavaScript API für Ethereum.%
+}}
+
 \newglossaryentry{glos:Fork}{
 name=Fork,
 description={Aufspaltung in einer Blockchain, die zur zeitweisen oder dauerhaften Spaltung führen kann.%
@@ -72,14 +82,14 @@ description={Ein System, das die Verteilung und Überprüfung von öffentlichen 
 \newglossaryentry{glos:PoW}{
 name=Proof of Work,
 description={Ein auf Hashcash %(s. Whitepaper \cite{p:bitcoin})
-basierendes Verfahren, dass die Schwierigkeit zur Erstellung neuer Blöcke durch stetiges Suchen nach einem Ziel steuert. Dieses Ziel kann u.a. durch die Anzahl der führenden Nullen %(s. \href{https://github.com/bitcoinbook/bitcoinbook/blob/8d01749bcf45f69f36cf23606bbbf3f0bd540db3/ch10.asciidoc\#proof-of-work-algorithm}{Proof of Work}% \autocite{b:mastering-bitcoin})
-eines Hashes dargestellt werden, wie dies bei Bitcoin der Fall ist.}
-}
+basierendes Verfahren, dass die Erstellung neuer Blöcke mit dem \emph{Ausgabeaufschlag} belohnt.% Die Schwierigkeit wird durch stetiges Suchen nach einem Ziel (z.B. Eigenschaft eines Hashes) steuert. Dieses Ziel kann u.a. durch die Anzahl der führenden Nullen %(s. \href{https://github.com/bitcoinbook/bitcoinbook/blob/8d01749bcf45f69f36cf23606bbbf3f0bd540db3/ch10.asciidoc\#proof-of-work-algorithm}{Proof of Work}% \autocite{b:mastering-bitcoin})
+eines Hashes dargestellt werden, wie dies bei Bitcoin der Fall ist.%
+}}
 
 \newglossaryentry{glos:PoS}{
 name=Proof of Stake,
-description={Ein Konsensalgorithmen mit Anreizsystem durch einen riskierten Einsatz des eigenen Vermögens (z.B. an Kryptowährung). Ein Problem ist die zufällige Auswahl der über die Richtigkeit bestimmenden Teilnehmer für den jeweiligen Block. Teilweise wird dieser Ansatz durch Delegation zu \emph{delegated Proof of Stake} (dPoS) ergänzt.}
-}
+description={Ein Konsensalgorithmen mit Anreizsystem durch einen riskierten Einsatz des eigenen Vermögens (z.B. an Kryptowährung). Ein Problem ist die zufällige Auswahl der über die Richtigkeit bestimmenden Teilnehmer für den jeweiligen Block. Teilweise wird dieser Ansatz durch Delegation zu \emph{delegated Proof of Stake} (dPoS) ergänzt.%
+}}
 
 \newglossaryentry{glos:Pruning}{
 name=Pruning,
@@ -88,7 +98,7 @@ description={Engl. \emph{pruning}. Das Beschneiden/Zurechtstutzen, hier bezügli
 
 \newglossaryentry{glos:Schwierigkeit}{
 name=Schwierigkeit,
-description={Engl. \emph{difficulty} oder \emph{target}. Dient bei Konsens-Algorithmen für \gls{glos:PoW} zur Anpassung der Wahrscheinlichkeit des Entstehens eines neuen Blocks.
+description={Engl. difficulty, auch als Ableitung vom \emph{Ziel} (engl. target). Dient bei Konsens-Algorithmen für \gls{glos:PoW} zur Anpassung der Wahrscheinlichkeit des Entstehens eines neuen Blocks.
 }}
 
 \newglossaryentry{glos:Wallet}{
@@ -98,7 +108,7 @@ description={Entlehnt aus dem Engl. für Brieftasche als Bezeichnung für ein Pr
 
 \newglossaryentry{glos:Ausgabeaufschlag}{
 name=Ausgabeaufschlag,
-description={Engl. blockreward. Die Belohnung -- insb. bei Bitcoin -- für den Erfolgsfall bei einem Proof-of-Konsensmechanismus (s.a. Halfing).
+description={Engl. blockreward. Die Belohnung für den Erfolgsfall bei einem Proof-of-Konsensmechanismus (s.a. Halfing).
 }}
 
 \newglossaryentry{glos:Exchange}{
@@ -134,9 +144,9 @@ description={Metrik für die Anzahl je Zeiteinheit durchführbarer oder tatsäch
 
 \newglossaryentry{glos:LN}{
 name=Lightning Network,
-description={Ein Netzwerk für das Routing von Zahlungen zunächst im Bitcoin-Netzwerk und potentiell darüber hinaus in andere Blockchains.
-Die Erweiterung erfolgt als zweite Protokollschicht über Limelocks und Multisignature-Adressen in einem Smart~Contract. Wiederverwendbare Payment~Codes die die Handhabung von Adressen erleichtern und gleichzeitig den Datenschutz verbessern werden integriert.}
-}
+description={Ein Netzwerk für das Routing von zunächst primär Zahlungstranskationen im Bitcoin-Netzwerk und potentiell darüber hinaus beliebige Transaktionen über verschiedene Blockchains hinweg.
+Die Erweiterung erfolgt als zweite Protokollschicht über Limelocks und Multisignature-Adressen in einem Smart~Contract. Wiederverwendbare Payment~Codes die die Handhabung von Adressen erleichtern und gleichzeitig den Datenschutz verbessern werden integriert.%
+}}
 
 %Abkürzungen
 \newacronym{BTC}{BTC}{Bitcoin%
@@ -169,9 +179,6 @@ Die Erweiterung erfolgt als zweite Protokollschicht über Limelocks und Multisig
 }
 
 \newacronym{GRNET}{GRNET}{Greek Research and Technology Network%
-}
-
-\newacronym{RPC}{RPC}{Remote Procedure Call%
 }
 
 \newacronym{JSON}{JSON}{JavaScript Object Notation%
@@ -238,5 +245,26 @@ Die Erweiterung erfolgt als zweite Protokollschicht über Limelocks und Multisig
 }
 
 \newacronym{IDE}{IDE}{Integrated Development Environment%
+}
+
+\newacronym{FSF}{FSF}{Free Software Foundation%
+}
+
+\newacronym{OSI}{OSI}{Open Source Initiative%
+}
+
+\newacronym{OSD}{OSD}{Open~Source Definition%
+}
+
+\newacronym{RPC}{RPC}{Remote Procedure Call%
+}
+
+\newacronym{REST}{REST}{Representational State Transfer (seltener ReST)%
+}
+
+\newacronym{BCCM}{BCCM}{Blockchain Competence Center Mittweida%
+}
+
+\newacronym{PBC}{PBC}{Permissioned Blockchain%
 }
 

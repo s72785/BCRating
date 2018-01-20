@@ -1,21 +1,26 @@
-Um die sehr unterschiedlichen Implementierungen miteinander vergleichbar zu machen, werden Eigenschaften als Kriterien benötigt, die mehr oder minder auf jede einzelne zutreffen und relevant für den wirtschaftlichen Betrieb einer \gls{BC} sind.
+Um die sehr unterschiedlichen Implementierungen miteinander vergleichbar zu machen, werden Eigenschaften als Kriterien benötigt. Idealer Weise sind sie auf jede einzelne zutreffen und relevant für den wirtschaftlichen Betrieb einer \gls{BC}.
 %~ Diese Kriterien auch sollen relevant für den Anwendungsfall, eventuelle Einschränkungen und die Notwendigkeit zur .
 Die Wertung soll klar von geringer Zielerfüllung zur höheren erkennbar sein.
 
+Hier wurde eine Auswahl getroffen und lange nicht alle denkbaren Kriterien angeführt. Bei der Durchführung für ein konkretes Unternehmen muss zusätzlich eine Betrachtung erfolgen, welche weiteren Kriterien wichtig sind.
+
 %%
 \section{Grundlegendes zur Informationstechnologie}\label{krit:it}
+%%
 
-Grundsätzlich treffen diese Annahmen auch auf andere Wissensgebiete zu.
+Grundsätzlich treffen die folgenden Annahmen auch auf andere Bereiche innerhalb der Softwaretechnologie zu.
 Allerdings ist die Bedeutung erst seit der Erfindung des Personal Computers und Zugang zum Internet für große Bevölkerungsteile durchsetzbar.
 Gerade diese Parallele der Entwicklung des Internets zu dem Wandel den auch die \gls{BCT} bringen kann, ist der Grund hier auf eine Verbesserung des Zugangs und eine erneute Dezentralisierung abzuzielen.
+Aber nicht nur für den direkten Kundenkontakt entworfene oder in der Interaktion mit anderen Unternehmen befindliche IT-Systeme profitieren von der neuen Offenheit und Dezentralisierung. Auch die IT-Architektur inerhalb eines Unternehmens wird gestärkt wenn zentrale Schwachpunkte vermieden werden. 
 
-
+%
 \subsection{Offener Standard}\label{krit:openstandard}
 
 Die Standardisierung einer Blockchain ist ein wesentlicher Bestandteil zur Sicherung der beabsichtigten Anwendungsfälle.
-Sowohl die bisher getroffenen Entscheidungen als auch der Prozess für neue Entscheidungen sollten daher standardisiert sein um beurteilt oder in Zukunft an die Erfordernisse angepasst werden zu können.
+Sowohl die Dokumentation bisher getroffener Entscheidungen als auch der Prozess für neue Entscheidungen sollten daher standardisiert sein um beurteilt oder in Zukunft an die Erfordernisse angepasst werden zu können.
 
-Über einzelne \gls{BCI} hinweg bringt die Standardieirung auch Austauschmöglichkeiten wie \emph{Interledger} (\ref{first:interledger}), \gls{LN}\footnote{Whitepaper \autocite{p:lightning}} oder Comit~Network\footnote{Whitepaper \autocite{p:comit}}. Zur Zeit der Arbeit werden erste Live-Tests im Mainnet über drei Netzwerke verschiedener Implementierungen von hinweg durchgführt.
+Über einzelne \gls{BCI} hinweg bringt die Standardisierung auch Austauschmöglichkeiten wie \emph{Interledger} (\ref{first:interledger}), \gls{LN}\footnote{Whitepaper \autocite{p:lightning}} oder das Comit~Network\footnote{Whitepaper \autocite{p:comit}}. Zur Zeit der Arbeit werden erste Live-Tests im Produktivnetzwerk, über drei Firmen-Netzwerke als verschiedene Implementierungen für das \gls{LN}, hinweg durchgführt.
+
 \subsection{Quelloffene Software}\label{krit:opensource}
 
 %~ Zugänglichkeit
@@ -24,16 +29,26 @@ Einem Anwender kann nicht allgemeingültig zugetraut werden, die betrieblich zu 
 Allein die Verfügbarkeit des Quellcodes ist daher für sich kein Mehrwert, den er nutzen kann.
 Sofern allerdings Quellen zur Verfügung stehen, kann u.a. über einen reproduzierbaren Build-Prozess (engl. reproducable build) und digitale Signaturen der Binärdateien sichergestellt werden, dass die ausgeführte der Software auch aus dem verfügbaren Quellcode resultierte.
 
-Sobald Anpassungen an einer Software notwendig werden, ist die Verfügbarkeit des Quellcodes aber ein entscheidendes Kriterium dazu unter Einsatz von begrenzten Ressourcen befähigt zu sein.\footnote{Selbst Herstellern kommt Quellcode abhanden \autocite{w:ms-binpatch}}
-Auch bei Anpassungen durch den Hersteller kann damit nachvollzogen werden ob die angekündigten Änderungen gemacht wurden oder ggf. ein Problem unscharf formuliert oder gar verschwiegen wurde.
+Sobald Anpassungen an eine Software notwendig werden, ist die Verfügbarkeit des Quellcodes aber ein entscheidendes Kriterium dazu unter Einsatz von begrenzten Ressourcen befähigt zu sein.\footnote{Selbst Herstellern kommt Quellcode abhanden \autocite{w:ms-binpatch}}
+Auch bei Anpassungen durch den Hersteller für externe Anwender kann damit nachvollzogen werden ob die angekündigten Änderungen gemacht wurden oder ggf. ein Problem unscharf formuliert oder gar verschwiegen wurde.
 
 Dieser Vertrauensanker bewirkt, dass wir erkennen können wie und warum etwas funktioniert.
-So wie Geometrie verstanden und angewendet werden kann, wenn ein gutes Buch die Grundlagen darlegt.
+%~ So wie Geometrie verstanden und angewendet werden kann, wenn ein gutes Buch die Grundlagen darlegt.
+Das ist bei der \gls{BCT} unabdingbar, da Vertrauen der eigentliche Zweck der damit geschaffenen Systeme ist.
+
+Für die Wertung werden virale Lizenzen besser bewertet als liberalere Open~Source Lizenzen, die erlauben würden Anwendern Rechte an der Software zu beschneiden.
+Um feiner abzustufen könnten als Aspekte die vier Freiheiten\footnote{Die vier essentiellen Freiheiten \autocite{w:fsf-freedoms}} der \gls{FSF}
+oder noch detaillierter die \gls{OSD}\footnote{Kriterien für Open~Source Software \autocite{w:iso-osd}} mit 10~Kriterien.
 
 \subsection{Entwicklungsstand}\label{krit:entwicklungsstand}
 
 Für die Anwendbarkeit einer Blockchain-Implementierung sind Stabilität und umgesetzte Features eine gute Maßgabe.
+Als Bezugspunkt kann hierfür zum einen die Planung des jeweiligen Projektes dienen.
+Aber auch der Vergleich bezüglich unterstützter und jeweils benötigter oder gewünschter Features.
 
+Das Vorhandensein von Dokumentation, Abstraktion als formalisiertes Protkoll wird hier nicht betrachtet, da bereits unter
+\ref{krit:openstandard} eingeordnet.
+Allerdings ist für die Bemessung des Reifegrades der Entwicklung dennoch interesant ob nur eine einzelne Implementierung oder mehrere unabhängige Implementierungen des Protokolles vorliegen oder beabsichtigt sind.
 
 \subsection{Schnittstellen}\label{krit:schnittstellen}
 
@@ -41,35 +56,57 @@ Sofern eine Blockchain-Implementierung nicht genau auf den eigenen Anwendungsfal
 Anpassungen sind auf Seiten des neuen Informationssystems oder auf der des alten denkbar.
 Um die bisherigen Prozesse nicht zu gefährden, ist grundsätzlich die Anpassung des neuen Systems oder die Schaffung von Adaptern zwischen den Schnittstellen zu empfehlen.
 
-\subsection{Anpassbarkeit}\label{krit:anpassbarkeit}
+Übliche Beispiele für solche Schnittstellen sind \gls{RPC} -- mit oder ohne \gls{JSON} -- oder \gls{REST}.
 
-Die Verfügbarkeit von Schnittstellen ist für die Schaffung dieser Adapter ausschlaggebend.
-Sofern keine nutzbaren Schnittstellen vorhanden sind, stellt sich die Frage wie leicht diese geschaffen werden können.
-Auch bei fehlenden Funktionen ist es von wesentlichem Vorteil wenn 
+%~ \subsection{Anpassbarkeit}\label{krit:anpassbarkeit}
+
+%~ Die Verfügbarkeit von Schnittstellen ist für die Schaffung dieser Adapter ausschlaggebend.
+%~ Sofern keine nutzbaren Schnittstellen vorhanden sind, stellt sich die Frage wie leicht diese geschaffen werden können.
+
+%~ Auch bei fehlenden Funktionen ist es von wesentlichem Vorteil wenn 
 
 \subsection{Community}\label{krit:community}
 
 Die Unterstützung einer Software hängt wesentlich von der Unterstützung durch Nutzer ab.\footnote{\enquote{The Importance of Having Users} \autocite{Raymond:CB}} Bei prorietären Produkten leuchtet dies direkt ein, da die Lizenzeinnahmen die Finanzierung der Entwicklung ermöglichen. Wir haben aber beim Kriterium \nameref{krit:opensource} festgestellt, dass gerade in Systemen die auf Vertrauen basieren, die Umsetzung als Offener Standard und Freie Softwarelizenzen ein ausschlaggebendes Argument im Wettbewerb darstellen. 
 Dabei geht es nicht nur um den Wettbewerb um die Nutzer, die eventuell Fehler melden und die Entwicklung durch Mitwirkung oder durch freiwillige monetäre Leistungen unterstützen. Es geht insbesondere auch um die Entwicklergemeinschaft, die Beiträge zur fraglichen Software leisten. Dazu zählen auch solche die keine Programmierung, sondern eventuell Übersetzungen, Dokumentation und Werkzeuge im Umfeld schaffen.
 
-Der kritischste Teil der Community sind aber die Personen, die den Kern des Projektes stellen. Ein Team mit nur einem Entwickler ist mit einem höheren Ausfallrisiko zu bewerten als ein Team aus zehn Entwickler. Selbst wenn der einzelne Entwickler initial besser Leistungen erbringt bleibt sein Ausfall eine Bedrohung für den Fortbestand des Projektes für solche Nutzer die dringende Problemfälle nicht selbst meistern können.
+Der kritischste Teil der Community sind aber die Personen, die den Kern des Projektes stellen. Ein \enquote{Team} mit nur einem Entwickler ist mit einem höheren Ausfallrisiko zu bewerten als ein Team aus zehn Kern-Entwickler mit hunderten Beitragenden. Selbst wenn der einzelne Entwickler initial besser Leistungen erbringt bleibt sein Ausfall eine Bedrohung für den Fortbestand des Projektes für solche Nutzer die dringende Problemfälle nicht selbst meistern können.
+
+Die Wertung kann nach Anzahl Größenordnungen der Beteiligten vorgenommen werden.
 
 \subsection{Dokumentation und Werkzeuge}\label{krit:werkzeuge}
 
 In wie weit eine \gls{BCI} leicht nutzbar gemacht werden kann hängt stark davon ab wie leicht es Neulingen gemacht wird sich diese zu eigen zu machen.
 Dazu sind Werkzeuge und Dokumentation wie Beispiele enorm hilfreich.
 
+Auf die \nameref{krit:schnittstellen} (\ref{krit:schnittstellen}) angepasste Werkzeuge wie etwa \gls{glos:Web3} und Integrationen in eine oder mehrere \gls{IDE} können hier bepunktet werden.
+
 \section{Blockchain-bezogene Eigenschaften}\label{krit:blockchainproperties}
 
 \subsection{Konsens}\label{krit:consensus}
 
-Der Konsensmechanismus  \emph{Paxos}, der bei \nameref{impl:hyperledger} verwendung findet, wurde mittels Voting geschaffen. Bei Bitcoin und Ethereum ist es derzeit ein \gls{PoW}. Ethereum hat einen kontinuierlichen Change-Prozess und eine Roadmap auf der der Wechsel zu einem \gls{PoS}
-vorgesehen ist und zumindest für konsortiale Instanzen einer \gls{BC} ist ein reines Signing z.B. mit Ethereum oder Quorum konfigurierbar. Im folgenden sollen die gefundenen Mechanismen vom schwächsten zum stärksten hinsichtlich der Sicherheitsleistung benannt werden.
+Es werden zwei Arten von Methoden unterschieden, die algorithmisch umgesetzt werden können.
+\emph{Voting} schafft einen finalen \gls{glos:State} durch stimmerechtigte Teilnehmer.
+\emph{Proof-of-Methoden} sind mathematische Beweise.
+Die Verkettung erfolgt durch einen Merkle-Baum und Einbeziehung des Vorgängers.
+Da die Verkettung mit genug Rechenleistung aufgrund möglicher Hashkollisionen nicht final ist, wird auch der \gls{glos:State} nicht final sondern nur zunehmend wahrscheinlich.
+
+Die meisteingesetzte öffentliche Konsensmethode ist \gls{PoW}. 
+Kritisch ist der hohe Energierverbrauch ohne einen Sekundärnutzen.
+In der Forschung wird nach beweisbaren Verfahren gesucht, die ständige Rechenleistung benötigen um diesen Makel zu schmälern.
+
+Ethereum hat einen kontinuierlichen Change-Prozess und eine Roadmap auf der ein Wechsel zu einem \gls{PoS} geplant ist.
+%Gegenüber dem \gls{PoW} ist die Energieeffizienz von \gls{PoS} auf ein notwendiges Maß reduziert. Der Anreiz wird stattdessen durch Deponierung von z.B. nativer Währung oder 
+%~ An dieser Stelle soll erwähnt sein, dass es weitere
+Die beiden Vertreter der \gls{PBC} Quorum und Hyperledger geben die Möglichkeit durch ihre 
+
+Instanzen einer \gls{BC} ist ein reines Signing z.B. mit Ethereum oder Quorum konfigurierbar.
+Im folgenden sollen die gefundenen Mechanismen vom schwächsten zum stärksten hinsichtlich der Sicherheitsleistung benannt werden.
 Künftige Neuentwicklungen können hier entsprechend eingefügt werden.
 
-Signing (engl. Unterzeichnen) ist die schwächste Form einen Konsens zu Erreichen. Der Ansatz bricht mit dem Ziel Autoritäten zu ersetzen.
-Ein Teilnehmer in der Rolle eines \emph{Signers} bestimmt %abgesehen von der
-allein über den Konsens eines Blockes.
+Signing (engl. Unterzeichnen) ist die schwächste Form einen Konsens zu Erreichen.
+Der Ansatz bricht mit dem Ziel Autoritäten zu ersetzen.
+Ein Teilnehmer in der Rolle eines \emph{Signers} bestimmt allein über den Konsens eines Blockes.
 
 Die Auswirkung von Voting ist die Notwendigkeit zur Akkreditierung der Stimmberechtigen, das Vertrauensproblem bleibt bestehen und wird nur vom Gegenstand des Votings auf das Voting selbst übertragen. Unter der Annahme, dass jeder Stimmberechtigte alles über die anderen weiß, ist auch ein virtuelles Voting denkbar.\footnote{\emph{Hashgraph} \autocite{p:hashgraph}} Damit wäre das Vertrauensproblem bei der Entscheidungsfindung keine Problem mehr, das Problem zur Akkreditierung wird aber nicht gelöst und um Bandbreite und Netzwerkverzögerung bereichert. Daher funktioniert der Ansatz bisher nur mit Einschränkungen\footnote{\url{https://www.reddit.com/r/hashgraph/comments/79g4po/hashgraph_is_not_a_blockchain_proofofwork/}  \autocite{w:reddit}} verbunden. Insb. müssen zwei drittel der Teilnehmer ehrlich bleiben.
 
@@ -209,3 +246,14 @@ Hier insb. Beiträge zu Verbänden und auf die \gls{BCI} beziehbare Personalkost
 Abgesehen von den Kosten ist auch die Beeinflussung des Umfeldes durch
 Standardisierung und Regulierung (\label{regulierung}s. \ref{first:regulierung}) für Unternehmen eine Herausforderung.
 Dabei können Kosten unregelmäßig auftreten und unvorhersehbar auftreten.
+
+\subsection{Organisation}
+
+Die Wirtschaftliche Organisation ist vergleichbar mit der \nameref{krit:community} (\ref{krit:community}).
+Auch auf der Ebene der Betreiber soll eine Absicherung nicht vernachlässigt werden.
+Ähnlich einem zentralen Entwickler kann eine zentrale Organisation ein Risiko für das Vertrauen darstellen.
+Üblich sind inzwischen gemeinnützige Stiftungen, die die Weiterentwicklung einer Implementation und des Ökosystems darum sicherstellen sollen.
+Diese ermöglichen auch eine Beteiligung weiterer -- natürlicher wie juristischer -- Personen.
+
+Eine gemeinnützige Organisationsform ist ggü. einer gewinnorientierten hinsichtlich des in sie gesetzten Vertrauens besser zu werten.
+Teilnahme-/Zugangsbeschränkung und Gleichheit können innerhalb einer solchen Organisation als zusätzliche Wertungsmöglichkeit herangezogen werden.

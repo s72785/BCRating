@@ -15,23 +15,32 @@ Da das Projekt von der \mbox{Linux Foundation} mit Unterstützung zahlreicher na
 Ein internationaler Konkurrent aus China ist \emph{NEO} -- vormals \gls{ANS}. Das Projekt erscheint zunächst interessant. Das überladene Design der Website gepaart mit bereits im Whitepaper fehlerhafter englischer Übersetzung\footnote{\enquote{NEO White Paper} \autocite{w:neo-whitepaper}} machen wenig Freude beim Lesen. Beworben
 %~ https://steemit.com/cryptocurrency/@basiccrypto/almost-everything-you-wanted-to-know-about-neo-part-1-of-2
 
-Auf der Suche nach einem dritten Kandidaten leuchtet die Schlagzeile über einen Geschwindigkeitsrekord der \emph{Red Belly Blockchain} auf. Über diese Schlagzeilen hinaus findet sich aber nichts. Auch wenig Details oder Dokumentation. Das Projekt \emph{Hyperledger} der \emph{Linux Foundation} bietet dagegen neben Dokumentation auf GitHub\footnote{\url{https://hyperledger.github.io/}} zahlreiche Mitglieder aus der Industrie, darunter auch die Deutsche Börse und die Firma SAP.
+Auf der Suche nach einem dritten Kandidaten leuchtet die Schlagzeile über einen Geschwindigkeitsrekord der \emph{Red Belly Blockchain} auf. Über diese Schlagzeilen hinaus findet sich aber nichts. Auch wenig Details oder Dokumentation. Das Projekt \emph{Hyperledger} der \emph{Linux Foundation} bietet dagegen neben Dokumentation auf GitHub\footnote{Hyperledger \cite{w:github-hyperledger}} zahlreiche Mitglieder aus der Industrie, darunter auch die Deutsche Börse und die Firma SAP.
 
 \section{BigchainDB}
 
-Der Name suggeriert bereits, dass es sich bei \emph{BigchainDB}\footnote{Whitepaper \autocite{p:bigchaindb}} primär um die Nutzbarmachung der \gls{BCT} für Datenbanken dreht. Tatsächlich wird die Blockchain in einer Datenbank gehalten. Bisher wurden Treiber für RethinkDB und für MongoDB implementiert. Die Autoren konzentrieren sich nach eigener Aussage auf die Skalierbarkeit bei Erhaltung der Dezentralisierung und Unveränderbarkeit sowohl für eine globale öffentliche \gls{BC} auch auch private \gls{BC}.
-Etwas überraschend ob des Namens ist die klare Unterteilung nicht Daten auf der Blockchain zu speichern, sondern nur als Hash und Zugangstoken darauf zu verorten.
+Der Name suggeriert bereits, dass es sich bei \emph{BigchainDB}\footnote{Whitepaper \autocite{p:bigchaindb}} primär um die Nutzbarmachung der \gls{BCT} für Datenbanken dreht.
+%~ Tatsächlich wird auch die Blockchain in einer Datenbank gehalten.
+Bisher wurden Treiber für RethinkDB und für MongoDB -- zwei Vertreter von noSQL-Datenbanken -- implementiert. Die Autoren konzentrieren sich nach eigener Aussage auf die Skalierbarkeit bei Erhaltung der Dezentralisierung und Unveränderbarkeit sowohl für eine globale öffentliche \gls{BC} auch auch private \gls{BC}.
+Etwas überraschend ob des Namens ist die klare Vorgabe, die besagt nicht Daten auf der Blockchain zu speichern. Stattdessen soll nur als Hash und Zugangstoken darauf verortet werden.
 
-Für die verbesserten Datenschutz (engl. privacy) von Daten sollen \enquote{Privacy Protocols} sorgen.\footnote{\url{https://github.com/bigchaindb/privacy-protocols}} Dazu sollen Authentifizierung und Beweise -- für u.a. Sharing, Storage und Replikation -- dienen.
-Für die redundante Ablage ist auch die Nutzung von \gls{IPFS} oder vergleichbaren verteilten Dateisystemen angedacht.
-Zusätzlich sollen Vermögenswetre (engl. Assets) nativ ermöglich werden. Die Verbindung verschiedener \gls{BC} soll über das Interledger Protokoll\footnote{A Protocol for Interledger Payments \autocite{p:interledger}}\label{first:interledger} ermöglicht werden.
+Für verbesserten Datenschutz (engl. privacy) von Daten sollen \enquote{Privacy Protocols} sorgen.\footnote{\cite{w:github-bigchaindb-pp}}
+Dabei sollen Authentifizierung und Beweise -- für u.a. Sharing, Storage und Replikation -- die einzelnen Operationen zusichern.
+Für die redundante Ablage ist auch die Nutzung von \gls{IPFS} oder vergleichbaren verteilten Dateisystemen und Datenbanken angedacht.
+Zusätzlich wurden Vermögenswetre (engl. Assets) nativ ermöglicht.
+Diese sollen auch zur Authentifizierung und Rechteverteilung dienen.
+Die Verbindung verschiedener \gls{BC} soll z.B. über das Interledger Protokoll\footnote{A Protocol for Interledger Payments \autocite{p:interledger}}\label{first:interledger} ermöglicht werden.
 
 %~ Die Roadmap\footnote{\url{https://github.com/bigchaindb/org/blob/master/ROADMAP.md}} hat noch viele Features für die Zukunft
-Die Integration in Entwicklunsgwerkzeuge ist einer der wirklichen Vorteile. Bisher stehen Treiber für Python, JavaScript (inkl. NodeJS) zur Verfügung.
-Allerdings ist die 
+Die Integration in Entwicklunsgwerkzeuge ist bereits beeindruckend.
+Bisher stehen Treiber für Python und JavaScript (inkl. NodeJS) zur Verfügung.
+Änderungen an der API werden in für Nutzer nachvollziehbaren Versionsschritten gemacht.
+Das Deployment von Nodes mittels Microsoft Azure und Kubernetes ist seitens des Kernteams dokumentiert.\footnote{\cite{w:bigchaindb-proddepl}}
 
-Bisher muss noch die fehlender Dezentralisierung kritisiert werden. Ohne einen zentralen Datenbank-Cluster ist die öffentliche, globale \emph{IPDB} derzeit nicht machbar weil alle Teilnehmer dorthin verbinden müssen.\footnote{\url{https://www.reddit.com/r/Bitcoin/comments/4j7wjf/bigchaindb_a_prime_example_of_blockchain_bullshit/}} Es ist kein Anreizsystem erkennbar, dass für einen Betrieb des Netzwerkes sorgen würde.
-Auch der Konsens.
+Bisher muss noch die fehlender Dezentralisierung kritisiert werden.
+Ohne einen zentralen Datenbank-Cluster ist die öffentliche, globale \emph{IPDB} derzeit nicht machbar weil alle Teilnehmer dorthin verbinden müssen.\footnote{\url{https://www.reddit.com/r/Bitcoin/comments/4j7wjf/bigchaindb_a_prime_example_of_blockchain_bullshit/}}
+Es ist kein Anreizsystem erkennbar, dass für einen Betrieb des Netzwerkes sorgen würde.
+Auch der Konsensmechanismus soll für private Instanzen erst noch austauschbar gestaltet werden.
 
 %~ * federation with pki => https://docs.bigchaindb.com/projects/server/en/latest/production-deployment-template/index.html
 %~ * tbd: labs.ipdb.com
@@ -109,8 +118,14 @@ Als Fork profitiert Quorum von Weiterentwicklungen aus dem Umfeld von Ethereum. 
 
 \section{Hyperledger}\label{impl:hyperledger}
 
-Das Projekt wurde Dezember 2015 von der Linux Foundation begonnen und hat nicht eine spezifische Blockchain sondern die gemeinsame Entwicklung der Technologie zum Ziel.
- %~ Als Konsensalgorithmus wird ein 
+Das Projekt wurde Dezember 2015 von der Linux Foundation begonnen und hat nicht eine spezifische Blockchain sondern die gemeinsame Entwicklung der Technologie als Offenen Standard zum Ziel. Im Weiteren geht es um \emph{HyperLedger~Fabric}, eine \gls{PBC} mit ausdrücklichem Fokus auf Nutzung zwischen Geschäftspartnern in einem Konsortium.
+
+In der Dokumentation sind Begriffe noch immer sehr inkonsistent. U.a. wird an einigen Stellen von Smart~Contracts gesprochen, an anderen von Chaincode. Und auch \gls{DLT} und \gls{BC} werden gleichermaßen verwendet.
+Details sind Nutzern außerhalb der beteiligten Firmen allein durch die Dokumentation schwer zugänglich.\footnote{p:hyperledger:arch}
+
+Der Standard Konsensmechanismus, der bei \nameref{impl:hyperledger} Fabric Verwendung findet, wird durch eine vereinfachte Stimmabgabe (engl. Voting) der Teilnehmer (engl. Peers) in Verbindung \gls{glos:Chaincode} mit Überprüfung der Transaktion gestaltet.\footnote{\cite{w:hyperledger:txworkflow}}
+Die Umsetzung als Protokoll für private Blockchains in Konsortien stellt auch darauf ab, dass Identitäten bekannt sind. Erlaubnisfreiheit ist damit nicht gegeben.
+Der Vorteil ist allerdings die austauschbare Gestaltung des Konsensprotokolls. 
 
 Hyperledger erlaubt eine gute Integration in bestehende Datenbanksysteme und eignet sich durch die konservative Technologie insbesondere zur Automatisierung von Geschäftprozessen.
 
