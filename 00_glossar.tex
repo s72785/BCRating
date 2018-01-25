@@ -31,23 +31,23 @@ description={Vereinfacht: Nicht rückwärtskompatibel Protokolländerungen die a
 
 \newglossaryentry{glos:Soft Fork}{
 name=Soft Fork,
-description={Vereinfacht: Rückwärtskompatibel Protokolländerungen die ab einem bestimmten Block Gültigkeit erlangen.}
-}
+description={Vereinfacht: Rückwärtskompatibel Protokolländerungen die ab einem bestimmten Block Gültigkeit erlangen.%
+}}
 
 \newglossaryentry{glos:SmartContract}{
 name=Smart Contract,
-description={Auch Chaincode (Firma IBM) genannte Programme, die auf einer Blockchain bzw. im Netzwerk der Teilnehmer laufen. Die Umsetzung erfolgt über einen Stack-basierte Programmierung deren Ergebnis den State beeinflusst. Z.B. Bitcoin durch das an Assembler erinnernde \enquote{Script} und bei Ethereum davon abstrahiert über höhere Programmiersprachen.}
-}
+description={Auch Chaincode (Firma IBM) genannte Programme, die auf einer Blockchain bzw. im Netzwerk der Teilnehmer laufen. Die Umsetzung erfolgt über einen Stack-basierte Programmierung deren Ergebnis den State beeinflusst. Ein Bsp. ist bei Bitcoin das an Assembler erinnernde \enquote{Script} und bei Ethereum davon abstrahiert höhere Programmiersprachen.%
+}}
 
 \newglossaryentry{glos:State}{
 name=State,
-description={Hier der Zustand bezüglich einer Blockchain oder eines Smart~Contract.}
-}
+description={Hier der Zustand bezüglich einer Blockchain oder eines Smart~Contract.%
+}}
 
 \newglossaryentry{glos:Block}{
 name=Block,
-description={Bildlicher Begriff für eine Datenstruktur, die Transaktionen zusammenfasst.}
-}
+description={Bildlicher Begriff für eine Datenstruktur, die Transaktionen zusammenfasst.
+}}
 
 \newglossaryentry{glos:FinTech}{
 name=Financial Services and Technology,
@@ -87,13 +87,13 @@ description={Ein System, das die Verteilung und Überprüfung von öffentlichen 
 \newglossaryentry{glos:PoW}{
 name=Proof of Work,
 description={Ein auf Hashcash %(s. Whitepaper \cite{p:bitcoin})
-basierendes Verfahren, dass die Erstellung neuer Blöcke mit dem \emph{Ausgabeaufschlag} belohnt.% Die Schwierigkeit wird durch stetiges Suchen nach einem Ziel (z.B. Eigenschaft eines Hashes) steuert. Dieses Ziel kann u.a. durch die Anzahl der führenden Nullen %(s. \href{https://github.com/bitcoinbook/bitcoinbook/blob/8d01749bcf45f69f36cf23606bbbf3f0bd540db3/ch10.asciidoc\#proof-of-work-algorithm}{Proof of Work}% \autocite{b:mastering-bitcoin})
+basierendes Verfahren, dass die Erstellung neuer Blöcke mit dem \emph{Ausgabeaufschlag} belohnt.% Die Schwierigkeit wird durch stetiges Suchen nach einem Ziel (\zB{} Eigenschaft eines Hashes) steuert. Dieses Ziel kann \ua{} durch die Anzahl der führenden Nullen %(s. \href{https://github.com/bitcoinbook/bitcoinbook/blob/8d01749bcf45f69f36cf23606bbbf3f0bd540db3/ch10.asciidoc\#proof-of-work-algorithm}{Proof of Work}% \autocite{b:mastering-bitcoin})
 eines Hashes dargestellt werden, wie dies bei Bitcoin der Fall ist.%
 }}
 
 \newglossaryentry{glos:PoS}{
 name=Proof of Stake,
-description={Ein Konsensalgorithmen mit Anreizsystem durch einen riskierten Einsatz des eigenen Vermögens (z.B. an Kryptowährung). Ein Problem ist die zufällige Auswahl der über die Richtigkeit bestimmenden Teilnehmer für den jeweiligen Block. Teilweise wird dieser Ansatz durch Delegation zu \emph{delegated Proof of Stake} (dPoS) ergänzt.%
+description={Ein Konsensalgorithmen mit Anreizsystem durch einen riskierten Einsatz des eigenen Vermögens (\zB{} an Kryptowährung). Ein Problem ist die zufällige Auswahl der über die Richtigkeit bestimmenden Teilnehmer für den jeweiligen Block. Teilweise wird dieser Ansatz durch Delegation zu \emph{delegated Proof of Stake} (dPoS) ergänzt.%
 }}
 
 \newglossaryentry{glos:Pruning}{
@@ -128,8 +128,8 @@ Bei Bitcoin wird der Ausgabeaufschlag (neue Bitcoin) alle 210.000 Blocks (d.h. s
 50 Bitcoin betrug der initiale Ausgabeaufschlag im Januar 2009.\\
 25 Bitcoin ab \href{https://blockchain.info/block/000000000000048b95347e83192f69cf0366076336c639f9b7228e9ba171342e}{Block 210.000} am 28.11.2012\\% \autocite{w:blockchain}.
 12,5 Bitcoin ab \href{https://blockchain.info/block/000000000000000002cce816c0ab2c5c269cb081896b7dcb34b8422d6b74ffa1}{Block 420.000}) am 09.07.2016\\% \autocite{w:blockchain}.
-Kommende Halbierungen werden über verschiedene Webseiten (u.a. \url{http://www.thehalvening.com/} o. \url{http://bitcoinclock.com/}) nach Auswertung der Entwicklung der Schwierigkeit im Netzwerk geschätzt. \\
-Bei Ethereum ist die absolute Menge nicht final festgelegt (\url{https://ethereum.stackexchange.com/questions/443/what-is-the-total-supply-of-ether}), andere native Währungen (z.B. \href{http://dogecoin.com/}{Dogecoin} oder \href{http://www.monero.cc/}{Monero}) haben teilweise eine infinite Menge.
+Kommende Halbierungen werden über verschiedene Webseiten (\ua{} \url{http://www.thehalvening.com/} o. \url{http://bitcoinclock.com/}) nach Auswertung der Entwicklung der Schwierigkeit im Netzwerk geschätzt. \\
+Bei Ethereum ist die absolute Menge nicht final festgelegt (\url{https://ethereum.stackexchange.com/questions/443/what-is-the-total-supply-of-ether}), andere native Währungen (\zB{} \href{http://dogecoin.com/}{Dogecoin} oder \href{http://www.monero.cc/}{Monero}) haben teilweise eine infinite Menge.
 }}
 
 \newglossaryentry{glos:Hashrate}{
@@ -139,7 +139,7 @@ description={Die Anzahl der Hashes je Zeiteinheit (meist je Sekunde). Die Absolu
 
 \newglossaryentry{glos:GenesisBlock}{
 name=Genesis Block,
-description={In Anlehnung an die griechische Bedeutung Schöpfung/Geburt -- u.a. bekannt durch das 1. Buch Mose der Bibel -- der erste Block einer Blockchain. Dieser wird üblicherweise vom Initiator unabhängig vom Mining erstellt.}
+description={In Anlehnung an die griechische Bedeutung Schöpfung/Geburt -- \ua{} bekannt durch das 1. Buch Mose der Bibel -- der erste Block einer Blockchain. Dieser wird üblicherweise vom Initiator unabhängig vom Mining erstellt.}
 }
 
 \newglossaryentry{glos:TPS}{

@@ -9,7 +9,7 @@ Im folgenden werden ein paar wenige Anwendungsfälle kurz diskutiert. Dabei soll
 \section{Zeitstempelservice}\label{uc:timestamping}
 
 Eine denkbare Anwendung ist die Dokumentation von betrieblichen Ereignissen zu oder nahe an ihrem jeweilig tatsächlichen Zeitpunkt.
-Bisher wird dies als Markt als sog. \emph{Time Stamping Service} von u.a. SwissSign\footnote{\cite{w:swisssign:timestamtservice}}, \gls{DFN}\footnote{\cite{w:dfn:timestamtservice}} und \gls{DGN}\footnote{\cite{w:dgn:timestamtservice}} beworben.
+Bisher wird dies als Markt als sog. \emph{Time Stamping Service} von \ua{} SwissSign\footnote{\cite{w:swisssign:timestamtservice}}, \gls{DFN}\footnote{\cite{w:dfn:timestamtservice}} und \gls{DGN}\footnote{\cite{w:dgn:timestamtservice}} beworben.
 
 Der eingangs erwähnte Genesis~Block hat die Nachricht \enquote{The Times 03/Jan/2009 Chancellor on brink of second bailout for banks}\footnote{\cite{w:blog:shirriff}} eingebettet.
 Auch bereits das Whitepaper \autocite{p:bitcoin} ist in Block \texttt{230009}\footnote{Transaktion \href{https://blockchain.info/tx/54e48e5f5c656b26c3bca14a8c95aa583d07ebe84dde3b7dd4a78f4e4186e713}{54e48e5f5c656b26c3bca14a8c95aa583d07ebe84dde3b7dd4a78f4e4186e713}} zu finden\footnote{\cite{w:bitcoin:storeddata}}.
@@ -18,23 +18,23 @@ Eine Demonstration der Möglichkeit einer Blockchain als Zeitstempeldienst gab e
 Assange bewies ungewollt auch gleich mit der mangelhaften Tonqualität der Videoübertragung und einem Fehler beim Vorlesen der Blocknummer seine kurz zuvor getätigte These, dass diese Methode nicht nur für den Laien schwer nachvollziehbar ist, sondern ggf. auch fehleranfällig ist.
 
 Die Umsetzung auf einer Blockchain kann oberflächlich betrachtet den Vorteil haben, dass der Zeitstempel zusätzlich durch die Metadaten des Blocks gestützt wird. Viel eindrucksvoller ist aber das Sicherheitsniveau der Verortung auf einer Blockchain\footnote{Bsp. \href{https://app.originstamp.org/}{OriginStamp} mit Kosten von 5\,USD für einen Hash zum Zeitpunkt der Recherche \autocite{w:originstamp}} gegenüber einer einfachen Signatur unter Zuhilfenahme eines Zeitstempeldienstes. \\
-Ein Zeitstempelserver signiert einmalig den sehr zuverlässig gelieferten Zeitstempel. Dieser lässt sich anschließend in z.B. eine Datei einbetten oder anderweitig ablegen. Dagegen setzt sich die Blockchain-basierte Lösung jedoch dadurch ab, dass der Hash eines zu datierenden Datenobjektes (hier der Datei) auf der Blockchain datiert abgelegt wird. Im hypothetischen Fall eines Angriffes auf die beiden Alternativen benötigt es für die Zeitstempeldienste den Bruch einer Signatur. Für die Lösung auf der öffentlichen Blockchain müssten jedoch alle seitdem geschriebenen Blöcke erneut berechnet werden; was jedoch wirtschaftlich selbst für staatliche Angreifer nicht umsetzbar ist. \\
+Ein Zeitstempelserver signiert einmalig den sehr zuverlässig gelieferten Zeitstempel. Dieser lässt sich anschließend in \zB{} eine Datei einbetten oder anderweitig ablegen. Dagegen setzt sich die Blockchain-basierte Lösung jedoch dadurch ab, dass der Hash eines zu datierenden Datenobjektes (hier der Datei) auf der Blockchain datiert abgelegt wird. Im hypothetischen Fall eines Angriffes auf die beiden Alternativen benötigt es für die Zeitstempeldienste den Bruch einer Signatur. Für die Lösung auf der öffentlichen Blockchain müssten jedoch alle seitdem geschriebenen Blöcke erneut berechnet werden; was jedoch wirtschaftlich selbst für staatliche Angreifer nicht umsetzbar ist. \\
 Die Kosten des erhöhten Sicherheitsniveaus direkt auf einer öffentlichen Blockchain, die auch viele andere Anwendungsfälle aufnimmt, sind langfristig jedoch nicht beherrschbar. Daher ist für den geschäftlichen Einsatz eine etwas komplexere Lösung oder die Umsetzung auf einer Blockchain speziell für diese Anwendung geeigneter.
 
 Auch nicht erwähnt werden weitere Umstände, wie Verbindungsprobleme und Schwankungen im Stromnetz die für Inselstaaten wie auch Krisenregionen nicht selten sind. Die Personalabteilung einer Firma mit einer redundanten Kopie der Blockchain wäre unabhängiger von einem Internetanschluss. Gleichzeitig ist die Datenmenge kompakter als ein üblicher Datenbankauszug, der gleichzeitig ein viel größeres Problem für den Datenschutz darstellen dürfte und weniger Integrität bietet.
 
 \section{Nachweis von Besitzverhältnissen}\label{uc:owning}
 
-Dem Prinzip der Kryptowährung nicht fern ist der Nachweis von Besitz- oder Eigentumsverhältnissen. Es ist zunächst nicht relevant um welche Art von Gütern (je nach Kategorisierung z.B. materiell/immateriell) es sich hier handelt.
+Dem Prinzip der Kryptowährung nicht fern ist der Nachweis von Besitz- oder Eigentumsverhältnissen. Es ist zunächst nicht relevant um welche Art von Gütern (je nach Kategorisierung \zB{} materiell/immateriell) es sich hier handelt.
 
 Ein konkretes Beispiel ist die Umsetzung von Abschlusszeugnissen auf einer Blockchain durch eine Zusammenarbeit der Firma IOHK mit dem \gls{GRNET} \autocite{w:abschluesse-blockchain}. Hier ist schon erkennbar, dass für diesen Fall hinnehmbare Einschränkungen vorgenommen wurden um die Kosten im Rahmen zu halten. Der Zeitpunkt muss nicht auf die Stunde oder genauer sein muss. Und auch die Anzahl der Transaktionen hält sich stark in Grenzen, sodass keine Überlastung dieser Blockchain zu erwarten ist. Gewonnen ist aber ein verteiltes Register von Abschlüssen an den beteiligten Universitäten und darüber hinaus einer gemeinsamen Institution, die in Fällen des Ausfalles oder der Neugründung einer Universität einen (wahrscheinlich juristisch bedingten, aber technisch nicht notwendigen) zusätzlichen Anker bietet. Die Bestätigung durch diese Blockchain allein erhärtet die Gültigkeit eines vorgelegten Abschlusszeugnisses bereits selbst wenn Details wie Fachbereich, Module/Scheine, Teilnoten, Abschlussnote bzw. das Prädikat (keine Erwähnung in der Pressemitteilung) nicht gespeichert werden. Die Europäische Kommission hat bereits eine Studie\footnote{\enquote{Blockchain in Education} \autocite{p:bc-edu-eurocommission}} dazu erstellen lassen, die der \gls{VDI} 2018 zur Aktualisierung aufgreifen möchte.
 
-Es können u.a. Repräsentationen von Vermögenswerten erstellt\footnote{Colored~Coins \autocite{b:mastering-bitcoin}} oder einfach nur Daten in der Transaktion encodiert abgelegt werden.
+Es können \ua{} Repräsentationen von Vermögenswerten erstellt\footnote{Colored~Coins \autocite{b:mastering-bitcoin}} oder einfach nur Daten in der Transaktion encodiert abgelegt werden.
 
 Diese Art der Datenablage ist jedoch nicht sonderlich effizient, da zum einen nicht unbegrenzt Speicher in den Blöcken zur Verfügung steht und zum anderen dieser Speicher sehr teuer ist.
 Damit sind diese Beispiele auf einer öffentlichen, Gebühren-incentivierten Blockchain nicht praktikabel.
 Aber auch in einer unternehmenseigenen privaten Blockchain ist das Ablegen von Dateien nicht der beste Weg diese nachzuweisen.
-Stattdessen könnte für die allermeisten Anwendungsfälle genügen die Metadaten -- wie z.B. den Ablageort, die verantwortliche Stelle im Unternehmen und eine Prüfsumme -- zu speichern.
+Stattdessen könnte für die allermeisten Anwendungsfälle genügen die Metadaten -- wie \zB{} den Ablageort, die verantwortliche Stelle im Unternehmen und eine Prüfsumme -- zu speichern.
 Ein weiterer Blickwinkel ist die potentielle Öffentlichkeit eines so abgelegten Dokumentes.
 Die zukünftiger Erweiterung des Kreises der Zugangsberechtigten zur Blockchain könnte potentiell alle abgelegten Daten ungewollt öffentlich werden lassen.
 
@@ -88,6 +88,6 @@ An dieser Stelle wird über Skalierbarkeit -- oft insbesondere auf Basis der Erh
 
 Die Verfügbarkeit der Blockchain wird im Netzwerk durch das möglichst vollständige Speichern der Historie belastet.
 Die vollständige Historie zu speichern kann die Festplattenkapazität einzelner Teilnehmer überfordern.
-Eine denkbare Lösung ist \gls{glos:Pruning}, dadurch werden unter Beibehaltung der Integritätsinformationen nur die Transaktionsdaten gelöscht, die als nicht relevant für die eigenen Zwecke betrachtet werden. Das können z.B. lange zurück liegender Transaktionen sein, oder solche die nicht Adressen der eigenen \gls{glos:Wallet} betreffen.
+Eine denkbare Lösung ist \gls{glos:Pruning}, dadurch werden unter Beibehaltung der Integritätsinformationen nur die Transaktionsdaten gelöscht, die als nicht relevant für die eigenen Zwecke betrachtet werden. Das können \zB{} lange zurück liegender Transaktionen sein, oder solche die nicht Adressen der eigenen \gls{glos:Wallet} betreffen.
 
 %\subsection{}

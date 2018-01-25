@@ -37,7 +37,7 @@ Dagegen sind die internen Prozesse nicht offengelegt.
 Einem Anwender kann nicht allgemeingültig zugetraut werden, die betrieblich zu nutzende Software selbst zu prüfen. Die betrieblichen Prozesse sollten aber ermöglichen Vertrauen in die IT-Umgebung zu induzieren. Das gilt insbesondere dann, wenn die verarbeiteten Daten ggf. ungewollt mit Dritten geteilt werden könnten.
 
 Allein die Verfügbarkeit des Quellcodes ist daher für sich kein Mehrwert, den er nutzen kann.
-Sofern allerdings Quellen zur Verfügung stehen, kann u.a. über einen reproduzierbaren Build-Prozess (engl. reproducable build) und digitale Signaturen der Binärdateien sichergestellt werden, dass die ausgeführte der Software auch aus dem verfügbaren Quellcode resultierte.
+Sofern allerdings Quellen zur Verfügung stehen, kann \ua{} über einen reproduzierbaren Build-Prozess (engl. reproducable build) und digitale Signaturen der Binärdateien sichergestellt werden, dass die ausgeführte der Software auch aus dem verfügbaren Quellcode resultierte.
 
 Sobald Anpassungen an eine Software notwendig werden, ist die Verfügbarkeit des Quellcodes aber ein entscheidendes Kriterium dazu unter Einsatz von begrenzten Ressourcen befähigt zu sein.\footnote{Selbst Herstellern kommt Quellcode abhanden \autocite{w:ms-binpatch}}
 Auch bei Anpassungen durch den Hersteller für externe Anwender kann damit nachvollzogen werden ob die angekündigten Änderungen gemacht wurden oder ggf. ein Problem unscharf formuliert oder gar verschwiegen wurde.
@@ -53,7 +53,7 @@ oder noch detaillierter die \gls{OSD}\footnote{Kriterien für Open~Source Softwa
 Die Bedeutung dieser Lizenzen soll hier auch hinsichtlich des Risikos für Geschäftsmodelle betont werden.
 Der ursprüngliche Gedanke, Freiheiten der Nutzer zu garantieren hat ist für die geschäftliche Verwendung nicht erste Priorität.
 Durch die Lizenzierung werden auch Fragen relativ neuer Rechtsprobleme, wie Patente auf Software oder die Frage der Gültigkeit von Lizenzen bei Anwendungen die im Netzwerk statt direkt beim Anwender laufen.
-Im Zuge der Nutzung von Software zur Verteilung von Werken unter anderen Schutzrechten spielt auch \gls{DRM} eine Rolle und muss auch für einen künftigen Anwendungsfall (z.B. \ref{uc:owning} \nameref{uc:owning}) beachtet werden.
+Im Zuge der Nutzung von Software zur Verteilung von Werken unter anderen Schutzrechten spielt auch \gls{DRM} eine Rolle und muss auch für einen künftigen Anwendungsfall (\zB{} \ref{uc:owning} \nameref{uc:owning}) beachtet werden.
 
 Konkret stehen Quorum unter LGPL\,3.0\footnote{\cite{w:license:lgpl3}, \cite{w:quorum-jpmorgan:github}}, Hyperledger~Fabric unter Apache\,2.0\footnote{\cite{w:license:al2}, \cite{w:hyperledger-fabric:github}} und BigchainDB unter AGPL\,3.0\footnote{\cite{w:license:agpl3}, \cite{w:bigchaindb:github}}. Daneben ist bei BigchainDB ausdrückliche eine andere Lizenzierung im Angebot. Im Allgemeinen spricht aus Sicht der \gls{BCI} auch nichts gegen ein duales Lizenzangebot.
 
@@ -129,12 +129,12 @@ In der Forschung wird nach beweisbaren Verfahren gesucht, die ständige Rechenle
 Ethereum hat einen kontinuierlichen Änderungsprozess und eine Roadmap auf der ein Wechsel zu einem \gls{PoS} geplant ist.
 Das globale Netzwerk schränkt eine eigene Anpassung ein.
 Dagegen können private Blockchains hinsichtlich des Konsens an die eigenen Erfordernisse angepasst werden. 
-%Gegenüber dem \gls{PoW} ist die Energieeffizienz von \gls{PoS} auf ein notwendiges Maß reduziert. Der Anreiz wird stattdessen durch Deponierung von z.B. nativer Währung oder 
+%Gegenüber dem \gls{PoW} ist die Energieeffizienz von \gls{PoS} auf ein notwendiges Maß reduziert. Der Anreiz wird stattdessen durch Deponierung von \zB{} nativer Währung oder 
 %~ An dieser Stelle soll erwähnt sein, dass es weitere
 Die beiden Vertreter der \gls{PBC} Quorum und Hyperledger geben die Möglichkeit durch den Ansatz der privaten \gls{BC} in Verbindung mit der modularen Gestaltung.
 Gerade letzteres fehlt BigchainDB derzeit noch.
 
-Für die Instanz einer \gls{BC} ist ein reines Signieren z.B. mit Ethereum oder Quorum konfigurierbar.
+Für die Instanz einer \gls{BC} ist ein reines Signieren \zB{} mit Ethereum oder Quorum konfigurierbar.
 Im folgenden sollen die gefundenen Mechanismen vom schwächsten zum stärksten hinsichtlich der Sicherheitsleistung benannt werden.
 Künftige Neuentwicklungen können hier entsprechend eingefügt werden.
 
@@ -147,11 +147,11 @@ Unter der Annahme, dass jeder Stimmberechtigte alles über die anderen weiß, is
 Damit wäre das Vertrauensproblem bei der Entscheidungsfindung keine Problem mehr, das Problem zur Akkreditierung wird aber nicht gelöst.
 Daher funktioniert der Ansatz bisher nur mit Einschränkungen\footnote{\url{https://www.reddit.com/r/hashgraph/comments/79g4po/hashgraph_is_not_a_blockchain_proofofwork/}  \autocite{w:reddit}} verbunden.
 
-Für \gls{PoS} wird z.B. eine bestimmte Mindestmenge an nativen Währungseinheiten als Sicherheitsleistung hinterlegt.
+Für \gls{PoS} wird \zB{} eine bestimmte Mindestmenge an nativen Währungseinheiten als Sicherheitsleistung hinterlegt.
 Der Teilnehmer, der den Block erstellen darf und den Ausgabeaufschlag erhält muss zufällig ermittelt werden.
 Falls ein Teilnehmer einen vom Konsens abweichenden Block produziert ist seine Sicherheitsleistung für ihn verloren.
 Es ist beabsichtigt dies bei Ethereum ab der Phase~4 \enquote{Serenity Release} einzuführen.\footnote{\enquote{Die Phasen von Ethereum} \url{https://etherbasics.com/basics/ethereum-phasen/}}.
-Ein Voting könnte ebenfalls ein \gls{PoS} darstellen, indem statt Währungseinheiten z.B. die Stimmberechtigung als Sicherheitsleistung verwendet würde.
+Ein Voting könnte ebenfalls ein \gls{PoS} darstellen, indem statt Währungseinheiten \zB{} die Stimmberechtigung als Sicherheitsleistung verwendet würde.
 Der wesentliche Grund für das Verfahren ist der dann ausbleibende hohe Energieverbrauch bei \gls{PoW} und die Eignung für erlaubnisfreie, globale \gls{BC}.
 %\footnote{ \autocite{p:pos:ouroboros}} \autocite{p:tendermint}
 
@@ -160,7 +160,7 @@ Dabei wird eine globale Konkurrenz um den \gls{glos:Ausgabeaufschlag} aufgebaut.
 Als Folge der Konkurrenzsituation in Verbindung mit der Steigerung des Wertes nativer Währungen -- insbesondere bei Bitcoin, Ethereum und Monero -- ist in der Vergangenheit der Energiebedarf ständig angestiegen.
 Teilnehmer, die bei dem Wettlauf nicht mithalten können, haben keine Möglichkeit den Konsens\footnote{Denkbar ist Zensur von Transaktionen durch aktives Verschweigen.} zu beeinflussen.
 
-Für die Wertung können die \gls{BCI} (\ref{chap:implementations}) z.B. über die Aspekte zur \gls{BFT}, Austauschbarkeit des Konsensverfahrens, Erlaubnisfreiheit und Dezentralität vorgenommen werden.
+Für die Wertung können die \gls{BCI} (\ref{chap:implementations}) \zB{} über die Aspekte zur \gls{BFT}, Austauschbarkeit des Konsensverfahrens, Erlaubnisfreiheit und Dezentralität vorgenommen werden.
 
 \subsection{Erlaubnisfreiheit}\label{krit:erlaubnisfreiheit}
 
@@ -185,8 +185,8 @@ Ausgenommen werden an dieser Stelle Eigenschaften wie Sprachkonzepte oder konkre
 Dagegen betrachtet werden muss die Turingvollständigkeit, also ob jedes berechenbare Problem zumindest theoretisch gelöst werden kann.  
 
 Die drei betrachteten \gls{BCI} bieten Programmierbarkeit.
-Quorum erbt u.a. Solidity von Ethereum.
-Für Hyperledger kann Chaincode u.a. mit Go geschrieben werden.
+Quorum erbt \ua{} Solidity von Ethereum.
+Für Hyperledger kann Chaincode \ua{} mit Go geschrieben werden.
 Dagegen begrenzt BigchainDB ihre Smart~Contracts in der Laufzeit indem nur Operationen unter bestimmten Konditionen ausgeführt werden und ist damit nicht turingvollständig. 
 %~ sofern der jeweiligen \gls{BCI} inhärent
 
@@ -243,7 +243,7 @@ Eine pauschale (oder durchschnittliche) Angabe sollte -- ohne Einbeziehung im Sp
 
 %~ Die Blöcke werden im Fall von \gls{PoW} Blockchain, wie Bitcoin und Ethereum, in statistisch gleichen großen Periode erschaffen. Am Bsp. Bitcoin wird diese statistische Periode von 10~Minuten am Graphen sehr deutlich erkennbar fast ständig unterschritten. Dieser Umstand hat abhängig von der \gls{glos:Hashrate} auch ein schnelleres Voranschreiten des \gls{glos:Halfing}s zur Folge, als es ursprünglich prognostiziert wurde.
 
-%~ U.a. über die Website \href{https://bitinfocharts.com/comparison/bitcoin-confirmationtime.html}{bitinfocharts.com} können insbesondere zum Projektstart starke Schwankungen beobachtet werden. Dies lässt sich über die geringe Anzahl der Teilnehmer zu diesem Zeitpunkt erklären.
+%~ Unter anderem über die Website \href{https://bitinfocharts.com/comparison/bitcoin-confirmationtime.html}{bitinfocharts.com} können insbesondere zum Projektstart starke Schwankungen beobachtet werden. Dies lässt sich über die geringe Anzahl der Teilnehmer zu diesem Zeitpunkt erklären.
 %~ Weitere Schwankungen kennzeichnen problematische Ereignisse in der globalen Blockchain wie Schwierigkeiten von dominierenden Marktteilnehmern (Bsp. \gls{glos:Exchange}), staatliche Regulierung und medialer Hype oder einfach nur Schwankungen im Preis\footnote{Bsp. 12.\,November~2017 Kurzzeitiger Einbruch um ca.\,20\,\% \autocite{w:bitcoinde-kurs}} die mit solchen Ereignissen und der Schwierigkeit im Netzwerk korrelieren.
 %~ % Ähnliches ist also auch im Unternehmenseinsatz bei Updates zu erwarten, die nicht gleichzeitig 
 
@@ -310,7 +310,7 @@ Die Wertung für geringere Personalverfügbarkeit ist kleiner als die höherer.
 Für die Verwendung im konkreten Unternehmen notwendigen Einmalaufwendungen können eine wesentliche Zugangshürde zu Technologie darstellen.
 Dies kann auch trotz \emph{offener Standards} und Open~Source Software der Fall sein wenn einzelne Akteure ihre Position oder ihren Wissensvorsprung monetarisieren.
 Initiale Kosten können insbesondere Anschaffung von Hardware und ggf. Lizenzkosten\footnote{Bsp. Softwarelizenzen, Nutzungslizenz für Patente; auch Konzessionen wie die \emph{BitLicense} \autocite{w:bitlicense}} darstellen.
-Auch andere Einmalaufwendungen -- z.B. für den Zugang zu Verbänden -- zählen hierzu.
+Auch andere Einmalaufwendungen -- \zB{} für den Zugang zu Verbänden -- zählen hierzu.
 
 BigchainDB hat keine Preisliste, ist aber gesprächsbereit sofern Interesse an Beratung besteht.
 Bei Hyperledger ist die intensive Mitarbeit für gewinnorientierte Unternehmen Gebührenpflichtig.
