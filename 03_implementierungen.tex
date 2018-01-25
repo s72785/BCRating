@@ -34,10 +34,10 @@ Der Name suggeriert bereits, dass es sich bei \emph{BigchainDB}\footnote{Whitepa
 Bisher wurden Treiber für RethinkDB und für MongoDB -- zwei Vertreter von noSQL-Datenbanken -- implementiert. Die Autoren konzentrieren sich nach eigener Aussage auf die Skalierbarkeit bei Erhaltung der Dezentralisierung und Unveränderbarkeit sowohl für eine globale öffentliche \gls{BC} auch auch private \gls{BC}.
 Nicht ganz intuitiv ob des Namens ist die klare Vorgabe\footnote{\autocite{w:bcdb:features}}: Statt der Daten werden nur Hash und Zugangstoken in der Blockchain gespeichert.
 
-Für verbesserten Datenschutz (engl. privacy) von Daten sollen \enquote{Privacy Protocols} sorgen.\footnote{\cite{w:github-bigchaindb-pp}}
+Für verbesserten Datenschutz (Engl. privacy) von Daten sollen \enquote{Privacy Protocols} sorgen.\footnote{\cite{w:github-bigchaindb-pp}}
 Dabei sollen Authentifizierung und Beweise -- für \ua{} Sharing, Storage und Replikation -- die einzelnen Operationen zusichern.
 Für die redundante Ablage ist auch die Nutzung von \gls{IPFS} oder vergleichbaren verteilten Dateisystemen und Datenbanken angedacht.
-Zusätzlich wurden Vermögenswerte (engl. Assets) nativ ermöglicht.
+Zusätzlich wurden Vermögenswerte (Engl. Assets) nativ ermöglicht.
 Diese sollen auch zur Authentifizierung und Rechteverteilung dienen.
 Die Verbindung verschiedener \gls{BC} soll \zB{} über das Interledger Protokoll\footnote{A Protocol for Interledger Payments \autocite{p:interledger}}\label{first:interledger} ermöglicht werden.
 
@@ -130,7 +130,7 @@ Im Weiteren ist der in Quorum~2.0 und von Ethereum abweichende Raft\footnote{The
 Der \enquote{Raft-based consensus}\footnote{\url{https://github.com/coreos/etcd/tree/master/raft}} ist ein Alternativer Konsensalgorithmus für private \gls{BC}. Die Teilnehmer sind in die drei Rollen unterteilt:
 \emph{Leader}, \emph{Follower} und \emph{Candidate}. Im Normalfall gibt es genau einen \emph{Leader}, der als Hub für alle Anfragen der \emph{Follower} zuständig ist.
 Der \emph{Candidate} wird nur benötigt um einen neuen \emph{Leader} zu bestimmen.
-Dafür wird eine Wahl per Losverfahren nach dem Abschluss einer Amtszeit (engl. term) des \emph{Leader} angesetzt.
+Dafür wird eine Wahl per Losverfahren nach dem Abschluss einer Amtszeit (Engl. term) des \emph{Leader} angesetzt.
 Sofern eine einfache Mehrheit einen neuen \emph{Leader} gewält hat, beginnt eine neue Amtszeit.
 Es werden sehr schnelle Transaktionszeiten (im Millisekundenbereich) ermöglicht und es entstehen keine Blöcke soweit keine Transaktionen vorhanden sind;
 d.h. der Effekt von unnötige, leeren Blöcken auf privaten Blockchains tritt nicht auf.
@@ -154,7 +154,7 @@ Details sind Nutzern außerhalb der beteiligten Firmen allein durch die Dokument
 Dank der Arbeit der \gls{HAWG} \cite{p:hyperledger:consensus}, die zwar keine Fehlertoleranz in Zahlen, aber immerhin eine Bewertung der seit 2017 verwendeten Konsensmethode offenbart.
 Der Ausbau der Zusammenarbeit mit der \emph{Community} ist geplant.
 
-Der Standard \emph{Konsensmechanismus} \enquote{Kafka}\footnote{\cite{w:kafka}}, der bei \nameref{impl:hyperledger} Fabric Verwendung findet, wird durch eine vereinfachte Stimmabgabe (engl. Voting) der Teilnehmer (engl. Peers) in Verbindung mit \gls{glos:Chaincode} zur Überprüfung der Transaktion gestaltet; das Verfahren ist nicht \gls{BFT}.\footnote{\cite{w:hyperledger:txworkflow}}
+Der Standard \emph{Konsensmechanismus} \enquote{Kafka}\footnote{\cite{w:kafka}}, der bei \nameref{impl:hyperledger} Fabric Verwendung findet, wird durch eine vereinfachte Stimmabgabe (Engl. Voting) der Teilnehmer (Engl. Peers) in Verbindung mit \gls{glos:Chaincode} zur Überprüfung der Transaktion gestaltet; das Verfahren ist nicht \gls{BFT}.\footnote{\cite{w:hyperledger:txworkflow}}
 Die Umsetzung als Protokoll für private Blockchains in Konsortien stellt auch darauf ab, dass Identitäten bekannt sind.
 \emph{Erlaubnisfreiheit} ist damit nicht gegeben.
 Der Vorteil ist allerdings die austauschbare Gestaltung des Konsensprotokolls und parallele Frameworks innerhalb des Hyperledger Projektes die Alternativen bereitstellen.
