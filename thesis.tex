@@ -36,9 +36,10 @@
 
 
 %<Textteil…
-\pagenumbering{arabic} %for actual content
+%~ \pagenumbering{arabic} %for actual content
 
 %<Chap1…
+\newgeometry{top=2cm,bottom=25mm,left=25mm,right=55mm}
 \input{01_Einleitung}
 \newpage
 
@@ -130,15 +131,27 @@
 
 \cleardoublepage 
 
-\pagenumbering{Roman} %for non-content
+%~ \pagenumbering{Roman} %for non-content
 
 %~ * Anhang
   %~ + Literaturverzeichnis
   %~ + Ehrenwörtliche Erklärung
 
 % TOC ergänzen, bib bauen
-\printbibliography[title={Quellennachweise\\\hspace{1mm}\,\\\normalfont{}\normalsize{}\quellenHinweistext{}}]
+\printbibliography[%
+%keyword={related-works},
+title={Quellennachweise\\\hspace{1mm}\,\\\normalfont{}\normalsize{}\quellenHinweistext{}}]
 \addcontentsline{toc}{chapter}{Quellennachweise}
+
+%~ \printbibliography[type=article,title={Articles only}]
+
+%~ \printbibliography[type=article,title={Articles only}]
+%~ \printbibliography[type=book,title={Books only}]
+ 
+%~ \printbibliography[keyword={physics},title={Physics-related only}]
+%~ \printbibliography[keyword={latex},title={\LaTeX-related only}]
+
+
 \cleardoublepage 
 
 \appendix
@@ -168,7 +181,7 @@
 %~ \listoftables
 %~ \addcontentsline{toc}{section}{Tabellenverzeichnis}
 
-\clearpage 
+\cleardoublepage 
 
 %~ \addsec{Vorgehen mit VirtualBox}\label{apx:vb}
 %~ \input{vb}
