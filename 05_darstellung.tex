@@ -57,7 +57,7 @@ Im umgekehrten Fall, der Darstellung einer bereits erfolgten Bewertung mit Zahle
 Sofern eine quantitative Gesamtbewertung vorliegt, eignet sich das Ranking für die Darstellung der naheliegendsten \gls{BCI}.
 Die Erstellung ist aber schwer nachvollziehbar und deshalb auch hinsichtlich der Wiederholbarkeit fehleranfällig.
 
-\subsection{Paarweiser Vergleich}
+\subsection{Paarweiser Vergleich}\label{dep:pugh}
 
 Der Paarweise Vergleich (auch Pugh~Matrix) ermöglicht einen strukturierten Vergleich für eine beliebige Anzahl von Parametern.
 Dabei werden die Kriterien horizontal und vertikal in eine Tabelle (Abb.\,\ref{abb:pugh-matrix}) eingetragen.
@@ -92,13 +92,14 @@ Dazu wird eine Zahl \(w \in [0;m] \)  höher für eine stärkere Wertung des Kri
 Die Diagonale in der das gleiche Kriterium mit sich selbst verglichen würde, entfällt und alle Vergleiche unterhalb der Diagonale sind invers zu den oberen Werten und können schlicht als \(w' = m - w\) am Maximalwert \(m\) gespiegelt werden.
 Um eine neutrale Wertungen zum Ausdruck bringen zu können, muss die Menge \(M\) eine ungerade Anzahl an Möglichkeiten für \(w\) vorgeben.
 
-Auch die Beteiligung mehrerer Entscheider ist die Kombination durch ein Produkt der einzelnen Bewertungen umsetzbar.
-Allerdings ist jeder einzelne Bewertungsvorgang aufwändig -- der Aufwand steigt exponentiell mit der Anzahl der Kriterien.
-Damit ist das Bewertungsverfahren nicht geeignet in einem kurzen Meeting durchgeführt zu werden.
+Auch die Beteiligung mehrerer Entscheider ist die Kombination durch ein Produkt der einzelnen Bewertungen mehrstufig umsetzbar.
+Eine Unterstützung durch z.B. eine Tabellenkalkulation ist machbar, aber mit manuellen Aufwand für Anpassungen verbunden.
+Jeder einzelne Bewertungsvorgang bleibt aufwändig -- und der Aufwand steigt exponentiell mit der Anzahl der Kriterien.
+Damit ist das Bewertungsverfahren nicht gut geeignet in einem Meeting mit überschaubarem Zeitrahmen durchgeführt zu werden.
 
-\subsection{Netzdiagramm}\label{}
+\subsection{Netzdiagramm}\label{dep:web}
 
-Das Netzdiagramm (auch Radardiagramm, Kiviat-Diagramm, oder Sterndiagramm) besteht aus mindestens drei Parametern als Strahlen (für die quantitative Wertung der Kriterien) ausgehend von einem gemeinsamen Mittelpunkt in einer Darstellung (Abb.\,\ref{disp:web:pic}).
+Das Netzdiagramm (auch Radardiagramm, Kiviat-Diagramm, oder Sterndiagramm) besteht aus mindestens drei unabhängigen Parametern als Strahlen (für die quantitative Wertung der Kriterien) ausgehend von einem gemeinsamen Mittelpunkt in einer Darstellung (Abb.\,\ref{disp:web:pic}).
 
 \begin{figure}[!htp]
 %~ \scalegraphics{img/disp-web}
@@ -147,7 +148,8 @@ Kandidaten können jedoch über das Verhältnis mit dem Pareto Optimum miteinand
 
 \section{Quantifizierung}
 
-Die Quantifizierung -- also Bewertung in Zahlen -- der bisher durch Beschreibung (in Worten) durchgeführten Bewertung soll das Verständnis für die Wertigkeit klarer zum Ausdruck bringen und die Berechnung ermöglichen.
+Die Quantifizierung -- also Bewertung in Zahlen -- der bisher durch Beschreibung (in Worten) durchgeführten subjektiven Bewertung soll das Verständnis für die Wertigkeit klarer zum Ausdruck bringen und ggf. eine Berechnung ermöglichen.
+In jede Fall kann dadurch eine objektivere Sicht bzw. die Begründung für Anpassungen eingebracht werden.
 
 %~ Als Beispiel dient hier die Bewertung 
 
@@ -184,7 +186,7 @@ Die Aspekte könnten sein:
 %~ \item 
 %~ \end{itemize}
 
-\begin{enumerate}
+\begin{enumerate} 		\setlength\itemsep{0em}\setlength\parskip{0em}\setlength\topsep{0em}\setlength\partopsep{0em}\setlength\parsep{0em}
 \item Open~Source gem. OSI (vgl. \ref{krit:opensource})
 \item Behandlung von Software-Patenten
 \item Gleiche Garantien auch ohne Auslieferung einer Software (z.B. Webservice)
@@ -220,10 +222,15 @@ dass vollständiger Unterscheidbarkeit das Ergebnis nicht eindeutig sein muss.
 
 Um das Problem zu verringern, ist eine Gewichtung hilfreich.
 
+\subsubsection*{Begründung am Beispiel}
+Wir gewichten hier die Aspekte 2-4 höher weil sie für die unternehmerische Nutzung von gesteigerter Bedeutung sind.
+Aspekt 1 wird nicht höher gewichtet, da es sich um das im technologischen Umfeld übliche Mindestmaß handelt, das auch eingehalten wird.
+Wegen des primären Einsatzes von Webtechnologien und der daraus resultierenden Verwendung von Services in Netzwerken bei gleichzeitiger Kommplung mit der \gls{BCT}, die selbst auf Netzwerken basiert, wird Aspekt 3 nochmals stärker gewichtet.
+
 \begin{figure}[!htp]
 \centering
 \begin{tabular}{l|llll}
-Zeilaspekt	& Gewichtung & LGPL\,3.0 	& Apache~License\,2.0 & AGPL\,3.0 \\
+Aspekt	& Gewichtung & LGPL\,3.0 	& Apache~License\,2.0 & AGPL\,3.0 \\
 \hline
 \hline
 1 		& 1	& 1	& 1	& 1	\\
@@ -241,10 +248,18 @@ Zeilaspekt	& Gewichtung & LGPL\,3.0 	& Apache~License\,2.0 & AGPL\,3.0 \\
 \end{figure}
 
 Durch die Stärkere Gewichtung der möglicherweise geschäftskritischeren Fragen kann damit ein eindeutiges Ergebnis für das Kriterium ermittelt werden.
+Wichtig für die Nachvollziehbarkeit ist die Dokumentation des Grundes für eine Gewichtung.
 
-\subsection{Entscheidung}
+\subsection{Entscheidungsunterstützung}
 
 Das verkürzte Beispiel zu den Software (Abb.\,\ref{abb:wertung:oss2}) lässt sich nun einfach per \nameref{dep:ranking} (\ref{dep:ranking}) entscheiden.
-Da dies aber nur ein Kriterium  
+Der Nutzen der Abbildung nur eines Kriteriums ist jedoch sehr begrenzt.
 
-%~ \subsecttion{}
+Da Entscheidungen sehr leicht subjektiv werden sind die Maßnahmen zur Gruppierung, \nameref{classification} und Gewichtung entscheidend um
+eine objektive und nachvollziehnbare Grundlage zu erreichen.
+
+Der Paarweise Vergleich (\ref{dep:pugh}) kann mehrstufig eingesetzt zu einer guten Entscheidungsgrundlage führen.
+Der mit Anzahl der Kriterien wachsende Aufwand und die geringe Eignung für die direkte bildliche Darstellung begrenzen den praktischen Nutzen.
+
+Dagegen kann durch das \nameref{dep:web} (\ref{dep:web}) eine gute grafische Darstellbarkeit -- für sogar mehrere Kandidaten -- in einem Bild aufweisen.
+Zusätzlich ist die Berechenbarkeit eines Entscheidungskriteriums und die Vergleichbarkeit mit einem Pareto-Optimum ein entscheidender Vorteil sowohl was die Einschränkungen für Präsentationen bei Entscheidern betrifft als auch die Argumentation bezüglich des theoretisch erreichbaren.
