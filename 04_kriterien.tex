@@ -2,7 +2,8 @@ Um die sehr unterschiedlichen Implementierungen miteinander vergleichbar zu mach
 %~ Diese Kriterien auch sollen relevant für den Anwendungsfall, eventuelle Einschränkungen und die Notwendigkeit zur .
 Die Wertung soll klar von geringer Zielerfüllung zur höheren erkennbar sein.
 
-Hier wurde eine Auswahl getroffen und lange nicht alle denkbaren Kriterien angeführt. Bei der Durchführung für ein konkretes Unternehmen muss zusätzlich eine Betrachtung erfolgen, welche weiteren Kriterien wichtig sind.
+%~ Hier wurde eine Auswahl getroffen und lange nicht alle denkbaren Kriterien angeführt.
+%~ Bei der Durchführung für ein konkretes Unternehmen muss zusätzlich eine Betrachtung erfolgen, welche weiteren Kriterien wichtig sind.
 
 %%
 \section{Grundlegendes zur Informationstechnologie}\label{krit:it}
@@ -11,7 +12,7 @@ Hier wurde eine Auswahl getroffen und lange nicht alle denkbaren Kriterien angef
 Grundsätzlich treffen die folgenden Annahmen auch auf andere Bereiche innerhalb der Softwaretechnologie zu.
 Allerdings ist die Bedeutung erst seit der Erfindung des Personal Computers und Zugang zum Internet für große Bevölkerungsteile durchsetzbar.
 Gerade diese Parallele der Entwicklung des Internets zu dem Wandel den auch die \gls{BCT} bringen kann, ist der Grund hier auf eine Verbesserung des Zugangs und eine erneute Dezentralisierung abzuzielen.
-Aber nicht nur für den direkten Kundenkontakt entworfene oder in der Interaktion mit anderen Unternehmen befindliche IT-Systeme profitieren von der neuen Offenheit und Dezentralisierung. Auch die IT-Architektur inerhalb eines Unternehmens wird gestärkt wenn zentrale Schwachpunkte vermieden werden. 
+Aber nicht nur für den direkten Kundenkontakt entworfene oder in der Interaktion mit anderen Unternehmen befindliche IT-Systeme profitieren von der neuen Offenheit und Dezentralisierung. Auch die IT-Architektur innerhalb eines Unternehmens wird gestärkt wenn zentrale Schwachpunkte vermieden werden. 
 
 %
 \subsection{Offener Standard}\label{krit:openstandard}
@@ -19,7 +20,16 @@ Aber nicht nur für den direkten Kundenkontakt entworfene oder in der Interaktio
 Die Standardisierung einer Blockchain ist ein wesentlicher Bestandteil zur Sicherung der beabsichtigten Anwendungsfälle.
 Sowohl die Dokumentation bisher getroffener Entscheidungen als auch der Prozess für neue Entscheidungen sollten daher standardisiert sein um beurteilt oder in Zukunft an die Erfordernisse angepasst werden zu können.
 
-Über einzelne \gls{BCI} hinweg bringt die Standardisierung auch Austauschmöglichkeiten wie \emph{Interledger} (\ref{first:interledger}), \gls{LN}\footnote{Whitepaper \autocite{p:lightning}} oder das Comit~Network\footnote{Whitepaper \autocite{p:comit}}. Zur Zeit der Arbeit werden erste Live-Tests im Produktivnetzwerk, über drei Firmen-Netzwerke als verschiedene Implementierungen für das \gls{LN}, hinweg durchgführt.
+Über einzelne \gls{BCI} hinweg bringt die Standardisierung auch Austauschmöglichkeiten wie \emph{Interledger} (\ref{first:interledger}), \gls{LN}\footnote{Whitepaper \autocite{p:lightning}} oder das Comit~Network\footnote{Whitepaper \autocite{p:comit}}.
+Zur Zeit der Arbeit werden erste Live-Tests im Produktivnetzwerk, über drei Firmen-Netzwerke als verschiedene Implementierungen für das \gls{LN}, hinweg durchgeführt. Auch Raiden\footnote{\url{https://raiden.network/}} für Ethereum ist bereits in der Entwicklung voran geschritten.
+
+Am Bsp. aus den \nameref{chap:usecases} von Julian Assange (\ref{uc:timestamping}) wurde bereits deutlich, dass die Nachvollziehbarkeit eines Beweisen (Proof of Life) auf mathematischer Grundlage nicht allein entscheidend ist.
+Stattdessen ist ein wesentlicher Punkt, dass über die Teilnehmer im Netzwerk hinaus und spezialisierte Auditoren hinaus die Nutzer fähig sind die resultierenden Anwendungen zu nutzen.
+Derzeit ist die \gls{BCT} so komplex, dass das Verständnis dafür nur mit viel persönlichem Zeitaufwand geschaffen werden kann.
+Um Anwendungen im Rahmen der Digitalisierung der Gesellschaft in der Bevölkerung dauerhaft mit Akzeptanz auszustatten, sind leicht zugängliche Erklärungen im Rahmen der Weiterbildung dafür notwendig.
+
+Dokumentation über das Protokoll ist bei den Projekten sämtlich vorhanden.
+Dagegen sind die internen Prozesse nicht offengelegt.
 
 \subsection{Quelloffene Software}\label{krit:opensource}
 
@@ -40,15 +50,34 @@ Für die Wertung werden virale Lizenzen besser bewertet als liberalere Open~Sour
 Um feiner abzustufen könnten als Aspekte die vier Freiheiten\footnote{Die vier essentiellen Freiheiten \autocite{w:fsf-freedoms}} der \gls{FSF}
 oder noch detaillierter die \gls{OSD}\footnote{Kriterien für Open~Source Software \autocite{w:iso-osd}} mit 10~Kriterien.
 
+Die Bedeutung dieser Lizenzen soll hier auch hinsichtlich des Risikos für Geschäftsmodelle betont werden.
+Der ursprüngliche Gedanke, Freiheiten der Nutzer zu garantieren hat ist für die geschäftliche Verwendung nicht erste Priorität.
+Durch die Lizenzierung werden auch Fragen relativ neuer Rechtsprobleme, wie Patente auf Software oder die Frage der Gültigkeit von Lizenzen bei Anwendungen die im Netzwerk statt direkt beim Anwender laufen.
+Im Zuge der Nutzung von Software zur Verteilung von Werken unter anderen Schutzrechten spielt auch \gls{DRM} eine Rolle und muss auch für einen künftigen Anwendungsfall (z.B. \ref{uc:owning} \nameref{uc:owning}) beachtet werden.
+
+Konkret stehen Quorum unter LGPL\,3.0\footnote{\cite{w:license:lgpl3}, \cite{w:quorum-jpmorgan:github}}, Hyperledger~Fabric unter Apache\,2.0\footnote{\cite{w:license:al2}, \cite{w:hyperledger-fabric:github}} und BigchainDB unter AGPL\,3.0\footnote{\cite{w:license:agpl3}, \cite{w:bigchaindb:github}}. Daneben ist bei BigchainDB ausdrückliche eine andere Lizenzierung im Angebot. Im Allgemeinen spricht aus Sicht der \gls{BCI} auch nichts gegen ein duales Lizenzangebot.
+
 \subsection{Entwicklungsstand}\label{krit:entwicklungsstand}
 
-Für die Anwendbarkeit einer Blockchain-Implementierung sind Stabilität und umgesetzte Features eine gute Maßgabe.
+Für die Anwendbarkeit einer Blockchain-Implementierung sind Stabilität und umgesetzte Funktionen eine gute Maßgabe.
 Als Bezugspunkt kann hierfür zum einen die Planung des jeweiligen Projektes dienen.
 Aber auch der Vergleich bezüglich unterstützter und jeweils benötigter oder gewünschter Features.
 
-Das Vorhandensein von Dokumentation, Abstraktion als formalisiertes Protkoll wird hier nicht betrachtet, da bereits unter
+Das Vorhandensein von Dokumentation, Abstraktion als formalisiertes Protokoll wird hier nicht betrachtet, da bereits unter
 \ref{krit:openstandard} eingeordnet.
-Allerdings ist für die Bemessung des Reifegrades der Entwicklung dennoch interesant ob nur eine einzelne Implementierung oder mehrere unabhängige Implementierungen des Protokolles vorliegen oder beabsichtigt sind.
+Allerdings ist für die Bemessung des Reifegrades der Entwicklung dennoch interessant ob nur eine einzelne Implementierung oder mehrere unabhängige Implementierungen des Protokolls vorliegen oder beabsichtigt sind.
+
+%~ \subsection{Dokumentation und Werkzeuge}
+\label{krit:werkzeuge}
+
+In wie weit eine \gls{BCI} leicht nutzbar gemacht werden kann hängt stark davon ab wie leicht es Neulingen gemacht wird sich diese zu eigen zu machen.
+Dazu sind Werkzeuge und deren Dokumentation wie Beispiele enorm hilfreich.
+
+Auf die \nameref{krit:schnittstellen} (\ref{krit:schnittstellen}) angepasste Werkzeuge wie etwa \gls{glos:Web3} und Integrationen in eine oder mehrere \gls{IDE} können hier bepunktet werden; ebenso ob Schulungsmaterial bereit steht. \\
+Quorum profitiert hier von den Errungenschaften um Ethereum.
+BigchainDB bietet mit einem Treiber-Modell Integration in Programmiersprachen.
+Und auch Hyperledger hält Beispiele für den Hyperledger Composer bereit.
+
 
 \subsection{Schnittstellen}\label{krit:schnittstellen}
 
@@ -57,7 +86,7 @@ Anpassungen sind auf Seiten des neuen Informationssystems oder auf der des alten
 Um die bisherigen Prozesse nicht zu gefährden, ist grundsätzlich die Anpassung des neuen Systems oder die Schaffung von Adaptern zwischen den Schnittstellen zu empfehlen.
 
 Übliche Beispiele für solche Schnittstellen sind \gls{RPC} -- mit oder ohne \gls{JSON} -- oder \gls{REST}.
-
+Die Kandidaten ermöglichen Zugriff über derartige Schnittstellen.
 %~ \subsection{Anpassbarkeit}\label{krit:anpassbarkeit}
 
 %~ Die Verfügbarkeit von Schnittstellen ist für die Schaffung dieser Adapter ausschlaggebend.
@@ -67,40 +96,45 @@ Um die bisherigen Prozesse nicht zu gefährden, ist grundsätzlich die Anpassung
 
 \subsection{Community}\label{krit:community}
 
-Die Unterstützung einer Software hängt wesentlich von der Unterstützung durch Nutzer ab.\footnote{\enquote{The Importance of Having Users} \autocite{Raymond:CB}} Bei prorietären Produkten leuchtet dies direkt ein, da die Lizenzeinnahmen die Finanzierung der Entwicklung ermöglichen. Wir haben aber beim Kriterium \nameref{krit:opensource} festgestellt, dass gerade in Systemen die auf Vertrauen basieren, die Umsetzung als Offener Standard und Freie Softwarelizenzen ein ausschlaggebendes Argument im Wettbewerb darstellen. 
+Die Unterstützung einer Software hängt -- auch wenn die Entwicklung größtenteils hauptberuflich erfolgt -- wesentlich von der Unterstützung durch Nutzer ab.\footnote{\enquote{The Importance of Having Users} \autocite{Raymond:CB}}
+Bei proprietären Produkten leuchtet dies direkt ein, da die Lizenzeinnahmen die Finanzierung der Entwicklung ermöglichen.
+Wir haben aber beim Kriterium \nameref{krit:opensource} festgestellt, dass gerade in Systemen die auf Vertrauen basieren, die Umsetzung als offener Standard und freie Softwarelizenzen ein ausschlaggebendes Argument im Wettbewerb darstellen. 
 Dabei geht es nicht nur um den Wettbewerb um die Nutzer, die eventuell Fehler melden und die Entwicklung durch Mitwirkung oder durch freiwillige monetäre Leistungen unterstützen. Es geht insbesondere auch um die Entwicklergemeinschaft, die Beiträge zur fraglichen Software leisten. Dazu zählen auch solche die keine Programmierung, sondern eventuell Übersetzungen, Dokumentation und Werkzeuge im Umfeld schaffen.
 
-Der kritischste Teil der Community sind aber die Personen, die den Kern des Projektes stellen. Ein \enquote{Team} mit nur einem Entwickler ist mit einem höheren Ausfallrisiko zu bewerten als ein Team aus zehn Kern-Entwickler mit hunderten Beitragenden. Selbst wenn der einzelne Entwickler initial besser Leistungen erbringt bleibt sein Ausfall eine Bedrohung für den Fortbestand des Projektes für solche Nutzer die dringende Problemfälle nicht selbst meistern können.
+Der kritischste Teil der Community sind aber die Personen, die den Kern des Projektes stellen.
+Ein \enquote{Team} mit nur einem Entwickler ist mit einem höheren Ausfallrisiko zu bewerten als ein Team aus zehn Kern-Entwickler mit hunderten Beitragenden. Selbst wenn der einzelne Entwickler initial besser Leistungen erbringt bleibt sein Ausfall eine Bedrohung für den Fortbestand des Projektes für solche Nutzer die dringende Problemfälle nicht selbst meistern können.
 
 Die Wertung kann nach Anzahl Größenordnungen der Beteiligten vorgenommen werden.
+%~ Ebenso inwoiefern und Kapazitäten für Beratung und Anpassungen angeboten werden
 
-\subsection{Dokumentation und Werkzeuge}\label{krit:werkzeuge}
-
-In wie weit eine \gls{BCI} leicht nutzbar gemacht werden kann hängt stark davon ab wie leicht es Neulingen gemacht wird sich diese zu eigen zu machen.
-Dazu sind Werkzeuge und Dokumentation wie Beispiele enorm hilfreich.
-
-Auf die \nameref{krit:schnittstellen} (\ref{krit:schnittstellen}) angepasste Werkzeuge wie etwa \gls{glos:Web3} und Integrationen in eine oder mehrere \gls{IDE} können hier bepunktet werden.
 
 \section{Blockchain-bezogene Eigenschaften}\label{krit:blockchainproperties}
 
 \subsection{Konsens}\label{krit:consensus}
 
-Es werden zwei Arten von Methoden unterschieden, die algorithmisch umgesetzt werden können.
-\emph{Voting} schafft einen finalen \gls{glos:State} durch stimmerechtigte Teilnehmer.
-\emph{Proof-of-Methoden} sind mathematische Beweise.
-Die Verkettung erfolgt durch einen Merkle-Baum und Einbeziehung des Vorgängers.
-Da die Verkettung mit genug Rechenleistung aufgrund möglicher Hashkollisionen nicht final ist, wird auch der \gls{glos:State} nicht final sondern nur zunehmend wahrscheinlich.
+Es werden zwei Arten von Methoden unterschieden, die algorithmisch umgesetzt werden können: Voting und Proof-of-Methoden.\footnote{\cite{p:hyperledger:consensus}}
+\emph{Voting} schafft einen finalen \gls{glos:State} durch stimmberechtigte Teilnehmer.
+\emph{Proof-of-Methoden} sind mathematische Beweise für eine mögliche Wahrheit.
+Die Verkettung erfolgt durch einen \gls{glos:MerkeTree} über die Transaktionen und Einbeziehung des Vorgängers.
+Da die Verkettung mit genug Rechenleistung aufgrund möglicher Hashkollisionen nicht final ist, wird auch der \gls{glos:State} nicht final sondern nur zunehmend wahrscheinlich. Zur Vereinfachung wird gelegentlich das Ergebnis nach einer Anzahl von weiteren Blöcken als final angenommen.
 
-Die meisteingesetzte öffentliche Konsensmethode ist \gls{PoW}. 
-Kritisch ist der hohe Energierverbrauch ohne einen Sekundärnutzen.
+Die konkrete \gls{BFT} (als Anteil der Teilnehmer die ohne Schaden für die Zuverlässigkeit fehlerhaft handeln können) für einen Algorithmus ist leider nicht in allen Fällen bekannt; zur Vereinfachung wird daher auf die binäre Aussage \gls{BFT} oder nicht abgestellt.
+Dies stellt in den erlaubnisbehafteten Systemen keine Priorität dar.
+Bekannt sind Angaben von bis zu \(\frac{1}{2}\) für \gls{PoW} und bis zu \(\frac{1}{3}\) für Voting.\footnote{\cite{p:hyperledger:consensus}}
+
+Die meist eingesetzte Konsensmethode für öffentliche, erlaubisfreie Blockchains ist \gls{PoW}. 
+Kritisch ist der hohe Energieverbrauch ohne einen sekundären Nutzen.
 In der Forschung wird nach beweisbaren Verfahren gesucht, die ständige Rechenleistung benötigen um diesen Makel zu schmälern.
 
-Ethereum hat einen kontinuierlichen Change-Prozess und eine Roadmap auf der ein Wechsel zu einem \gls{PoS} geplant ist.
+Ethereum hat einen kontinuierlichen Änderungsprozess und eine Roadmap auf der ein Wechsel zu einem \gls{PoS} geplant ist.
+Das globale Netzwerk schränkt eine eigene Anpassung ein.
+Dagegen können private Blockchains hinsichtlich des Konsens an die eigenen Erfordernisse angepasst werden. 
 %Gegenüber dem \gls{PoW} ist die Energieeffizienz von \gls{PoS} auf ein notwendiges Maß reduziert. Der Anreiz wird stattdessen durch Deponierung von z.B. nativer Währung oder 
 %~ An dieser Stelle soll erwähnt sein, dass es weitere
-Die beiden Vertreter der \gls{PBC} Quorum und Hyperledger geben die Möglichkeit durch ihre 
+Die beiden Vertreter der \gls{PBC} Quorum und Hyperledger geben die Möglichkeit durch den Ansatz der privaten \gls{BC} in Verbindung mit der modularen Gestaltung.
+Gerade letzteres fehlt BigchainDB derzeit noch.
 
-Instanzen einer \gls{BC} ist ein reines Signing z.B. mit Ethereum oder Quorum konfigurierbar.
+Für die Instanz einer \gls{BC} ist ein reines Signieren z.B. mit Ethereum oder Quorum konfigurierbar.
 Im folgenden sollen die gefundenen Mechanismen vom schwächsten zum stärksten hinsichtlich der Sicherheitsleistung benannt werden.
 Künftige Neuentwicklungen können hier entsprechend eingefügt werden.
 
@@ -108,12 +142,25 @@ Signing (engl. Unterzeichnen) ist die schwächste Form einen Konsens zu Erreiche
 Der Ansatz bricht mit dem Ziel Autoritäten zu ersetzen.
 Ein Teilnehmer in der Rolle eines \emph{Signers} bestimmt allein über den Konsens eines Blockes.
 
-Die Auswirkung von Voting ist die Notwendigkeit zur Akkreditierung der Stimmberechtigen, das Vertrauensproblem bleibt bestehen und wird nur vom Gegenstand des Votings auf das Voting selbst übertragen. Unter der Annahme, dass jeder Stimmberechtigte alles über die anderen weiß, ist auch ein virtuelles Voting denkbar.\footnote{\emph{Hashgraph} \autocite{p:hashgraph}} Damit wäre das Vertrauensproblem bei der Entscheidungsfindung keine Problem mehr, das Problem zur Akkreditierung wird aber nicht gelöst und um Bandbreite und Netzwerkverzögerung bereichert. Daher funktioniert der Ansatz bisher nur mit Einschränkungen\footnote{\url{https://www.reddit.com/r/hashgraph/comments/79g4po/hashgraph_is_not_a_blockchain_proofofwork/}  \autocite{w:reddit}} verbunden. Insb. müssen zwei drittel der Teilnehmer ehrlich bleiben.
+Die Auswirkung von Voting ist die Notwendigkeit zur Akkreditierung der Stimmberechtigten, das Vertrauensproblem bleibt bestehen und wird nur vom Gegenstand des Votings auf das Voting selbst übertragen.
+Unter der Annahme, dass jeder Stimmberechtigte alles über die anderen weiß, ist auch ein virtuelles Voting denkbar.\footnote{\emph{Hashgraph} \autocite{p:hashgraph}}
+Damit wäre das Vertrauensproblem bei der Entscheidungsfindung keine Problem mehr, das Problem zur Akkreditierung wird aber nicht gelöst.
+Daher funktioniert der Ansatz bisher nur mit Einschränkungen\footnote{\url{https://www.reddit.com/r/hashgraph/comments/79g4po/hashgraph_is_not_a_blockchain_proofofwork/}  \autocite{w:reddit}} verbunden.
 
-Für \gls{PoS} wird eine bestimmte Mindestmenge an nativen Währungseinheiten als Sicherheitsleistung für hinterlegt. Der Teilnehmer, der den Block erstellen darf und den Ausgabeaufschlag erhält muss zufällig ermittelt werden. Falls ein Teilnehmer einen vom Konsens abweichenden Block produziert ist seine Sicherheitsleistung für ihn verloren. Es ist beabsichtigt dies bei Ethereum ab der Phase~4 \enquote{Serenity Release} einzuführen.\footnote{\enquote{Die Phasen von Ethereum} \url{https://etherbasics.com/basics/ethereum-phasen/}}. Ein Voting kann ebenfalls ein \gls{PoS} darsstellen, indem z.B. statt Währungseinheiten die Stimmberechtigung als Sicherheitsleistung verwendet wird. Der wesentliche Grund für das Verfahren ist der dann ausbleibende hohe Energieverbrauch bei \gls{PoW} und die Eignung für erlaubnisfreie, globale \gls{BC}.
+Für \gls{PoS} wird z.B. eine bestimmte Mindestmenge an nativen Währungseinheiten als Sicherheitsleistung hinterlegt.
+Der Teilnehmer, der den Block erstellen darf und den Ausgabeaufschlag erhält muss zufällig ermittelt werden.
+Falls ein Teilnehmer einen vom Konsens abweichenden Block produziert ist seine Sicherheitsleistung für ihn verloren.
+Es ist beabsichtigt dies bei Ethereum ab der Phase~4 \enquote{Serenity Release} einzuführen.\footnote{\enquote{Die Phasen von Ethereum} \url{https://etherbasics.com/basics/ethereum-phasen/}}.
+Ein Voting könnte ebenfalls ein \gls{PoS} darstellen, indem statt Währungseinheiten z.B. die Stimmberechtigung als Sicherheitsleistung verwendet würde.
+Der wesentliche Grund für das Verfahren ist der dann ausbleibende hohe Energieverbrauch bei \gls{PoW} und die Eignung für erlaubnisfreie, globale \gls{BC}.
 %\footnote{ \autocite{p:pos:ouroboros}} \autocite{p:tendermint}
 
-Beim Ansatz von Bitcoin, dem \gls{PoW}, wird durch laufendes Hashing alternativer Kombinationen der Transaktionen und Metadaten für einen nächsten Block ein Ziel gesucht, das der algorithmisch vorgegeben \gls{glos:Schwierigkeit} im Netzwerk entspricht oder größer als diese ist. Dabei wird eine globale Konkurrenz um den \gls{glos:Ausgabeaufschlag} aufgebaut. Als Folge der Konkurrenzsituation in Verbindung mit der Steigerung des Wertes nativer Währungen -- insb. bei Bitcoin, Ethereum und Monero -- ist in der Vergangenheit der Energiebedarf ständig angestiegen. Teilnehmer, die bei dem Wettlauf nicht mithalten können, haben keine Möglichkeit den Konsens\footnote{Denkbar ist Zensur von Transaktionen durch aktives Verschweigen.} zu beeinflussen.
+Beim Ansatz von Bitcoin, dem \gls{PoW}, wird durch laufendes Hashing alternativer Kombinationen der Transaktionen und Metadaten für einen nächsten Block ein Ziel gesucht, das der algorithmisch vorgegeben \gls{glos:Schwierigkeit} im Netzwerk entspricht oder größer als diese ist.
+Dabei wird eine globale Konkurrenz um den \gls{glos:Ausgabeaufschlag} aufgebaut.
+Als Folge der Konkurrenzsituation in Verbindung mit der Steigerung des Wertes nativer Währungen -- insbesondere bei Bitcoin, Ethereum und Monero -- ist in der Vergangenheit der Energiebedarf ständig angestiegen.
+Teilnehmer, die bei dem Wettlauf nicht mithalten können, haben keine Möglichkeit den Konsens\footnote{Denkbar ist Zensur von Transaktionen durch aktives Verschweigen.} zu beeinflussen.
+
+Für die Wertung können die \gls{BCI} (\ref{chap:implementations}) z.B. über die Aspekte zur \gls{BFT}, Austauschbarkeit des Konsensverfahrens, Erlaubnisfreiheit und Dezentralität vorgenommen werden.
 
 \subsection{Erlaubnisfreiheit}\label{krit:erlaubnisfreiheit}
 
@@ -125,40 +172,69 @@ Der Fall unterschiedlicher Rollen unter den Teilnehmern muss hier vergleichend b
 %~ Die frage nach Autoritäten ist immer eine Frage nach Vertrauen. Im Unternehmensumfeld lässt dies auch das Eigentum am Geschäft bezweifeln.
 %~ In diesem Fall ist zwischen den verschiendenen \gls{BCI} keine entscheidende Abstufung erkennbar.
 %~ Daher wird diese Bewertung einstweilen als binär angenommen.
+Hyperledger und Quorum sind klar erlaubnisorientiert.
+Öffentliche Transaktionen können zwar gelesen werden, aber eigene Transaktionen sind nur von akkreditierten Teilnehmern erwünscht.
+BigchainDB bietet die Möglichkeit des Zugangs auf Basis der Kostenbeteiligung für API-Zugriffe an.
 
 \subsection{Programmierbarkeit}\label{krit:programmierbarkeit}
 
 Die Möglichkeit des programmierbaren Geldes kann nicht nur binär betrachtet werden.
-Aber sie ist notwendig dem Protokoll inhärent. Die Programmierung in einer weiteren Schicht (engl. 2nd Layer) außerhalb des Konsensprotokolles ist davon unberührt.
+Aber sie ist notwendig dem Protokoll inhärent.
+Die Programmierung in einer weiteren Schicht (engl. 2nd Layer) außerhalb des Konsensprotokolls ist davon unberührt.
 Ausgenommen werden an dieser Stelle Eigenschaften wie Sprachkonzepte oder konkrete Unterstützung bezüglich der \gls{IDE} -- s.a. \nameref{krit:werkzeuge}.
 Dagegen betrachtet werden muss die Turingvollständigkeit, also ob jedes berechenbare Problem zumindest theoretisch gelöst werden kann.  
+
+Die drei betrachteten \gls{BCI} bieten Programmierbarkeit.
+Quorum erbt u.a. Solidity von Ethereum.
+Für Hyperledger kann Chaincode u.a. mit Go geschrieben werden.
+Dagegen begrenzt BigchainDB ihre Smart~Contracts in der Laufzeit indem nur Operationen unter bestimmten Konditionen ausgeführt werden und ist damit nicht turingvollständig. 
 %~ sofern der jeweiligen \gls{BCI} inhärent
+
+%~ Praktische Limits?
 
 %~ \subsection{Kapazität}\label{krit:kapazitaet}
 
 %~ Die Blockgröße
 
-\subsection{Interchain-Unterstützung}\label{krit:interchain}
+%~ \subsection{Interchain-Unterstützung}\label{krit:interchain}
+
+%~ Für die mögliche Interaktion ist interessant inwiefern die Verbindung verschiedener Instanzen einer \gls{BCI}, oder gar verschiedenen \gls{BCI} möglich ist.
+
+%~ Hyperledger und BigchainDB bieten beide Unterstützung für das Interledger-Protokoll.
+%~ Quorum hat hier keinen Schwerpunkt, kann aber direkt von einer Lösung für Ethereum profitieren.
 
 \subsection{Native Währung}\label{krit:waehrung}
 
 Eine \gls{BC} kann für ihr Anreizsystem eine native Währung einsetzen.
+
+%~ \subsection{Fungibilität}\label{krit:fungibility}
+
+Diese Eigenschaft beschreibt die Gleichwertigkeit bzw. Austauschbarkeit der nativen Währungseinheiten.
+Hier ist interessant, ob die Einheiten anhand Teilnehmern oder Herkunft unterschieden werden können.
+Transparenz der Besitzverhältnisse eines Teilnehmers bedeutet auch, dass diesem -- und anderen über Transaktionen mit ihm in Verbindung stehenden Teilnehmern -- weitere Eigenschaften zugeordnet werden können.
+Damit können ggf. agierende Personen identifiziert werden oder eine \enquote{Verschmutzung} von Währungseinheiten begründet werden.
+
 Für den Unternehmenseinsatz kann dies je nach Jurisdiktion ein zusätzlicher Aufwand sein.
 Vorgaben hierzu können geändert werden,  Anpassungen an eine Regulierung und im schlimmsten Fall die Außerbetriebnahme der \gls{BC} notwendig machen.
 
-\subsection{Fungibilität}\label{krit:fungibility}
+Für den Unternehmenseinsatz werden daher native Währungen eher ein Hinderungsgrund.
+Stattdessen ist die Umsetzung als stark limitierte Token zu bevorzugen.
+Im Fall privater Blockchains können diese Assets die Beteiligung am Konsortium bzw. den Kosten widerspiegeln.
 
-Diese Eigenschaft beschreib die gleichwertigkeit bzw. Austauschbarkeit der nativen Währungseinheiten.
-Die native Währung betreffend ist interessant, ob die Einheiten eines Teilnehmers von denen eines anderen Teilnehmers unterschieden werden können.
-Transparenz der Besitzverhältnisse eines Teilnehmers bedeutet auch, dass diesem -- und anderen über Transaktionen mit ihm in Verbindung stehenden Teilnehemrn -- weitere Eigenschaften zugeordnet werden können. Damit können ggf. agierende Personen identifiziert werden oder eine \enquote{Verschmutzung} von Währungseinheiten begründet werden.
+Quorum behält Ether als native Währung für die Beschränkung der Laufzeit in der Virtuellen Maschine. 
 
-\subsection{Transaktionsgeschwindigkeit}\label{krit:transaktionsgeschwindigkeit}
+\subsection{Performance}\label{krit:performance}
 
 Die Frage nach Performance ist eine naheliegende Entscheidungsgrundlage bei der Beschaffung von IT-Systemen.
-Benchmarks zum Vergleich verschiedener \gls{BCI} stellen gerne auf die \gls{TPS} ab.
+Die damit optimierten betrieblichen Prozesse sollen nicht nur effektiv sein, sondern effizient.
+Benchmarks zum Vergleich verschiedener \gls{BCI} stellen gerne auf die \gls{TPS} ab.\footnote{s.a. \enquote{schnellste Blockchain} \autocite{w:rbbc}}
 Die Vergleichbarkeit ist aber nur bedingt gegeben, da Blockgröße und Transaktionsgröße abhängig von den Vorgaben sehr starke Unterschiede aufweisen können.
 Zusätzlich unterscheidet sich die Transaktionsgröße für verschiedene Anwendunsgfälle sehr stark.
-Eine pauschale oder durchschnittliche Angabe sollte daher nicht die primäre Grundlage für eine Entscheidung sein.
+Der Grad der Verteilung hat einen direkten Einfluss auf die Verbreitungsgeschwindigkeit von Transaktionen und Blocks im Netzwerk; ebenso wie die Übertragungstechnik.
+Eine pauschale (oder durchschnittliche) Angabe sollte -- ohne Einbeziehung im Speziellen des \nameref{krit:consensus} (\ref{krit:consensus}) -- nicht die primäre Grundlage für eine Entscheidung sein. An dieser Stelle sollen daher keine Zahlen aus voraussichtlich stark optimierten Tests genannt werden.
+%~ An dieser Stelle wäre die 
+
+%~ Da die Skalierungsmaßnahmen
 
 %~ \subsection{Periode und Stetigkeit der Blockzeit}\label{blocktime}
 
@@ -167,7 +243,7 @@ Eine pauschale oder durchschnittliche Angabe sollte daher nicht die primäre Gru
 
 %~ Die Blöcke werden im Fall von \gls{PoW} Blockchain, wie Bitcoin und Ethereum, in statistisch gleichen großen Periode erschaffen. Am Bsp. Bitcoin wird diese statistische Periode von 10~Minuten am Graphen sehr deutlich erkennbar fast ständig unterschritten. Dieser Umstand hat abhängig von der \gls{glos:Hashrate} auch ein schnelleres Voranschreiten des \gls{glos:Halfing}s zur Folge, als es ursprünglich prognostiziert wurde.
 
-%~ U.a. über die Website \href{https://bitinfocharts.com/comparison/bitcoin-confirmationtime.html}{bitinfocharts.com} können insb. zum Projektstart starke Schwankungen beobachtet werden. Dies lässt sich über die geringe Anzahl der Teilnehmer zu diesem Zeitpunkt erklären.
+%~ U.a. über die Website \href{https://bitinfocharts.com/comparison/bitcoin-confirmationtime.html}{bitinfocharts.com} können insbesondere zum Projektstart starke Schwankungen beobachtet werden. Dies lässt sich über die geringe Anzahl der Teilnehmer zu diesem Zeitpunkt erklären.
 %~ Weitere Schwankungen kennzeichnen problematische Ereignisse in der globalen Blockchain wie Schwierigkeiten von dominierenden Marktteilnehmern (Bsp. \gls{glos:Exchange}), staatliche Regulierung und medialer Hype oder einfach nur Schwankungen im Preis\footnote{Bsp. 12.\,November~2017 Kurzzeitiger Einbruch um ca.\,20\,\% \autocite{w:bitcoinde-kurs}} die mit solchen Ereignissen und der Schwierigkeit im Netzwerk korrelieren.
 %~ % Ähnliches ist also auch im Unternehmenseinsatz bei Updates zu erwarten, die nicht gleichzeitig 
 
@@ -191,7 +267,7 @@ Eine pauschale oder durchschnittliche Angabe sollte daher nicht die primäre Gru
 %~ \end{figure}
 
 %~ Bei Ethereum Abb.\,\ref{blocktime-eth} tritt eine ähnliche Auffälligkeit zur Anfangsphase auf.
-%~ Zusätzlich sind sehr Deutlich Auswirkungen im März~2016\footnote{Homestead Release am 14.\,März~2016 \autocite{w:etherchain-hardforks}} und das Einsetzen der \enquote{Schwierigkeits-Bombe} (Engl. Difficulty-Bomb) bis zum abrupten Abfall\foornote{ab April~2017 (am Graph abgelesen) bis zum Byzantium Release am 16.\, Oktober~2017 \autocite{w:etherchain-hardforks}}. Beide Änderungen stehen je mit einer \gls{glos:Hard~Fork} in Verbindung.
+%~ Zusätzlich sind sehr Deutlich Auswirkungen im März~2016\footnote{Homestead Release am 14.\,März~2016 \autocite{w:etherchain-hardforks}} und das Einsetzen der \enquote{Schwierigkeits-Bombe} (Engl. Difficulty-Bomb) bis zum abrupten Abfall\footnote{ab April~2017 (am Graph abgelesen) bis zum Byzantium Release am 16.\, Oktober~2017 \autocite{w:etherchain-hardforks}}. Beide Änderungen stehen je mit einer \gls{glos:Hard~Fork} in Verbindung.
 
 %\begin{figure}
 %\includegraphics[width=\textwidth]{img/screenshot-bitinfocharts-2018-01-13-18-27-38}
@@ -213,10 +289,9 @@ Eine pauschale oder durchschnittliche Angabe sollte daher nicht die primäre Gru
 %%
 \section{Wirtschaftliche Gesichtspunkte}\label{krit:oeconomics}
 
-Bevor naheliegende Kosten betrachtet werden, soll auch auf die Ertragsseite der Wirtschaftlichkeoitsbetrachtung hingewiesen werden.
-Die Bewertung ist sehr stark vom Einzelfall mit vielen Einflussfaktoren 
-abhängig und wird daher nicht als Kriterium aufgenommen.
-Was Wertung von Angaben zu Kosten und Erträgen angeht, so sind höhere Kosten immer schlechter zu werden und höhere Erträge besser.
+Bevor naheliegende Kosten betrachtet werden, soll auch auf die Ertragsseite der Wirtschaftlichkeitsbetrachtung hingewiesen werden.
+Die Bewertung ist sehr stark vom Einzelfall mit vielen Einflussfaktoren abhängig und wird daher in der Arbeit nicht als Kriterium aufgenommen.
+Was Wertung von Angaben zu Kosten und Erträgen angeht, so sind höhere Kosten immer schlechter zu werten und höhere Erträge besser.
 
 \subsection{Personalverfügbarkeit}\label{krit:personal}
 
@@ -233,14 +308,18 @@ Die Wertung für geringere Personalverfügbarkeit ist kleiner als die höherer.
 
 %~ (gewonnen aus \nameref{first:kosten})
 Für die Verwendung im konkreten Unternehmen notwendigen Einmalaufwendungen können eine wesentliche Zugangshürde zu Technologie darstellen.
-Dies kann auch trotz \emph{Offener Standards} und Open~Source Software der Fall sein wenn einzelne Akteure ihre Position oder ihren Wissensvorsprung monetarisieren.
-Initiale Kosten können insb. Anschaffung von Hardware und ggf. Lizenzkosten\footnote{Bsp. Softwarelizenzen, Lizensierung von Patenten; auch Konzessionen wie die \emph{BitLicense} \autocite{w:bitlicense}} darsellen.
+Dies kann auch trotz \emph{offener Standards} und Open~Source Software der Fall sein wenn einzelne Akteure ihre Position oder ihren Wissensvorsprung monetarisieren.
+Initiale Kosten können insbesondere Anschaffung von Hardware und ggf. Lizenzkosten\footnote{Bsp. Softwarelizenzen, Nutzungslizenz für Patente; auch Konzessionen wie die \emph{BitLicense} \autocite{w:bitlicense}} darstellen.
 Auch andere Einmalaufwendungen -- z.B. für den Zugang zu Verbänden -- zählen hierzu.
+
+BigchainDB hat keine Preisliste, ist aber gesprächsbereit sofern Interesse an Beratung besteht.
+Bei Hyperledger ist die intensive Mitarbeit für gewinnorientierte Unternehmen Gebührenpflichtig.
+Gemeinnützige Organisationen können sich für eine kostenlose Mitgliedschaft bewerben.
 
 \subsection{Laufende Kosten}
 
 Abgesetzt von den Beschaffungskosten sind auch laufende Kosten zu betrachten.
-Hier insb. Beiträge zu Verbänden und auf die \gls{BCI} beziehbare Personalkosten (s.a. \ref{krit:personal}) wie Gehälter und Weiterbildung.
+Hier insbesondere Beiträge zu Verbänden und auf die \gls{BCI} beziehbare Personalkosten (s.a. \ref{krit:personal}) wie Gehälter und Weiterbildung.
 
 %~ (gewonnen aus \nameref{first:regulierung})
 Abgesehen von den Kosten ist auch die Beeinflussung des Umfeldes durch

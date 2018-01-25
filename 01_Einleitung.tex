@@ -20,7 +20,6 @@
 %Textteil
 
 \chapter{Einleitung}\label{einleitung}
-%\pagestyle{plain} %http://www.weinelt.de/latex/pagestyle.html
 
 % warum relevant?
 
@@ -43,6 +42,7 @@ einfachen Mitarbeitern und Vorgesetzten,
 zwischen Mitarbeitern mit bestimmten Verantwortungen gegenüber anderen Mitarbeiten
 und nicht zuletzt
 zwischen Vertragsparteien wie z.B. Beteiligten aus unterschiedlichen Unternehmen bis hin zu Kunden.
+Gleichzeitig steht die ökonomische Realität einem teilweise ideologisch geprägten verteilten, öffentlichen, erlaubnisfreien Idealbild entgegen.
 
 % Damit ermöglicht ein solches System eine hochdynamische Menge an Teilnehmern im Netzwerk.
 % durch einen ständigen Akkreditierungsprozess zur Prüfung der Teilnehmer 
@@ -68,9 +68,11 @@ Seitens der \gls{HSM} wurde im Jahr~2017 das \gls{BCCM}\footnote{Website \autoci
 %%%
 %Ausgangssituation und Problemstellung
 
-Es gibt insb. seit Ende des Jahres~2013\footnote{s.a. \enquote{Ethereum Whitepaper} \autocite{p:ethereum}} zahlreiche Vertreter im Umfeld dieser speziellen Datenbank-Technologie.
-Unternehmen stehen vor der Herausforderung diese nach einheitlichen Kriterien zu betrachten um selbst eine Bewertung und Auswahl treffen zu können.
-Hierzu sollen im Rahmen der Arbeit einzelne am Markt vertretene Blockchain-Implementierungen, in auf weitere Neuentwicklungen anwendbarer Weise, betrachtet werden.
+Es gibt insbesondere seit Ende des Jahres~2013\footnote{s.a. \enquote{Ethereum Whitepaper} \autocite{p:ethereum}} zahlreiche Vertreter im Umfeld dieser speziellen Datenbank-Technologie.
+Die viel diskutierte Anwendung für die Finanzierung von Unternehmungen mit einem \gls{ICO} und die damit einher gehenden meist spekulativ getriebenen Wertsteigerungen im Jahr~2017 bringt viel Aufmerksamkeit auch durch die Politik ein.
+Eine weitere Auswirkung ist auch der Entwurf immer neuer Anwendungsfälle für die \gls{BCT}.
+Unternehmen stehen im Zusammenhang mit den eigenen Prozessen und neuen Geschäftsideen vor der Herausforderung neu erscheinende \gls{BCI} zu bewerten um selbst Auswahl treffen zu können.
+Hierzu sollen im Rahmen der Arbeit einzelne am Markt vertretene Blockchain-Implementierungen, in wiederholbarer und auf weitere Neuentwicklungen anwendbarer Weise, betrachtet werden.
 
 \section{Ziel der Arbeit}
 
@@ -78,7 +80,7 @@ Hierzu sollen im Rahmen der Arbeit einzelne am Markt vertretene Blockchain-Imple
 
 Es soll ein System zur Bewertung von \gls{BCI} entworfen werden.
 Die dafür notwendigen Kriterien sollen schrittweise recherchiert werden.
-Dazu dient auch die Betrachtung von Anwendungsfällen sowie bestehender \gls{BCI}.
+Dazu soll die Betrachtung von Anwendungsfällen sowie bestehender \gls{BCI} dienen.
 Gefundene Kriterien müssen im Kontext der Bewertung und Darstellung quantifizierbar gestaltet sein.
 Die Frage der Darstellung soll hinsichtlich der Unterstützung von Präsentation und Entscheidungsprozessen behandelt werden.
 
@@ -107,36 +109,40 @@ Sie bieten einen Anreiz zur Einhaltung des Protokolls oder können wie im Fall v
 Durch die Möglichkeit die Geldmenge algorithmisch zu steuern sind Kryptowährungen hinsichtlich der Geldmenge transparenter\footnote{Angaben zur Geldmenge z.B. auf Coinmarketcap \autocite{w:cmc}} als Geldmengenberichte\footnote{Keine Aussage zur gesamten Geldmenge \autocite{w:ecb-moneydev}} der Zentralbank.
 Neben diesen nativen Währungen kann u.a. durch die Eigenschaft der Programmierbarkeit dieses Geldes weitere sog. Token\footnote{\enquote{What is An Ethereum Token} \autocite{w:eth-token}} oder Colored Coins\footnote{Colored Coins \autocite{b:mastering-bitcoin}%, \url{https://github.com/bitcoinbook/bitcoinbook/blob/8d01749bcf45f69f36cf23606bbbf3f0bd540db3/colored_coins.asciidoc}
 } erstellt werden.
-Auch ohne native Kryptowährung sind diese Möglichlkeiten gegeben, lediglich der Anreiz zur Beteiligung an der \gls{BC} wäre dann ein anderer und die Frage nach der Verteilung der Token auf.
+Auch ohne native Kryptowährung sind diese Möglichkeiten gegeben, lediglich der Anreiz zur Beteiligung an der \gls{BC} wäre dann ein anderer und die Frage nach der Verteilung der Token auf.
 %~ Eine Möglichkeit für den Einsatz von Kryptowährungen ist der Betrieb von \gls{DApp} vorzusehen.
 %~ Die Eigenschaften die zur Nutzbarkeit von Kryptowährungen führen sind damit Bestandteil der Arbeit. Nicht Bestandteil sind Fragen zu Legalität, Legitimität, Handel und anderen Gesichtspunkten der Finanzwirtschaft.
 
 Die später näher betrachteten \gls{BCI} sollen durch ein Verfahren bewertet werden.
 Sie sind damit Objekte der Bewertung.
-Die beurteilung der Objekte soll anhand konstituierender Eigenschaften stattfinden.\footnote{\cite{b:strassert:entscheidungen}}
+Die Beurteilung der Objekte soll anhand konstituierender Eigenschaften stattfinden.\footnote{\cite{b:strassert:entscheidungen}}
 Diese Eigenschaften nennen wir Kriterien für unsere Entscheidung.
 
 \section{Methode}
 
 Diese Arbeit basiert auf qualitativer Recherche unter Nutzung von Sekundärforschung, Forschungsüberblick, Betrachtung von Anwendungsfällen und bestehenden \gls{BCI} um Kriterien für die Beurteilung aufzufinden.
-Damit wird der Herausforderung stetig neuer Veröffentlichungen um die Technologie Rechnung getragen, da die Forschung dazu noch nicht abgeschlossen und durch neue Ansätze geprägt ist. 
+Damit wird der Herausforderung stetig neuer Veröffentlichungen um die Technologie Rechnung getragen, da die Forschung dazu noch nicht abgeschlossen und durch neue Ansätze geprägt ist.
 
 Um mehr über die Grenzen der \gls{BCT} zu erfahren sollen Anwendungsfälle betrachtet werden, die eine Eignung für den Unternehmenseinsatz aufweisen.
 Als allgemeine Annahme wird verfolgt, dass technologische Grenzen durch eine konkrete Implementierung entweder deutlich oder aber von der Implementierung abgemildert werden.
 %Sofern solche Grenzen erkannt werden können, eignen sie sich als Kriterium für den Vergleich über verschiedene \gls{BCI} hinweg.
 %D.h. über bekannt gewordene Anwendungsfälle sollen Kriterien ermittelt werden, die als Vor-/Nachteilen der \gls{BCT} oder der \gls{BCI} erkannt werden können.
-Die theoretischen Vorteile werden bei der Werbung für Produkte üblicherweise stark betont, weshalb hier insb. auf Schwächen geachtet werden soll.
+Die theoretischen Vorteile werden bei der Werbung für Produkte üblicherweise stark betont, weshalb hier insbesondere auf Schwächen geachtet werden soll.
 
 \textbf{Hypothese~\rom{1}} Anwendungsfälle zeigen Schwächen von \gls{BCI} auf.
 
 Das zu Demonstrationszwecken gewählte Feld der infrage stehenden \gls{BCI} soll besonders für die Verwendung in Unternehmen geeignet sein um daraus erkannte Kriterien auch auf Neuerscheinungen vergleichend anwenden zu können.
-Deshalb wird die Auswahl darauf beruhen inwiefern Unternehmen bereits mit den konkreten \gls{BCI} befasst sind.
+Deshalb wird die Auswahl von betrachteten Kandidaten darauf beruhen inwiefern Unternehmen bereits mit diesen konkreten \gls{BCI} befasst sind.
 
 \textbf{Hypothese~\rom{2}} Blockchain-Implementierungen die für den Unternehmenseinsatz geeignet sind, werden primär von Firmen oder Verbänden voran getrieben.
 
+Die von Unternehmen vorangetriebenen \gls{BCI} werden durch sehr spezifische Anforderungen getrieben.
+Dabei sind Kompromisse für geringere Kosten sehr wahrscheinlich.
+Daher wird vermutet, dass sich Schwächen im Vergleich zum theoretischen Idealbild finden lassen.
+
 \textbf{Hypothese~\rom{3}} Aus den erkannten Schwächen können aussagekräftige Kriterien für die Beurteilung gezogen werden.
 
-Für die quantitative Bewertung sollen Kriterien die nicht binär oder durch eine Bewertung in Zahlen ausgedrück werden auf eine solche zurück geführt werden.
+Für die quantitative Bewertung sollen Kriterien die nicht binär oder durch eine Bewertung in Zahlen ausgedrückt werden auf eine solche zurück geführt werden.
 Daran anschließend soll eine geeignete Vergleichsmöglichkeit und Darstellung gefunden werden.
 
 %~ Die erfolgte quantitative Bewertung soll in geeigneter Art und Weise übersichtlich 
@@ -154,7 +160,7 @@ Daran anschließend soll eine geeignete Vergleichsmöglichkeit und Darstellung g
 
 %Bekannte Vertreter sind Lose des Webportals \href{http://klamm.de/}{klamm.de} oder Spielwährungen in u.a. \emph{World of Warcraft}. Ihnen wird teilweise auch über die Ausgabestelle hinaus ein Wert, z.B. durch den Aufwand der notwendig ist um an sie heran zu kommen, beigemessen. Das führt auch dazu, dass sie als Tauschmittel außerhalb des angedachten Bereiches verwendet werden.
 %Tatsächlich sind staatliche Währungen in den meisten Fällen eine virtuelle Währung, die mit einer Garantie eines Staates oder einer Staatengemeinschaft und ihrer Zentralbanken versehen ist.
-%Sofern eine öffentliche, globale, erlaubnisfreie und zensur-resistente Blockchain \autocite{}
+%Sofern eine öffentliche, globale, erlaubnisfreie und zensur-resistente Blockchain
 
 %Abgrenzung der Themenstellung
 

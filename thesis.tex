@@ -20,19 +20,6 @@
 \tableofcontents
 \cleardoublepage 
 
-%Glossar ausgeben
-\printglossary[style=altlist,title=Glossar,toctitle=Glossar]
-%~ \printglossary[title=Stichwortverzeichnis,toctitle=Stichwortverzeichnis,] 
-
-\clearpage 
- 
-%Abkürzungen ausgeben
-\printglossary[type=\acronymtype,style=long,title=Abkürzungsverzeichnis,toctitle=Abkürzungsverzeichnis]
-%~ \printglossary[type=acronym,title=Abkürzungsverzeichnis,toctitle=Abkürzungsverzeichnis] 
- 
-%Symbole ausgeben
-%~ \printglossary[type=symbolslist,style=long]\cleardoublepage 
-
 %~ \,
 %~ \vspace{30em}
 %~ {
@@ -56,13 +43,13 @@
 \newpage
 
 %%%
-\chapter{Anwendungsfälle}
+\chapter{Anwendungsfälle}\label{chap:usecases}
 %%%
 \input{02_anwendungsfaelle}
 
 
 %%%
-\chapter{Auswahl von Blockchain-Implementierungen}
+\chapter{Auswahl von Blockchain-Implementierungen}\label{chap:implementations}
 %%%
 \input{03_implementierungen}
 
@@ -160,6 +147,28 @@
 %~ \addstarredchapter{Anlagen}
 %~ \minitoc
 \clearpage
+
+%Glossar ausgeben
+\printglossary[style=altlist,title=Glossar,toctitle=Glossar]
+%~ \printglossary[title=Stichwortverzeichnis,toctitle=Stichwortverzeichnis,] 
+
+\clearpage 
+ 
+%Abkürzungen ausgeben
+\printglossary[type=\acronymtype,style=long,title=Abkürzungsverzeichnis,toctitle=Abkürzungsverzeichnis]
+%~ \printglossary[type=acronym,title=Abkürzungsverzeichnis,toctitle=Abkürzungsverzeichnis] 
+ 
+\clearpage 
+
+%Symbole ausgeben
+%~ \printglossary[type=symbolslist,style=long]\cleardoublepage 
+
+\listoffigures
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+%~ \listoftables
+%~ \addcontentsline{toc}{section}{Tabellenverzeichnis}
+
+\clearpage 
 
 %~ \addsec{Vorgehen mit VirtualBox}\label{apx:vb}
 %~ \input{vb}

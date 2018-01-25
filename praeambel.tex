@@ -10,6 +10,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 
+% Mathematics
+\usepackage{empheq}
+
+% tables
+%~ \usepackage{tabularx}
+
 % Einzugsart
 \setlength{\parindent}{0em} 
 \setlength{\parskip}{2em}
@@ -37,7 +43,7 @@
 \usepackage[autostyle=true,german=quotes]{csquotes}
 \usepackage{graphicx}
 \usepackage{tikz}
-%~ \input{scale-makro.inc.tex}
+\input{scale-makro.inc.tex}
 \usepackage{color}
 %~ \usepackage{pdfpages}
 \usepackage{comment}
@@ -150,18 +156,19 @@ section]      %optionen: [numberedsection|section] im Inhaltsverzeichnis auf "in
 %~ \makeindex
 
 \usepackage{bookmark}
-%~ \hypersetup{%
-	%~ draft,
+\usepackage{hyperref}
+\hypersetup{%
 	%pdfa,
 	%unicode,
 	%driverfallback=hpdftex,
 	%hypertex,
-	%colorlinks=false,pdfborderstyle={/S/U/W 1},% for non-PDF/A
+	colorlinks=false,
+	hidelinks,
+	%~ pdfborderstyle={/S/U/W 1},% for non-PDF/A
 	%~ colorlinks,
 	%draft,%no links
 	%~ allcolors=black,%for PDF/A with pdfx
-%~ }
-\usepackage{hyperref}
+}
 \usepackage[top=2cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
 
 % minitoc
@@ -175,4 +182,7 @@ section]      %optionen: [numberedsection|section] im Inhaltsverzeichnis auf "in
 %~ \WarningFilter{minitoc(hints)}{W0049}
 
 % Kleiner Kommentar vor der bib, zitation funktioniert hierin nicht
-\newcommand{\quellenHinweistext}{Online aufgefundene Quellen wurden via \href{https://archive.org/}{archive.org} gesichert und umfangreiche Werke bei Abgabe auf dem Datenträger beigelegt.}
+\newcommand{\quellenHinweistext}{Online aufgefundene Quellen wurden via \href{https://archive.org/}{archive.org} gesichert% und umfangreiche Werke bei Abgabe auf dem Datenträger beigelegt%
+.}
+
+\renewcommand*{\emph}[1]{#1}
