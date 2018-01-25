@@ -1,4 +1,5 @@
-\documentclass[german,12pt,paper=a4,DIV=calc,twoside, openright]{scrreprt}
+\documentclass[german,12pt,paper=a4,DIV=calc,twoside, openright]{scrreprt%scrartcl%
+}
 %~ parskip=,%
 %~ headsepline,
 %~ footsepline=openright,
@@ -17,8 +18,8 @@
 %~ \usepackage{tabularx}
 
 % Einzugsart
-\setlength{\parindent}{0em} 
-\setlength{\parskip}{2em}
+%~ \setlength{\parindent}{0em} 
+%~ \setlength{\parskip}{2em}
 
 % spacing for paragraphs but no indent
 \usepackage[onehalfspacing]{setspace}
@@ -169,8 +170,7 @@ section]      %optionen: [numberedsection|section] im Inhaltsverzeichnis auf "in
 	%draft,%no links
 	%~ allcolors=black,%for PDF/A with pdfx
 }
-\usepackage[top=2cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
-
+\usepackage[top=2cm,bottom=25mm,left=25mm,right=25mm]{geometry}
 % minitoc
 %~ \usepackage{minitoc}
 % do not show minitoc error msgs

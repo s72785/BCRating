@@ -1,7 +1,7 @@
 %Glossar-Einträge
 \newglossaryentry{glos:Dezentralisierung}{
 name=Dezentralisierung,
-description={Als Gegensatz zur Zentralisierung. Hier insbesondere bezüglich Teilnehmern in Computernetzwerken bzw. Entscheidungsprozessen. Die Steigerung ist: Zentralisiert, Dezentralisiert, Verteilt.%
+description={Als Gegensatz zur Zentralisierung. Hier insbesondere bezüglich Teilnehmern in Computernetzwerken bzw. Entscheidungsprozessen. Die Steigerung ist: zentralisiert, dezentralisiert, verteilt.%
 }}
 
 \newglossaryentry{glos:MerkeTree}{
@@ -11,12 +11,12 @@ description={Ein Baum -- aus durch seine Hashwerte rekursiv paarweise verbundene
 
 \newglossaryentry{glos:Chaincode}{
 name=Chaincode,
-description={Angelehnt an Smart~Contracts programmierbare Geschäftslogik mit gekapseltem State bei Hyperledger Fabric. Betroffene Teilnehmer müssen zustimmen.%
+description={Angelehnt an Smart~Contracts programmierbare Geschäftslogik mit gekapseltem State bei \ua{} Hyperledger Fabric. Betroffene Teilnehmer müssen zustimmen.%
 }}
 
 \newglossaryentry{glos:Web3}{
 name=Web3,
-description={JavaScript API für Ethereum.%
+description={API (\ua{} in JavaScript, Python) für Ethereum.%
 }}
 
 \newglossaryentry{glos:Fork}{
@@ -31,12 +31,12 @@ description={Vereinfacht: Nicht rückwärtskompatibel Protokolländerungen die a
 
 \newglossaryentry{glos:Soft Fork}{
 name=Soft Fork,
-description={Vereinfacht: Rückwärtskompatibel Protokolländerungen die ab einem bestimmten Block Gültigkeit erlangen.%
+description={Vereinfacht: Rückwärtskompatible Protokolländerungen die ab einem bestimmten Block Gültigkeit erlangen.%
 }}
 
 \newglossaryentry{glos:SmartContract}{
 name=Smart Contract,
-description={Auch Chaincode (Firma IBM) genannte Programme, die auf einer Blockchain bzw. im Netzwerk der Teilnehmer laufen. Die Umsetzung erfolgt über einen Stack-basierte Programmierung deren Ergebnis den State beeinflusst. Ein Bsp. ist bei Bitcoin das an Assembler erinnernde \enquote{Script} und bei Ethereum davon abstrahiert höhere Programmiersprachen.%
+description={Auch Chaincode (Firma IBM) genannte Programme, die auf einer Blockchain bzw. im Netzwerk der Teilnehmer laufen. Die Umsetzung erfolgt über einen Stack-basierte Programmierung deren Ergebnis den State beeinflusst. Ein Bsp. ist das an Assembler erinnernde \enquote{Script} bei Bitcoin und davon abstrahiert höhere Programmiersprachen (\zB{} Solidity) bei Ethereum.%
 }}
 
 \newglossaryentry{glos:State}{
@@ -51,28 +51,23 @@ description={Bildlicher Begriff für eine Datenstruktur, die Transaktionen zusam
 
 \newglossaryentry{glos:FinTech}{
 name=Financial Services and Technology,
-description={Unternehmen, die mit Unterstützung von moderner Technologie Finanzdienstleistungen anbieten% \autocite{w:lexika-econimics}
+description={Unternehmen, die mit Unterstützung von moderner Technologie Finanzdienstleistungen anbieten%
 }}
 
 \newglossaryentry{glos:CR}{
 name=Zensurresistenz,
-description={Wie stark ein betrachteter Aspekt gegen Verschweigen, Löschen oder Veränderung geschützt ist.}
-}
+description={Wie stark ein betrachteter Aspekt gegen Verschweigen, Löschen oder Veränderung geschützt ist.%
+}}
 
 \newglossaryentry{glos:Konsens}{
 name=Konsens,
-description={Engl. Consensus. Hier die als Wahrheit angenommene, algorithmisch gesteuerte Aussagen wie Reihenfolge aber auch Zeit oder State in einem verteilten Netzwerk.
+description={Hier die als wahr angenommenen, algorithmisch gesteuerten Aussagen zu Reihenfolge aber auch Zeit oder State in einem verteilten Netzwerk.%
 }}
 
 \newglossaryentry{glos:Mining}{
 name=Mining,
-description={Englischer Begriff für \emph{Schürfen}. Ein Verfahren zum finden des nächsten Blocks, insbesondere bei Blockchains die auf Proof of Work basieren. Die Tätigkeit der Netzwerkteilnehmer wird damit bildlich dem Freilegen von seltenen  gleichgesetzt.}
-}
-
-\newglossaryentry{glos:Transaktion}{
-name=Transaktion,
-description={Datenstruktur, die ein Asset }
-}
+description={Englischer Begriff für \emph{Schürfen}. Ein Verfahren zum finden des nächsten Blocks, insbesondere bei Blockchains die auf Proof of Work basieren. Die Tätigkeit der Netzwerkteilnehmer wird damit bildlich dem Freilegen von seltenen Metallen gleichgesetzt.%
+}}
 
 \newglossaryentry{glos:IRC}{
 name=Internet Relay Chat,
@@ -88,17 +83,17 @@ description={Ein System, das die Verteilung und Überprüfung von öffentlichen 
 name=Proof of Work,
 description={Ein auf Hashcash %(s. Whitepaper \cite{p:bitcoin})
 basierendes Verfahren, dass die Erstellung neuer Blöcke mit dem \emph{Ausgabeaufschlag} belohnt.% Die Schwierigkeit wird durch stetiges Suchen nach einem Ziel (\zB{} Eigenschaft eines Hashes) steuert. Dieses Ziel kann \ua{} durch die Anzahl der führenden Nullen %(s. \href{https://github.com/bitcoinbook/bitcoinbook/blob/8d01749bcf45f69f36cf23606bbbf3f0bd540db3/ch10.asciidoc\#proof-of-work-algorithm}{Proof of Work}% \autocite{b:mastering-bitcoin})
-eines Hashes dargestellt werden, wie dies bei Bitcoin der Fall ist.%
+%~ eines Hashes dargestellt werden, wie dies bei Bitcoin der Fall ist.%
 }}
 
 \newglossaryentry{glos:PoS}{
 name=Proof of Stake,
-description={Ein Konsensalgorithmen mit Anreizsystem durch einen riskierten Einsatz des eigenen Vermögens (\zB{} an Kryptowährung). Ein Problem ist die zufällige Auswahl der über die Richtigkeit bestimmenden Teilnehmer für den jeweiligen Block. Teilweise wird dieser Ansatz durch Delegation zu \emph{delegated Proof of Stake} (dPoS) ergänzt.%
+description={Ein Konsens mit Anreizsystem basierend auf einem riskierten Einsatz des eigenen Vermögens (\zB{} an Kryptowährung). Ein Problem ist die zufällige Auswahl bestimmenden Teilnehmer für den jeweiligen Block. Teilweise wird dieser Ansatz durch Delegation zu \emph{delegated Proof of Stake} (dPoS) ergänzt.%
 }}
 
 \newglossaryentry{glos:Pruning}{
 name=Pruning,
-description={Das Beschneiden/Zurechtstutzen (Engl. \emph{pruning}), hier bezüglich der Einträge für Transaktionen in einem Block exkl. der Integritätsinformationen.%
+description={Das Beschneiden/Zurechtstutzen (Engl. \emph{pruning}), hier bezüglich der Einträge für Transaktionen in einem Block exklusive der Integritätsinformationen.%
 }}
 
 \newglossaryentry{glos:Schwierigkeit}{
@@ -108,22 +103,22 @@ description={Als Ableitung vom \emph{Ziel} (Engl. target). Dient bei Konsens-Alg
 
 \newglossaryentry{glos:Wallet}{
 name=Wallet,
-description={Entlehnt aus dem Engl. für Brieftasche als Bezeichnung für ein Programm, oder Datenstruktur bzw. Datei. Sie beinhaltet die kryptografischen Schlüssel für die Interaktion mit der Blockchain. 
+description={Entlehnt aus dem Engl. für Brieftasche als Bezeichnung für ein Programm, oder Datenstruktur oder Datei. Sie beinhaltet die kryptografischen Schlüssel für die Interaktion mit der Blockchain.% 
 }}
 
 \newglossaryentry{glos:Ausgabeaufschlag}{
 name=Ausgabeaufschlag,
-description={Die Belohnung (Engl. blockreward) für den Erfolgsfall bei einem Proof-of-Konsens (s.a. Halfing).
+description={Die Belohnung (Engl. blockreward) für den Erfolgsfall bei einem \enquote{Proof of}-Konsens (s.a. Halfing).%
 }}
 
 \newglossaryentry{glos:Exchange}{
 name=Exchange,
-description={Wechslestuben, hier im Speziellen Dienstleister und Märkte die dem Tausch zwischen stattlichen Währungen und Kryptowährungen/Token dienen.%
+description={Wechselstuben, hier im Speziellen Dienstleister und Märkte die dem Tausch zwischen stattlichen Währungen und Kryptowährungen/Token dienen.%
 }}
 
 \newglossaryentry{glos:Halfing}{
 name=Halfing,
-description={Halbierung des Ausgabeaufschlags (Engl. \emph{Block Reward}) zur Regulierung der Gesamtmenge.
+description={Halbierung des Ausgabeaufschlags zur Regulierung der Gesamtmenge.
 Bei Bitcoin wird der Ausgabeaufschlag (neue Bitcoin) alle 210.000 Blocks (d.h. statistisch etwa alle 4 Jahre) halbiert. \\
 50 Bitcoin betrug der initiale Ausgabeaufschlag im Januar 2009.\\
 25 Bitcoin ab \href{https://blockchain.info/block/000000000000048b95347e83192f69cf0366076336c639f9b7228e9ba171342e}{Block 210.000} am 28.11.2012\\% \autocite{w:blockchain}.
@@ -134,23 +129,23 @@ Bei Ethereum ist die absolute Menge nicht final festgelegt (\url{https://ethereu
 
 \newglossaryentry{glos:Hashrate}{
 name=Hashrate,
-description={Die Anzahl der Hashes je Zeiteinheit (meist je Sekunde). Die Absolute Zahl der Hashes wird äquivalent zur verrichteten Arbeit verstanden. Einerseits eine Maßzahl für die erbrachte Leistung eines einzelnen Teilnehmers. Zumeist aber die aufgrund der Schwierigkeit geschätzte Gesamtleistung des Netzwerkes.}
-}
+description={Die Anzahl der Hashes je Zeiteinheit (meist je Sekunde). Die Absolute Zahl der Hashes wird äquivalent zur verrichteten Arbeit verstanden. Einerseits eine Maßzahl für die erbrachte Leistung eines einzelnen Teilnehmers, zumeist aber die aufgrund der Schwierigkeit geschätzte Gesamtleistung des Netzwerkes.%
+}}
 
 \newglossaryentry{glos:GenesisBlock}{
 name=Genesis Block,
-description={In Anlehnung an die griechische Bedeutung Schöpfung/Geburt -- \ua{} bekannt durch das 1. Buch Mose der Bibel -- der erste Block einer Blockchain. Dieser wird üblicherweise vom Initiator unabhängig vom Mining erstellt.}
-}
+description={In Anlehnung an die griechische Bedeutung Schöpfung/Geburt -- \ua{} bekannt durch das 1. Buch Mose der Bibel -- der erste Block einer Blockchain. Dieser wird üblicherweise vom Initiator unabhängig vom Mining erstellt.%
+}}
 
 \newglossaryentry{glos:TPS}{
 name=Transaktionsgeschwindigkeit,
-description={Metrik für die Anzahl je Zeiteinheit durchführbarer oder tatsächlich durchgeführten Transaktionen nach Konsens.}
-}
+description={Metrik für die Anzahl je Zeiteinheit durchführbarer oder tatsächlich durchgeführten Transaktionen nach Konsens.%
+}}
 
 \newglossaryentry{glos:LN}{
 name=Lightning Network,
 description={Ein Netzwerk für das Routing von zunächst primär Zahlungstransaktionen im Bitcoin-Netzwerk und potentiell darüber hinaus beliebige Transaktionen über verschiedene Blockchains hinweg.
-Die Erweiterung erfolgt als zweite Protokollschicht über Timelocks und Multisignature-Adressen in einem Smart~Contract. Wiederverwendbare Payment~Codes die die Handhabung von Adressen erleichtern und gleichzeitig den Datenschutz verbessern werden integriert.%
+Die zweite Protokollschicht erweitert über Zeitschranken (Engl. Timelocks) und Multisignatur-Adressen in einem Smart~Contract. Wiederverwendbare Zahlungsadressen (Engl. reuseable Payment~Codes) die die Handhabung von Adressen erleichtern und gleichzeitig den Datenschutz verbessern werden integriert.%
 }}
 
 %Abkürzungen
@@ -180,7 +175,7 @@ Die Erweiterung erfolgt als zweite Protokollschicht über Timelocks und Multisig
 \newacronym{PoS}{PoS}{Proof of Stake\protect\glsadd{glos:PoS}
 }
 
-\newacronym{TPS}{TPS}{Transaction Processing System\protect\glsadd{glos:TPS}%
+\newacronym{TPS}{TPS}{Transaction Processing System oder Transaktionen pro Sekunde\protect\glsadd{glos:TPS}%
 }
 
 \newacronym{GRNET}{GRNET}{Greek Research and Technology Network%

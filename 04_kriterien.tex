@@ -2,8 +2,6 @@ Um die sehr unterschiedlichen Implementierungen miteinander vergleichbar zu mach
 %~ Diese Kriterien auch sollen relevant für den Anwendungsfall, eventuelle Einschränkungen und die Notwendigkeit zur .
 Die Wertung soll klar von geringer Zielerfüllung zur höheren erkennbar sein.
 
-%~ Hier wurde eine Auswahl getroffen und lange nicht alle denkbaren Kriterien angeführt.
-%~ Bei der Durchführung für ein konkretes Unternehmen muss zusätzlich eine Betrachtung erfolgen, welche weiteren Kriterien wichtig sind.
 
 %%
 \section{Grundlegendes zur Informationstechnologie}\label{krit:it}
@@ -23,7 +21,7 @@ Sowohl die Dokumentation bisher getroffener Entscheidungen als auch der Prozess 
 Über einzelne \gls{BCI} hinweg bringt die Standardisierung auch Austauschmöglichkeiten wie \emph{Interledger} (\ref{first:interledger}), \gls{LN}\footnote{Whitepaper \autocite{p:lightning}} oder das Comit~Network\footnote{Whitepaper \autocite{p:comit}}.
 Zur Zeit der Arbeit werden erste Live-Tests im Produktivnetzwerk, über drei Firmen-Netzwerke als verschiedene Implementierungen für das \gls{LN}, hinweg durchgeführt. Auch Raiden\footnote{\url{https://raiden.network/}} für Ethereum ist bereits in der Entwicklung voran geschritten.
 
-Am Bsp. aus den \nameref{chap:usecases} von Julian Assange (\ref{uc:timestamping}) wurde bereits deutlich, dass die Nachvollziehbarkeit eines Beweisen (Proof of Life) auf mathematischer Grundlage nicht allein entscheidend ist.
+Am Bsp. aus den Anwendungsfällen von Julian Assange (\ref{uc:timestamping}) wurde bereits deutlich, dass die Nachvollziehbarkeit eines Beweisen (Proof of Life) auf mathematischer Grundlage nicht allein entscheidend ist.
 Stattdessen ist ein wesentlicher Punkt, dass über die Teilnehmer im Netzwerk hinaus und spezialisierte Auditoren hinaus die Nutzer fähig sind die resultierenden Anwendungen zu nutzen.
 Derzeit ist die \gls{BCT} so komplex, dass das Verständnis dafür nur mit viel persönlichem Zeitaufwand geschaffen werden kann.
 Um Anwendungen im Rahmen der Digitalisierung der Gesellschaft in der Bevölkerung dauerhaft mit Akzeptanz auszustatten, sind leicht zugängliche Erklärungen im Rahmen der Weiterbildung dafür notwendig.
@@ -59,9 +57,11 @@ Konkret stehen Quorum unter LGPL\,3.0\footnote{\cite{w:license:lgpl3}, \cite{w:q
 
 \subsection{Entwicklungsstand}\label{krit:entwicklungsstand}
 
-Für die Anwendbarkeit einer Blockchain-Implementierung sind Stabilität und umgesetzte Funktionen eine gute Maßgabe.
-Als Bezugspunkt kann hierfür zum einen die Planung des jeweiligen Projektes dienen.
-Aber auch der Vergleich bezüglich unterstützter und jeweils benötigter oder gewünschter Features.
+Stabile Software ist ein grundlegendes Kennzeichen für den Entwicklungsstand.
+Abstürze oder unerwartetes Verhalten wären ein Indikator für mangelnde Stabilität.
+Das Verhältnis bereits implementierter Funktionen bezogen auf eine Planungsgrundlage (\zB{} Roadmap) ist ein praktikabler Maßstab.
+%~ Als Bezugspunkt kann hierfür zum einen die Planung des jeweiligen Projektes dienen.
+Gleiches gilt bezüglich unterstützter und jeweils benötigter oder gewünschter Features.
 
 Das Vorhandensein von Dokumentation, Abstraktion als formalisiertes Protokoll wird hier nicht betrachtet, da bereits unter
 \ref{krit:openstandard} eingeordnet.
@@ -96,15 +96,18 @@ Die Kandidaten ermöglichen Zugriff über derartige Schnittstellen.
 
 \subsection{Community}\label{krit:community}
 
-Die Unterstützung einer Software hängt -- auch wenn die Entwicklung größtenteils hauptberuflich erfolgt -- wesentlich von der Unterstützung durch Nutzer ab.\footnote{\enquote{The Importance of Having Users} \autocite{Raymond:CB}}
+Auch wenn die Entwicklung größtenteils hauptberuflich erfolgt, hängt die Unterstützung einer Software wesentlich von der Bereitschaft der Nutzer ab.\footnote{\enquote{The Importance of Having Users} \autocite{Raymond:CB}}
 Bei proprietären Produkten leuchtet dies direkt ein, da die Lizenzeinnahmen die Finanzierung der Entwicklung ermöglichen.
 Wir haben aber beim Kriterium \nameref{krit:opensource} festgestellt, dass gerade in Systemen die auf Vertrauen basieren, die Umsetzung als offener Standard und freie Softwarelizenzen ein ausschlaggebendes Argument im Wettbewerb darstellen. 
 Dabei geht es nicht nur um den Wettbewerb um die Nutzer, die eventuell Fehler melden und die Entwicklung durch Mitwirkung oder durch freiwillige monetäre Leistungen unterstützen. Es geht insbesondere auch um die Entwicklergemeinschaft, die Beiträge zur fraglichen Software leisten. Dazu zählen auch solche die keine Programmierung, sondern eventuell Übersetzungen, Dokumentation und Werkzeuge im Umfeld schaffen.
 
-Der kritischste Teil der Community sind aber die Personen, die den Kern des Projektes stellen.
-Ein \enquote{Team} mit nur einem Entwickler ist mit einem höheren Ausfallrisiko zu bewerten als ein Team aus zehn Kern-Entwickler mit hunderten Beitragenden. Selbst wenn der einzelne Entwickler initial besser Leistungen erbringt bleibt sein Ausfall eine Bedrohung für den Fortbestand des Projektes für solche Nutzer die dringende Problemfälle nicht selbst meistern können.
+Der wichtigste Teil für Kontinuität in der Community sind aber Personen, die den Kern des Projektes stellen.
+Ein \enquote{Team} mit nur einem Entwickler ist mit einem höheren Ausfallrisiko zu bewerten als ein Team aus zehn Kern-Entwickler mit hunderten Beitragenden.
+Selbst wenn der einzelne Entwickler initial besser Leistungen erbringt bleibt sein Ausfall eine Bedrohung für den Fortbestand des Projektes.
+Bei dringenden Problemfällen können Anwender diese nicht selbst beheben und sind häufig auf Serviceleistungen angewiesen.
+Für Unternehmen sind die Teile der Community, die Service anbieten eine Versicherung gegen das Ausfallrisiko der Software. 
 
-Die Wertung kann nach Anzahl Größenordnungen der Beteiligten vorgenommen werden.
+Die Wertung kann nach Anzahl und Größenordnungen der Beteiligten vorgenommen werden.
 %~ Ebenso inwoiefern und Kapazitäten für Beratung und Anpassungen angeboten werden
 
 
@@ -112,11 +115,12 @@ Die Wertung kann nach Anzahl Größenordnungen der Beteiligten vorgenommen werde
 
 \subsection{Konsens}\label{krit:consensus}
 
-Es werden zwei Arten von Methoden unterschieden, die algorithmisch umgesetzt werden können: Voting und Proof-of-Methoden.\footnote{\cite{p:hyperledger:consensus}}
+Es werden zwei Arten von Methoden unterschieden, die algorithmisch umgesetzt werden können: \enquote{Voting} und \enquote{Proof of}-Methoden.\footnote{\cite{p:hyperledger:consensus}}
 \emph{Voting} schafft einen finalen \gls{glos:State} durch stimmberechtigte Teilnehmer.
-\emph{Proof-of-Methoden} sind mathematische Beweise für eine mögliche Wahrheit.
-Die Verkettung erfolgt durch einen \gls{glos:MerkeTree} über die Transaktionen und Einbeziehung des Vorgängers.
-Da die Verkettung mit genug Rechenleistung aufgrund möglicher Hashkollisionen nicht final ist, wird auch der \gls{glos:State} nicht final sondern nur zunehmend wahrscheinlich. Zur Vereinfachung wird gelegentlich das Ergebnis nach einer Anzahl von weiteren Blöcken als final angenommen.
+\emph{\enquote{Proof of}-Methoden} sind mathematische Beweise für eine mögliche Wahrheit.
+Die Transaktionen in einem Block werden durch einen \gls{glos:MerkeTree} verkettet, die Blöcke durch Einbeziehung des Vorgängerblocks.
+Da die Verkettung mit genug Rechenleistung aufgrund möglicher Hashkollisionen nicht final ist, wird auch der \gls{glos:State} nicht final sondern nur zunehmend wahrscheinlich.
+Das Ergebnis wird gelegentlich vereinfachend nach einer bestimmten Anzahl von weiteren Blöcken als final angenommen.
 
 Die konkrete \gls{BFT} (als Anteil der Teilnehmer die ohne Schaden für die Zuverlässigkeit fehlerhaft handeln können) für einen Algorithmus ist leider nicht in allen Fällen bekannt; zur Vereinfachung wird daher auf die binäre Aussage \gls{BFT} oder nicht abgestellt.
 Dies stellt in den erlaubnisbehafteten Systemen keine Priorität dar.
@@ -227,7 +231,7 @@ Quorum behält Ether als native Währung für die Beschränkung der Laufzeit in 
 
 Die Frage nach Performance ist eine naheliegende Entscheidungsgrundlage bei der Beschaffung von IT-Systemen.
 Die damit optimierten betrieblichen Prozesse sollen nicht nur effektiv sein, sondern effizient.
-Benchmarks zum Vergleich verschiedener \gls{BCI} stellen gerne auf die \gls{TPS} ab.\footnote{s.a. \enquote{schnellste Blockchain} \autocite{w:rbbc}}
+Benchmarks zum Vergleich verschiedener \gls{BCI} stellen gerne auf das \gls{TPS} ab.\footnote{s.a. \enquote{schnellste Blockchain} \autocite{w:rbbc}}
 Die Vergleichbarkeit ist aber nur bedingt gegeben, da Blockgröße und Transaktionsgröße abhängig von den Vorgaben sehr starke Unterschiede aufweisen können.
 Zusätzlich unterscheidet sich die Transaktionsgröße für verschiedene Anwendunsgfälle sehr stark.
 Der Grad der Verteilung hat einen direkten Einfluss auf die Verbreitungsgeschwindigkeit von Transaktionen und Blocks im Netzwerk; ebenso wie die Übertragungstechnik.
