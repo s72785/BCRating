@@ -10,12 +10,15 @@ An dieser Stelle soll die davon abweichend die Hypothese~\rom{2} verfolgt werden
 Wenn Unternehmen bereits aktiv mit \gls{BCI} arbeiten, sollten Beispiele auf"|findbar sein.
 
 Die in der \nameref{einleitung} bereits erwähnte \gls{HSM} bot im September~2017 eine Woche \enquote{Autumn School} zum Thema Blockchain an.\footnote{Programm und Informationen \autocite{w:hsmw-bccm-as}}
-Der Schwerpunkt wurde wahrscheinlich durch die in der Nähe befindlichen und bei der Gründung von Ethereum beteiligte Firma \mbox{slock.it} beeinflusst.
+Der Schwerpunkt wurde wahrscheinlich durch die in der Nähe befindliche und von Ethereum-Pionieren gegründete Firma \mbox{slock.it} beeinflusst.
 In der Retrospektive ist interessant, welche konkreten \gls{BCI} -- außer Ethereum oder Bitcoin -- Firmen betrachten oder im Einsatz haben.
-Hier sticht der Name \emph{Deutschen Bundesbank} mit der Vorführung eines Prototyps hervor.
-Dieser wurde mit \emph{Quorum} -- einem Fork von Ethereum -- umgesetzt. Dies scheint also ein beachtenswerter Vergleichskandidat zu sein.
-Da das Projekt von der \mbox{Linux Foundation} mit Unterstützung zahlreicher namhafter Firmen, u.a Intel, SAP, Daimler, IBM und Accenture, gehostet wird ist davon auszugehen, dass sich die Investition für beteiligte Unternehmen lohnt.
+Hier sticht der Name der \emph{Deutschen Bundesbank} mit der Vorführung eines Prototyps hervor.
+Dieser wurde mit \emph{Quorum} -- einem Fork einer Ethereum-Implementierung -- umgesetzt. Dies scheint also ein beachtenswerter Vergleichskandidat zu sein% der durch J.P.~Morgan finanziert wird.
+.
+%
 Weiterhin hat die Firma \emph{Sopra Steria} die Umsetzung von Kundenprojekten mittels \emph{BigchainDB} und den Einsatz von \emph{Hyperledger} durch Kunden erwähnt.
+Da das Hyperledger-Projekt von der \mbox{Linux Foundation} mit Unterstützung zahlreicher namhafter Firmen, u.a Intel, SAP, Daimler, IBM und Accenture, gehostet wird ist davon auszugehen, dass sich die Investition für beteiligte Unternehmen lohnt.
+%
 Die hinter \emph{BigchainDB} stehende gleichnamige Firma ist ebenfalls Mitglied im \emph{Bundesverband Blockchain} und arbeitet mit der \gls{IPDB} deren Finanzierung durch eine Stiftung\footnote{Blogpost zur Gründung \autocite{w:ipdb-foundation}} sichergestellt ist.
 Damit hätten wir einen weiteren bereits bei Firmenkunden eingesetzten Kandidaten.
 
@@ -34,8 +37,10 @@ Der Name suggeriert bereits, dass es sich bei \emph{BigchainDB}\footnote{Whitepa
 Bisher wurden Treiber für RethinkDB und für MongoDB -- zwei Vertreter von noSQL-Datenbanken -- implementiert. Die Autoren konzentrieren sich nach eigener Aussage auf die Skalierbarkeit bei Erhaltung der Dezentralisierung und Unveränderbarkeit sowohl für eine globale öffentliche \gls{BC} auch auch private \gls{BC}.
 Nicht ganz intuitiv ob des Namens ist die klare Vorgabe\footnote{\autocite{w:bcdb:features}}: Statt der Daten werden nur Hash und Zugangstoken in der Blockchain gespeichert.
 
-Für verbesserten Datenschutz (Engl. privacy) von Daten sollen \enquote{Privacy Protocols} sorgen.\footnote{\cite{w:github-bigchaindb-pp}}
-Dabei sollen Authentifizierung und Beweise -- für \ua{} Sharing, Storage und Replikation -- die einzelnen Operationen zusichern.
+Für verbesserten Datenschutz (Engl. privacy)
+% von Daten
+sollen \enquote{Privacy Protocols} sorgen.\footnote{\cite{w:github-bigchaindb-pp}}
+Dabei sollen Authentifizierung und Beweise -- für \ua{} Sharing, Storage und Replikation -- die einzelnen Operationen (vlg. CRUD bei konventionellen DBMS) zusichern.
 Für die redundante Ablage ist auch die Nutzung von \gls{IPFS} oder vergleichbaren verteilten Dateisystemen und Datenbanken angedacht.
 Zusätzlich wurden Vermögenswerte (Engl. Assets) nativ ermöglicht.
 Diese sollen auch zur Authentifizierung und Rechteverteilung dienen.
@@ -47,10 +52,10 @@ Bisher stehen Treiber für Python und JavaScript (inkl. NodeJS) zur Verfügung.
 Änderungen an der API werden für Nutzer nachvollziehbaren Versionsschritten gemacht.
 Das Deployment von Nodes mittels Microsoft Azure und Kubernetes ist seitens des Kernteams dokumentiert.\footnote{\cite{w:bigchaindb-proddepl}}
 
-Bisher ist BigchainDB nicht zuverlässig dezentral einsetzbar und nicht \gls{BFT}.
+Bisher ist BigchainDB nicht zuverlässig dezentral einsetzbar und bietet keine \gls{BFT}.
 Teilnehmer müssen sich für den Abgleich mit der öffentlichen, globalen \emph{IPDB} mit dem zentralen Datenbank-Cluster verbinden.
 Es ist kein Anreizsystem erkennbar, dass für einen Betrieb des Netzwerkes sorgen würde.
-Auch der Konsensmechanismus ist noch fest verankert und soll für private Instanzen erst noch austauschbar gestaltet werden.\footnote{\url{https://www.reddit.com/r/Bitcoin/comments/4j7wjf/bigchaindb_a_prime_example_of_blockchain_bullshit/}}
+Auch der Konsensmechanismus ist noch fest verankert und soll künftig für private Instanzen austauschbar gestaltet werden.\footnote{\url{https://www.reddit.com/r/Bitcoin/comments/4j7wjf/bigchaindb_a_prime_example_of_blockchain_bullshit/}}
 
 Das Angebot an Firmen reicht von Workshops über Hilfe bei der Entwicklung von Anwendungsfällen bis hin zu Support.
 Die Unterhaltung von Datenbankinstanzen gehört auch zum Geschäftsmodell; die Preise sind nicht transparent.\footnote{\cite{w:bigchaindb-enterprise}}
@@ -122,7 +127,7 @@ Der Konsens ist konfigurierbar% wird durch einen \gls{glos:SmartContract} gebild
 . Dies ermöglicht den späteren Einsatz eines anderen Konsensalgorithmus.
 Im Weiteren ist der in Quorum~2.0 und von Ethereum abweichende Raft\footnote{The Raft Consensus Algorithm \autocite{p:raft}} kurz beschrieben.
 
-% uorumChaim
+% QuorumChaim
 % erlaubt ein Voting durch in der Rolle der \emph{Voter} befindliche Teilnehmer. Neben den Votern gibt es zwei weitere \emph{Rollen} -- für das Erstellen der Blöcke die \emph{Maker} (können Voter sein) und die lediglich validierenden \emph{Observer} (können keine weitere Rolle einnehmen). Die ersten beiden Rollentypen können einem Observer ihre eigene Rolle durch eine Transaktion verleihen.
 %Um die Wahrscheinlichkeit einer gleichzeitigen Blockerstellung bei mehreren Makern zu verringern werden individuelle Wartezeiten rundenbasierend zufällig neu gesetzt; ein Maker beginnt erst mit der Erstellung eines Blockes wenn seine Wartezeit abgelaufen ist.
 %https://github.com/jpmorganchase/quorum/wiki/QuorumChain-Consensus
@@ -133,8 +138,8 @@ Der \emph{Candidate} wird nur benötigt um einen neuen \emph{Leader} zu bestimme
 Dafür wird eine Wahl per Losverfahren nach dem Abschluss einer Amtszeit (Engl. term) des \emph{Leader} angesetzt.
 Sofern eine einfache Mehrheit einen neuen \emph{Leader} gewält hat, beginnt eine neue Amtszeit.
 Es werden sehr schnelle Transaktionszeiten (im Millisekundenbereich) ermöglicht und es entstehen keine Blöcke soweit keine Transaktionen vorhanden sind;
-d.h. der Effekt von unnötige, leeren Blöcken auf privaten Blockchains tritt nicht auf.
-Allerdings verzichten die Autoren nach eigener Aussage vollständig auf die Byzantine Fehlertoleranz zugunsten eines leicht verständlichen und in der Praxis einsetzbaren Design. 
+d.h. der Effekt von unnötigen, leeren Blöcken auf privaten Blockchains tritt nicht auf.
+Allerdings verzichten die Autoren nach eigener Aussage vollständig auf die Byzantine Fehlertoleranz zugunsten eines leicht verständlichen und in der Praxis einsetzbaren Designs. 
 
 Als Fork profitiert Quorum von der Community und Weiterentwicklungen aus dem Umfeld von Ethereum.
 Eigene Dokumentation und Entwicklungsergebnisse um das Projekt sind nicht öffentlich auf"|findbar. 
