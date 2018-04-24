@@ -3,6 +3,8 @@
 Abschlussarbeit für den Bachelor Wirtschaftsinformatik an der Hochschule für Technik und Wirtschaft in Dresden
 
 Abgabedatum: 26.01.2018
+Verteidigung: 24.04.2018
+
 
 ### Kurzfassung
 
